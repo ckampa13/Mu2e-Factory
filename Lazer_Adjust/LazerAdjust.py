@@ -29,7 +29,7 @@ pyautogui.FAILSAFE = True #Move mouse to top left corner to abort script
 
 
 ##**GLOBAL VARIABLES**##
-TEMP = 75.0 #current temp  ##ONLY FOR TESTING
+TEMP = 80.0 #current temp  ##ONLY FOR TESTING
 HUMID = 45.0 #current humidity   ##ONLY FOR TESTING
 
 TEMP_INIT = 73.0 #temp for original setting
