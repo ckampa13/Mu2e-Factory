@@ -29,8 +29,8 @@ pyautogui.FAILSAFE = True #Move mouse to top left corner to abort script
 
 
 ##**GLOBAL VARIABLES**##
-TEMP = 80.0 #current temp  ##ONLY FOR TESTING
-HUMID = 50.0 #current humidity   ##ONLY FOR TESTING
+TEMP = 73.0 #current temp  ##ONLY FOR TESTING
+HUMID = 45.0 #current humidity   ##ONLY FOR TESTING
 
 TEMP_INIT = 73.0 #temp for original setting
 HUMID_INIT = 27.0 #humidity for original setting
@@ -42,7 +42,7 @@ CSV_FILE_26 = 'LaserInfo2,6.csv'
 LASERCUT_FILE_26 = 'C2I3.ecp'
 
    
-MAIN_DIR = 'C:\\Users\\AP Lazer\\Desktop\\Lazer_Adjust\\' #CSV in CSV_Files, LASERCUT in Original_Lazer_Files
+MAIN_DIR = 'C:\\Users\\AP Lazer\\Desktop\\Mu2e-Factory\\Lazer_Adjust\\' #CSV in CSV_Files, LASERCUT in Original_Lazer_Files
    
 X_SIZE = 3 #set pixel amount to adjust to right and down
 Y_SIZE = 7
@@ -80,7 +80,7 @@ def loadData(filename, directory):
 # Open LaserCut & .ecp File
 def openFile(filename, directory):
     os.system('start C:\\LaserCut53-2816\\LaserCut53.exe')
-    time.sleep(4)#wait 4 seconds after opening 
+    time.sleep(7)#wait 7 seconds after opening 
     pyautogui.hotkey('ctrl', 'o')
     time.sleep(1)
     pyautogui.typewrite(MAIN_DIR + directory + filename)
