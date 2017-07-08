@@ -1,0 +1,7 @@
+On any computer that wishes to run the automated resistance measurement script,
+open the command prompt, navigate to the PyGUI-2.5.4 directory, and run the following
+command:
+
+	$ python setup.py install
+
+Refer to README.txt in PyGUI-2.5.4 directory for more thorough explanations.

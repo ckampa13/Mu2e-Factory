@@ -3,14 +3,15 @@
 #   Email:         <kampa041@umn.edu>
 #   Institution: University of Minnesota
 #   Project:              Mu2e
-#   Date:				6/19/17
+#   Date:	    	6/19/17
 #
 #   Description:
 #   A Python 3 script using VISA to control an Agilent 34410A Digital MultiMeter (DMM). After scanning in the 
 #   worker code & workstation code, the user scans the straw number (st#####), then is prompted for each
 #   measurement: inside to inside (I-I), outside to outside (O-O), inside to outside (I-O), and outside to inside (O-I). 
 #   To take a given measurement (the minimum of 30 data points), press enter. To stop measurements, enter 'q' in straw prompt.
-#   Data is saved in comma-delimited format to file: Desktop\\strawResistanceMeasurements\\strawResistance_MM-DD-YY.csv
+#   Data is saved in comma-delimited format to file: Desktop\\Mu2e-Factory\\Resistance_Measurement\\Manual\\StrawResistanceMeasurements
+#   \\strawResistanceMeasurements\\StrawResistance_MM-DD-YY.csv
 #   Columns in file (for database): straw_barcode, create_time, worker_barcode, workstation_barcode, resistance, temperature, humidity, test_type
 #
 #   Libraries: pyvisa (with NI-VISA backend) 
@@ -39,8 +40,8 @@ def res_meas():
 		
 
 ##**Global Variables**##
-dataDirectory = 'C:\\Users\\LArTPC\\Desktop\\Mu2e-Factory\\strawResistanceMeasurements\\'
-dataFile = 'strawResistance_' + datetime.now().strftime('%m-%d-%Y') + '.csv'
+dataDirectory = 'C:\\Users\\LArTPC\\Desktop\\Mu2e-Factory\\Resistance_Measurement\\Manual\\StrawResistanceMeasurements\\'
+dataFile = 'StrawResistance_' + datetime.now().strftime('%m-%d-%Y') + '.csv'
 # Test Types (may need to change for database)
 ii_type = 'inside-inside'
 oo_type = 'outside-outside'
