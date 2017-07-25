@@ -12,7 +12,7 @@ a shortcut of the .py (.ino, File Directory etc.) file the user should run direc
 
 ## Resistance_Measurement:
 ### Manual:
-- Script: StrawResistanceMeasurement.py
+- Script: [StrawResistanceMeasurement.py](Resistance_Measurement/Manual/StrawResistanceMeasurement.py)
 - Language: Python 3
 - Computer: Windows desktop in back room of 464 with Agilent DMM connected via USB.
 - Packages: 
