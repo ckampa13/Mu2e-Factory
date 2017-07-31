@@ -3,7 +3,7 @@
 #   Email:         <kampa041@umn.edu>
 #   Institution: University of Minnesota
 #   Project:              Mu2e
-#   Date:	    	7/7/17
+#   Date:	    	    7/28/17
 #
 #   Description:
 #   A Python 3 script using VISA to control an Arduino Uno and PCB board connected to full pallet of straws. 
@@ -17,12 +17,13 @@ import serial
 import time
 
 ser = serial.Serial('COM4', 9600)
-time.sleep(2)
+print (ser.readline())
+#print ("\n")
 
 for i in range(0, 16):
-    f = bytes(str(i), 'utf-8')
-    ser.write(f)
-    time.sleep(1)
-    ser.write(b'69')
-    time.sleep(3)
+    ser.write(bytes(chr(i+97), 'ascii'))
+    ser.write(b'r')
     print (ser.readline())
+
+
+

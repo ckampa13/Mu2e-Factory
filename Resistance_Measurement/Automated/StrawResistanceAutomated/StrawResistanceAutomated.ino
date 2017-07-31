@@ -9,13 +9,14 @@ int adc_max[6];
 float volt_max[6];
 
 float Vout= 0;
-int inByte = 0;
-int current_selection = 0;
+int inByte = 97;
+int current_selection = 97;
 int rawADC = 0;
 
 void setup() {
   // initialize serial communication:
   Serial.begin(9600);
+  Serial.println("Ready"); // print "Ready" once
   // initialize the Digital (Select) pins:
   for (int thisPin = 2; thisPin <= 7; thisPin++) {
     pinMode(thisPin, OUTPUT);
@@ -26,12 +27,13 @@ void setup() {
 void loop() {
   // read the sensor:
   if (Serial.available() > 0) {
-    inByte = Serial.parseInt();
-    if(inByte >= 0 && inByte < 16) {
-      digitalSwitch(dig_vals[inByte]);
+    //inByte = Serial.parseInt();
+    inByte = Serial.read();
+    if(inByte-97 >= 0 && inByte-97 < 16) {    //If letter is a-p, switch digital values
+      digitalSwitch(dig_vals[inByte-97]);
       current_selection = inByte; 
     }
-    if(inByte == 69) {
+    if(inByte == 'r') { //using r for 'read'
       readVoltage();
     }
   }
@@ -115,9 +117,9 @@ void readVoltage() {
   }
 
   //SERIAL OUTPUT
-  Serial.print("(S");
-  Serial.print(current_selection);
-  Serial.print(": ");
+  Serial.print("S");
+  Serial.print(current_selection-97);
+  Serial.print(", ");
   
   for (int j = 0; j < 6; j++){
     volt_max[j] = adc_max[j] * Vard / 1023.0;
@@ -126,7 +128,7 @@ void readVoltage() {
       Serial.print(", ");
     }
     else {
-      Serial.print(")\n");
+      Serial.print("\n");
     }
     /*
     //TESTING

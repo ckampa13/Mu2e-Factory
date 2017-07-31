@@ -1,0 +1,9 @@
+On any Windows computer that wishes to run the automated resistance measurement script,
+open the command prompt, navigate to the PyQt4-4.11.4 directory, and run the following
+command:
+
+	$ python -m pip install -U PyQt4-4.11.4-cp36-cp36m-win_amd64.whl
+
+whl downloads at: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4
+
+cp36 refers to Python 3.6, amd64 refers to 64-bit operating system
