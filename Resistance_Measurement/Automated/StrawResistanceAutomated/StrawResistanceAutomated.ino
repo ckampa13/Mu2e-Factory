@@ -1,17 +1,25 @@
 //Global Variables
-const float Vard= 5.0;
+const float Vard= 4.991;
+//const float Vard= 5.028;
 const int num_meas = 100;
-
+//                   234567   234567   234567   234567
 int dig_vals[16] = {B000000, B000100, B100000, B100100,    B010010, B010110, B110010, B110110,    B001001, B001101, B101001, B101101,    B011011, B011111, B111011, B111111};
 
 int analog_read[num_meas][6];
-int adc_max[6];
-float volt_max[6];
+//int adc_max[6];
+int adc_max;
+long adc_total;
+float adc_avg;
+//float volt_max[6];
+float final_volt[6];
 
 float Vout= 0;
 int inByte = 97;
 int current_selection = 97;
 int rawADC = 0;
+
+// Send serial value 'y' for actual averaging of data, 'z' for giving maximum voltage value, corresponding to minimum resistance...setting default to averaging, but should always declare in python script.
+char avg_method = 'y';
 
 void setup() {
   // initialize serial communication:
@@ -36,6 +44,9 @@ void loop() {
     if(inByte == 'r') { //using r for 'read'
       readVoltage();
     }
+    if(inByte == 'y' || inByte == 'z') {
+      avg_method = inByte;
+    }
   }
 
 /*
@@ -53,7 +64,7 @@ void loop() {
 
   //serial print to be read by python script
   //readVoltage();
-  delay(250);
+  delay(25);
 }
 
 // Setting digital outputs for select channels on MUXs
@@ -64,16 +75,19 @@ void digitalSwitch(int dig) {
   digitalWrite(5, HIGH && (dig & B000100));
   digitalWrite(6, HIGH && (dig & B000010));
   digitalWrite(7, HIGH && (dig & B000001));
-  delay(500);
+  delay(10);
 }
 
 
 
 void readVoltage() {
-  for (int i = 0; i < num_meas; i++) {
-    for (int j = 0; j < 6; j++) {
+  for (int j = 0; j < 6; j++) {
+    for (int i = 0; i < num_meas; i++) {
       analog_read[i][j] = 0;
     }
+
+    final_volt[j] = 0; 
+    
   }
 
   int i = 0;
@@ -101,29 +115,53 @@ void readVoltage() {
       */
     }
     i++;
-    delay(10);
+
+    //1 ms delay between measurements
+    delay(1);
   }
 
-  //Find maximum values for Voltage...corresponds to minimum resistance!
-  for (int j = 0; j < 6; j++) {
-    adc_max[j] = 0;
-  }
-  for (int i = 0; i < num_meas; i++) {
+  if (avg_method == 'y') {
+    //Find average value
     for (int j = 0; j < 6; j++) {
-      if (analog_read[i][j] > adc_max[j]) {
-        adc_max[j] = analog_read[i][j];
+      adc_total = 0;
+      for (int i = 0; i < num_meas; i++) {
+        adc_total += analog_read[i][j];
       }
+      adc_avg = adc_total/num_meas;
+      final_volt[j] = adc_avg * Vard / 1023.0;
+    }
+  }
+  else if (avg_method == 'z') {
+    //Find maximum values for Voltage...corresponds to minimum resistance!
+
+    /*
+    for (int j = 0; j < 6; j++) {
+      adc_max[j] = 0;
+    }
+    */
+    
+    for (int j = 0; j < 6; j++) {
+      adc_max = 0;
+      for (int i = 0; i < num_meas; i++) {
+        if (analog_read[i][j] > adc_max) {
+        //if (analog_read[i][j] > adc_max[j]) {
+          adc_max = analog_read[i][j];
+          //adc_max[j] = analog_read[i][j];
+        }
+      }
+
+      final_volt[j] = adc_max * Vard / 1023.0;
     }
   }
 
   //SERIAL OUTPUT
-  Serial.print("S");
-  Serial.print(current_selection-97);
+  //Serial.print("S");
+  Serial.print(char(current_selection));
   Serial.print(", ");
   
   for (int j = 0; j < 6; j++){
-    volt_max[j] = adc_max[j] * Vard / 1023.0;
-    Serial.print(volt_max[j]);
+    //volt_max[j] = adc_max[j] * Vard / 1023.0;
+    Serial.print(final_volt[j]);
     if ( j != 5 ) {
       Serial.print(", ");
     }
@@ -140,4 +178,5 @@ void readVoltage() {
     */
   }
 }
+
 
