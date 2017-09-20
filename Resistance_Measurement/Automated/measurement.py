@@ -38,8 +38,8 @@ inf_low_limit = 1000.0 #determining if io and oi measurements are open circuits
 ii_pass_range = [150.0,250.0]
 oo_pass_range = [50.0,150.0]
 
-
-com_port = 'COM11'
+com_port = 'COM3'
+#com_port = 'COM11'
 
 #calib_file = 'calib_testing.csv'
 calib_file = 'Calibration\\calib.csv'

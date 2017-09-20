@@ -80,8 +80,8 @@ void digitalSwitch(int dig) {
   digitalWrite(5, HIGH && (dig & B000100));
   digitalWrite(6, HIGH && (dig & B000010));
   digitalWrite(7, HIGH && (dig & B000001));
-  delay(250);
-  //delay(10);
+  //delay(250);
+  delay(10);
 }
 
 
