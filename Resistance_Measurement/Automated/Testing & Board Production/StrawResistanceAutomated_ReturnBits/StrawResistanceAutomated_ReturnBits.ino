@@ -124,6 +124,7 @@ void readVoltage(char avg_method) {
 
     //1 ms delay between measurements
     delay(1);
+    //delay(2);
   }
 
   if (avg_method == 'y') {

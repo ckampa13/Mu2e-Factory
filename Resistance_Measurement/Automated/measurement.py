@@ -46,7 +46,10 @@ calib_file = 'Calibration\\calib.csv'
 dataFile = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
 
 meas_cycles = 'abcdefghijklmnop'
-avg_method = 'average'
+
+
+avg_method = 'minimum'
+#avg_method = 'average'
 #   'average' for a strict averaging of resistance values, 'minimum'
 #   for minimum measured resistance (max measured voltage)
 
