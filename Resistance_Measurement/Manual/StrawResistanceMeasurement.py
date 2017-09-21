@@ -41,7 +41,7 @@ def res_meas():
 
 ##**Global Variables**##
 dataDirectory = 'C:\\Users\\LArTPC\\Desktop\\Mu2e-Factory\\Resistance_Measurement\\Manual\\StrawResistanceMeasurements\\'
-dataFile = 'StrawResistance_' + datetime.now().strftime('%m-%d-%Y') + '.csv'
+dataFile = 'StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
 # Test Types (may need to change for database)
 ii_type = 'inside-inside'
 oo_type = 'outside-outside'
