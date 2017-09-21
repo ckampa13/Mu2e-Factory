@@ -244,7 +244,7 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary):
     data_file = 'straw_resistance_' + datetime.now().strftime("%Y-%m-%d_%H%M%S_") + workstation + '.csv' 
     with open(dataFile, 'a') as f:
         f.write('Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail \n')  
-        for key, value in straw_dictionary.items():
+        for key, value in sorted(straw_dictionary.items()):
             if key[2:4] == 'ii':
                 meas_type = 'inside-inside'
             elif key[2:4] == 'io':
