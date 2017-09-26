@@ -45,7 +45,7 @@ com_port = 'COM3'
 calib_file = 'Calibration\\calib.csv'
 calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
 dataFile = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
-dataFile_adjusted = 'Resistance_Data\\ADJUSTED_CALIB_StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
+dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
 meas_cycles = 'abcdefghijklmnop'
 
