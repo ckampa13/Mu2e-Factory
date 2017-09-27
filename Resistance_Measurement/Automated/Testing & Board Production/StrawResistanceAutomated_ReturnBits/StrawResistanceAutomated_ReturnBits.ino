@@ -26,6 +26,7 @@ int rawADC = 0;
 // Send serial value 'y' for actual averaging of data, 'z' for giving maximum voltage value, corresponding to minimum resistance...setting default to averaging, but should always declare in python script.
 char avg_method = 'y';
 
+
 void setup() {
   // initialize serial communication:
   Serial.begin(9600);
@@ -123,8 +124,8 @@ void readVoltage(char avg_method) {
     i++;
 
     //1 ms delay between measurements
-    delay(1);
-    //delay(2);
+    //delay(1);
+    delay(3);
   }
 
   if (avg_method == 'y') {
@@ -134,7 +135,7 @@ void readVoltage(char avg_method) {
       for (int i = 0; i < num_meas; i++) {
         adc_total += analog_read[i][j];
       }
-      adc_avg = adc_total/num_meas;
+      adc_avg = 1.0*adc_total/num_meas;
       
       //final_volt[j] = adc_avg * Vard / 1023.0;
       final_volt[j] = adc_avg;

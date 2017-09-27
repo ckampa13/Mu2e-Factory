@@ -39,10 +39,11 @@ ii_pass_range = [150,250]
 oo_pass_range = [50,150]
 
 
-com_port = 'COM11'
+com_port = 'COM3'
+#com_port = 'COM11'
 
 #calib_file = 'calib_testing.csv'
-calib_file = 'calib_flipped.csv'
+calib_file = 'Calibration/calib.csv'
 dataFile = 'StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
 
 meas_cycles = 'abcdefghijklmnop'
