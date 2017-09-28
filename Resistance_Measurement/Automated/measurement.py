@@ -103,6 +103,19 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         ser.write(b'z')
     #getting calibration info
     Vin, V5, r2_list, meas_dict = calibration_store(c_file)
+    
+    ###TESTING###
+    i = 1
+    for key, value in sorted(meas_dict.items()):
+        print('[' + key + ': ' + str(value(0)) + ', ' + str(value(1)) + ']', end='')
+        if i % 4 == 0:
+            print()
+        else:
+            print(', ', end='')
+        i += 1
+    input("Check calibration vals (hit enter)...")
+    ################
+    
     #Storing straw ID in meas_dict value index 2
     for key, value in meas_dict.items():
         value[2] = straw_ids[int(key[:2])]
