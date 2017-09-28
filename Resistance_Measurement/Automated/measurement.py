@@ -103,11 +103,12 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         ser.write(b'z')
     #getting calibration info
     Vin, V5, r2_list, meas_dict = calibration_store(c_file)
-    
+
+    '''
     ###TESTING###
     i = 1
     for key, value in sorted(meas_dict.items()):
-        print('[' + key + ': ' + str(value(0)) + ', ' + str(value(1)) + ']', end='')
+        print('[' + key + ': ' + str(value[0]) + ', ' + str(value[1]) + ']', end='')
         if i % 4 == 0:
             print()
         else:
@@ -115,6 +116,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         i += 1
     input("Check calibration vals (hit enter)...")
     ################
+    '''
     
     #Storing straw ID in meas_dict value index 2
     for key, value in meas_dict.items():
@@ -135,8 +137,18 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
             sys.exit(0)
         del bits_list[0]
         i = 0
-        for key, v_out in straws.items():
+        for key, v_out in sorted(straws.items()):
             v_out = float(bits_list[i])*V5/1023.0
+
+            '''
+            ##TESTING##
+            print(key + ', ' + str(bits_list[i]) + ', ' + str(v_out))
+            if (i+1) % 6 == 0:
+                input()
+            ###########
+            '''
+
+            
             i += 1
             #straws dictionary now contains key: straw#+measurement type and value: measured voltage
             if v_out != 0:
@@ -275,7 +287,8 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file
 def main():
     colorama.init() #turn colorama ANSII conversion on
     wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
-    
+
+    straw_dict = {}
     save_dict = {}
     for value in straw_nums:
         save_dict[value+'ii'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]

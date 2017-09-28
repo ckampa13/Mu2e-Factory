@@ -156,7 +156,8 @@ def arduino_voltage(v5, first_straw):
             sys.exit(0)
         del bits_list[0]
         i = 0
-        for key in straws:
+        #for key in straws:
+        for key in sorted(straws):
             volt_dict[key] = float(bits_list[i])*v5/1023.0
             i += 1
     return volt_dict
