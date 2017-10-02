@@ -68,7 +68,7 @@ board_meas = [8.0,5.0,509.8,509.8,510.0,510.0,509.8,510.0]
 #first_straw = {'a':'02ii','b':'02io','c':'02oi','d':'02oo', 'e':'01ii','f':'01io','g':'01oi','h':'01oo',
 #               'i':'04ii','j':'04io','k':'04oi','l':'04oo', 'm':'03ii','n':'03io','o':'03oi','p':'03oo'}
 
-com_port = 'COM11'
+com_port = 'COM3'
 
 calib_file = 'calib_check_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
 
@@ -260,14 +260,17 @@ def main():
             meas_res = measurement(vin,v5,r2_vals,avg_method,straw_nums,first_straw) 
             calib_dict = calculate_calib(meas_res,test_res_1,test_res_2,straw_nums)
             i = 0
+            all_pass = True
             for key, value in sorted(save_dict.items()):
                 if value[2] != 'pass' and calib_dict[key][2] == 'pass':
                     value[0] = calib_dict[key][0]
                     value[1] = calib_dict[key][1]
                     value[2] = calib_dict[key][2]
                     i += 1
+                if value[2] != 'pass':
+                    all_pass = False
             display_calib(vin, v5, r2_vals, save_dict)
-            if i == 0:
+            if i == 0 or all_pass == True:
                 repeat = check_repeat()
         save_calib(f, vin, v5, r2_vals, save_dict)
         colorama.deinit()  #turn colorama ANSII conversion off

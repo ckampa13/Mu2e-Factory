@@ -3,7 +3,8 @@
 #   Email:         <kampa041@umn.edu>
 #   Institution: University of Minnesota
 #   Project:              Mu2e
-#   Date:	    	    8/25/17
+#   Date:	        8/25/17
+#   Most Recent Update: 10/2/17 -CK
 #
 #   Description:
 #   A Python 3 script using PySerial to control and read from an Arduino
@@ -43,7 +44,7 @@ com_port = 'COM3'
 
 #calib_file = 'calib_testing.csv'
 calib_file = 'Calibration\\calib.csv'
-calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
+#calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
 dataFile = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
 dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
@@ -137,6 +138,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
             sys.exit(0)
         del bits_list[0]
         i = 0
+        #we must sort straws dict otherwise python iterates over it randomly :( Fixed 9/28/17
         for key, v_out in sorted(straws.items()):
             v_out = float(bits_list[i])*V5/1023.0
 
@@ -296,7 +298,7 @@ def main():
         save_dict[value+'oi'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
         save_dict[value+'oo'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
 
-    print('Using first calibration file...\n')
+    #print('Using first calibration file...\n')
     repeat = True
     while(repeat == True):
         input("Press enter to measure resistance...")
@@ -318,7 +320,9 @@ def main():
         display_resistance(save_dict)
         repeat = check_repeat()
     save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile)
-    
+    input('Press enter to exit...')
+
+    ''' This section was used in testing different calibration methods
     print('Now using adjusted calibration file...\n')
     straw_dict = {}
     save_dict = {}
@@ -349,6 +353,7 @@ def main():
         display_resistance(save_dict)
         repeat = check_repeat()
     save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile_adjusted)
+    '''
     
     colorama.deinit()  #turn colorama ANSII conversion off
 
