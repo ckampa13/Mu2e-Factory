@@ -306,15 +306,23 @@ def main():
                                         str_start, str_end,calib_file)
         i = 0
         for key, value in sorted(save_dict.items()):
-            if value[6] != 'pass': #and straw_dict[key][6] == 'pass':
-                value[0] = straw_dict[key][0]
-                value[1] = straw_dict[key][1]
-                value[2] = straw_dict[key][2]
-                value[3] = straw_dict[key][3]
-                value[4] = straw_dict[key][4]
-                value[5] = straw_dict[key][5]
-                value[6] = straw_dict[key][6]
-                i += 1
+            #if value[6] != 'pass': #and straw_dict[key][6] == 'pass':
+            if straw_dict[key][6] == 'pass':
+                if key[2:4] == 'ii':
+                    better_meas_check = abs(straw_dict[key][4]-200) - abs(value[4]-200)
+                elif key[2:4] == 'oo':
+                    better_meas_check = abs(straw_dict[key][4]-100) - abs(value[4]-100)
+                elif key[2:4] == 'io' or key[2:4] == 'oi':
+                    better_meas_check = 1
+                if value[6] != 'pass' or better_meas_check < 0:
+                    value[0] = straw_dict[key][0]
+                    value[1] = straw_dict[key][1]
+                    value[2] = straw_dict[key][2]
+                    value[3] = straw_dict[key][3]
+                    value[4] = straw_dict[key][4]
+                    value[5] = straw_dict[key][5]
+                    value[6] = straw_dict[key][6]
+                    i += 1
         if i == 0:
             repeat = False
         display_resistance(save_dict)
