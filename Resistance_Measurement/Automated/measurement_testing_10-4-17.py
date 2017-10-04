@@ -3,7 +3,8 @@
 #   Email:         <kampa041@umn.edu>
 #   Institution: University of Minnesota
 #   Project:              Mu2e
-#   Date:	    	    8/25/17
+#   Date:	        8/25/17
+#   Most Recent Update: 10/2/17 -CK
 #
 #   Description:
 #   A Python 3 script using PySerial to control and read from an Arduino
@@ -34,19 +35,23 @@ os.system('mode con: cols=115 lines=50')
 
 
 ##-Global Variables-##
-inf_low_limit = 1000 #determining if io and oi measurements are open circuits
-ii_pass_range = [150,250]
-oo_pass_range = [50,150]
-
+inf_low_limit = 1000.0 #determining if io and oi measurements are open circuits
+ii_pass_range = [150.0,250.0]
+oo_pass_range = [50.0,150.0]
 
 com_port = 'COM3'
 #com_port = 'COM11'
 
 #calib_file = 'calib_testing.csv'
-calib_file = 'Calibration/calib.csv'
-dataFile = 'StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
+calib_file = 'Calibration\\calib.csv'
+#calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
+dataFile = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
+dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
 meas_cycles = 'abcdefghijklmnop'
+
+
+#avg_method = 'minimum'
 avg_method = 'average'
 #   'average' for a strict averaging of resistance values, 'minimum'
 #   for minimum measured resistance (max measured voltage)
@@ -69,7 +74,7 @@ def gather_info():
     return worker, workstation, temp, humid, str_start, str_end
 
 #meas_cycles is a string containing characters a-p in desired order
-def measure_resistance(avg_type, meas_cycles, straw_start, straw_end):
+def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
     ###--TESTING--###
     first_straw = {'a':'01ii','b':'01io','c':'01oi','d':'01oo', 'e':'02ii','f':'02io','g':'02oi','h':'02oo',
                    'i':'03ii','j':'03io','k':'03oi','l':'03oo', 'm':'04ii','n':'04io','o':'04oi','p':'04oo'}
@@ -98,7 +103,22 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end):
     elif avg_type == 'minimum':
         ser.write(b'z')
     #getting calibration info
-    Vin, V5, r2_list, meas_dict = calibration_store(calib_file)
+    Vin, V5, r2_list, meas_dict = calibration_store(c_file)
+
+    '''
+    ###TESTING###
+    i = 1
+    for key, value in sorted(meas_dict.items()):
+        print('[' + key + ': ' + str(value[0]) + ', ' + str(value[1]) + ']', end='')
+        if i % 4 == 0:
+            print()
+        else:
+            print(', ', end='')
+        i += 1
+    input("Check calibration vals (hit enter)...")
+    ################
+    '''
+    
     #Storing straw ID in meas_dict value index 2
     for key, value in meas_dict.items():
         value[2] = straw_ids[int(key[:2])]
@@ -118,11 +138,25 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end):
             sys.exit(0)
         del bits_list[0]
         i = 0
-        for key, v_out in straws.items():
+        #we must sort straws dict otherwise python iterates over it randomly :( Fixed 9/28/17
+        for key, v_out in sorted(straws.items()):
             v_out = float(bits_list[i])*V5/1023.0
+
+            '''
+            ##TESTING##
+            print(key + ', ' + str(bits_list[i]) + ', ' + str(v_out))
+            if (i+1) % 6 == 0:
+                input()
+            ###########
+            '''
+
+            
             i += 1
             #straws dictionary now contains key: straw#+measurement type and value: measured voltage
-            meas_dict[key][3] = float(r2_list[(int(key[:2])-1)//4]) * (V5 - v_out) / v_out
+            if v_out != 0:
+                meas_dict[key][3] = float(r2_list[(int(key[:2])-1)//4]) * (V5 - v_out) / v_out
+            else:
+                meas_dict[key][3] = 1000000
             ############
             #TESTING with partially good calib file
             if float(meas_dict[key][0]) != 1:
@@ -133,11 +167,13 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end):
             #meas_dict[key][4] = meas_dict[key][3] / (1 - float(meas_dict[key][0])) - float(meas_dict[key][1])
             
             #check if measurement meets 'inf' requirements
-            if meas_dict[key][4] >= inf_low_limit:
+            if (float(meas_dict[key][4]) >= inf_low_limit or float(meas_dict[key][4]) <= 1):
                 meas_dict[key][4] = 'inf'
             meas_dict[key][5] = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
             #determines and stores pass/fail
             meas_dict[key][6] = check_measurement(key, float(meas_dict[key][4]))
+        for key, value in sorted(meas_dict.items()):
+            value[6] = check_measurement(key,value[4])
     return meas_dict
         
     
@@ -169,21 +205,25 @@ def calibration_store(calib_f):
     
 def check_measurement(key, value):
     if key[2:4] == 'ii':
+        if str(value) == 'inf':
+            return 'fail'
         if ii_pass_range[0] <= value <= ii_pass_range[1]:
             return 'pass'
         else:
             return 'fail'
     elif key[2:4] == 'io':
-        if value == 'inf':
+        if str(value) == 'inf':
             return 'pass'
         else:
             return 'fail'
     elif key[2:4] == 'oi':
-        if value == 'inf':
+        if str(value) == 'inf':
             return 'pass'
         else:
             return 'fail'
     elif key[2:4] == 'oo':
+        if str(value) == 'inf':
+            return 'fail'
         if oo_pass_range[0] <= value <= oo_pass_range[1]:
             return 'pass'
         else:
@@ -221,19 +261,19 @@ def display_resistance(straw_dictionary):
         #print(value[2] + ', ' + str(value[3]) + 'Ohms, ' + str(value[4]) + 'Ohms, ' + value[0][2:3] + '\n')
     
 def check_repeat():
-    check = input("\n" + "Do these measurements pass (y/n)?")
+    check = input("\n" + "Do these measurements pass (y/n)? ")
     if check == 'y':
         return False
     else:
         print("Repeating measurements...\n")
         return True
 
-def save_resistance(worker, workstation, temp, humid, straw_dictionary):
+def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file):
     print("Saving file...\n")
     data_file = 'straw_resistance_' + datetime.now().strftime("%Y-%m-%d_%H%M%S_") + workstation + '.csv' 
-    with open(dataFile, 'a') as f:
+    with open(save_file, 'a') as f:
         f.write('Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail \n')  
-        for key, value in straw_dictionary.items():
+        for key, value in sorted(straw_dictionary.items()):
             if key[2:4] == 'ii':
                 meas_type = 'inside-inside'
             elif key[2:4] == 'io':
@@ -249,7 +289,58 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary):
 def main():
     colorama.init() #turn colorama ANSII conversion on
     wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
-    
+
+    straw_dict = {}
+    save_dict = {}
+    for value in straw_nums:
+        save_dict[value+'ii'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+        save_dict[value+'io'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+        save_dict[value+'oi'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+        save_dict[value+'oo'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+
+    #print('Using first calibration file...\n')
+    repeat = True
+    while(repeat == True):
+        input("Press enter to measure resistance...")
+        straw_dict = measure_resistance(avg_method, meas_cycles,
+                                        str_start, str_end,calib_file)
+        i = 0
+        for key, value in sorted(save_dict.items()):
+            #if value[6] != 'pass': #and straw_dict[key][6] == 'pass':
+            if straw_dict[key][6] == 'pass':
+                if key[2:4] == 'ii':
+                    better_meas_check = abs(straw_dict[key][4]-200) - abs(value[4]-200)
+                elif key[2:4] == 'oo':
+                    better_meas_check = abs(straw_dict[key][4]-100) - abs(value[4]-100)
+                elif key[2:4] == 'io' or key[2:4] == 'oi':
+                    better_meas_check = 1
+                if value[6] != 'pass' or better_meas_check < 0:
+                    value[0] = straw_dict[key][0]
+                    value[1] = straw_dict[key][1]
+                    value[2] = straw_dict[key][2]
+                    value[3] = straw_dict[key][3]
+                    value[4] = straw_dict[key][4]
+                    value[5] = straw_dict[key][5]
+                    value[6] = straw_dict[key][6]
+                    i += 1
+            elif value[6] == 'fail':
+                value[0] = straw_dict[key][0]
+                value[1] = straw_dict[key][1]
+                value[2] = straw_dict[key][2]
+                value[3] = straw_dict[key][3]
+                value[4] = straw_dict[key][4]
+                value[5] = straw_dict[key][5]
+                value[6] = straw_dict[key][6]
+        if i == 0:
+            repeat = False
+        display_resistance(save_dict)
+        repeat = check_repeat()
+    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile)
+    input('Press enter to exit...')
+
+    ''' This section was used in testing different calibration methods
+    print('Now using adjusted calibration file...\n')
+    straw_dict = {}
     save_dict = {}
     for value in straw_nums:
         save_dict[value+'ii'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
@@ -261,22 +352,25 @@ def main():
     while(repeat == True):
         input("Press enter to measure resistance...")
         straw_dict = measure_resistance(avg_method, meas_cycles,
-                                        str_start, str_end)
+                                        str_start, str_end,calib_file_adjusted)
         i = 0
         for key, value in sorted(save_dict.items()):
-            if value[6] != 'pass' and straw_dict[key][6] == 'pass':
+            if value[6] != 'pass': #and straw_dict[key][6] == 'pass':
                 value[0] = straw_dict[key][0]
                 value[1] = straw_dict[key][1]
                 value[2] = straw_dict[key][2]
                 value[3] = straw_dict[key][3]
                 value[4] = straw_dict[key][4]
                 value[5] = straw_dict[key][5]
+                value[6] = straw_dict[key][6]
                 i += 1
         if i == 0:
             repeat = False
         display_resistance(save_dict)
         repeat = check_repeat()
-    save_resistance(wrkr, wrkst, temp, humid, save_dict)
+    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile_adjusted)
+    '''
+    
     colorama.deinit()  #turn colorama ANSII conversion off
 
 main()
