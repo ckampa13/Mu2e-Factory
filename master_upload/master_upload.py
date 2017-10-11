@@ -20,7 +20,7 @@ group = "Straw Tables"
 password = "sdwjmvw"
 
 
-path = '/home/sam/Mu2e_stuff/upload_programs/' #where files are located
+path = '/home/sam/Mu2e-Factory/master_upload/' #where files are located
 	
 #first upload all make_straw files
 def makestraw():
@@ -108,7 +108,7 @@ def uploadleaktests():
     for row in upload_file:
         def createRow():
             return{'straw_barcode': str(row[0]),
-            'create_time' : str(row[1]), #Website gets real time somehow.
+            'leak_test_timestamp' : str(row[1]), #Website gets real time somehow.
             'test_type' : str(row[2]),
             'worker_barcode' : str(row[3]),
             'workstation_barcode' : str(row[4]),
@@ -238,7 +238,7 @@ for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
 		upload_file = csv.reader(f)
-		strawcutlengths()
+		uploadleaktests()
 		f.close()
 		
 		

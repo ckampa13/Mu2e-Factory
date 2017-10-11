@@ -26,30 +26,53 @@ print 'scan worker ID'
 worker_id = raw_input()
 print 'scan workstation ID'
 workstn_id = raw_input()
-print 'enter batch number'
+print 'scan batch number'
 batchnum = raw_input()
-print '\nscan straw barcode (scan end code to stop or type "end")'
-straw = raw_input()
+print '\nscan first straw barcode (lowest number)'
+straw1 = raw_input()
+print '\nscan last straw barcode (highest number)'
+straw2 = raw_input()
 
 filename ='make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
 output = open(filename,"w")
 
-while straw != 'end':
-	output.write(straw)
+start = int(straw1[2:])
+end = int(straw2[2:])
+
+for i in range (start,end+1):
+	n=0
+	if i < 10000:
+		n = 1
+	if i < 1000:
+		n = 2
+	if i < 100:
+		n = 3
+	if i < 10:
+		n = 4
+
+	output.write('st'+ '0' * n + str(i))
 	output.write(',')
 	output.write(batchnum)
-	output.write(',')
-	print 'scan parent barcode (if applicable)'
-	parent = raw_input()
-	output.write( parent)
-	output.write(',')
+	output.write(',,') #second comma because not including parent straw at this point
+	#print 'scan parent barcode (if applicable)'
+	#parent = raw_input()
+	#output.write( parent)
+	#output.write(',')
 	output.write(worker_id)
 	output.write(',')
 	output.write( datetime.now().strftime("%Y-%m-%d_%H%M%S") )
 	output.write('\n')
-	print '\nscan straw barcode (scan end code to stop) or type "end"'
-	straw = raw_input()
 output.close()
 
 #('straw barcode --  batch num -- parent -- worker -- time workstation ID time')
 # need workstation id for database
+
+
+
+
+
+
+
+
+
+
