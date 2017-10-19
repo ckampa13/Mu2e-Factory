@@ -20,64 +20,61 @@ group = "Straw Tables"
 password = "sdwjmvw"
 
 
-path = '/home/sam/Mu2e_stuff/upload_programs/' #where files are located
+path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
 	
 #first upload all make_straw files
 def makestraw():
-
-    for row in upload_file:
-
-        def createRow():
-
-			if str(row[2]) is not '':
-				return{'straw_barcode': str(row[0]),
-			    'batch_number' : str(row[1]),
-				'parent' : str(row[2]),
-				'worker_barcode' : str(row[3]),
-				'create_time' : str(row[4]),}
-				
-			else: #if there is no parent straw
-				return{'straw_barcode': str(row[0]),
-			    'batch_number' : str(row[1]), 
-				'worker_barcode' : str(row[3]),
-				'create_time' : str(row[4]),}
-				
-
-	table = "straws"
-	dataLoader = DataLoader(password,url,group,table)
-	dataLoader.addRow(createRow())
-	retVal,code,text =  dataLoader.send()
-
-	if retVal:
-
-		print "succesfuly made straw " + str(row[0])
-
-	elif retVal == False:
-
+	
+	def createRow():
+		if str(row[2]) is not '':
+			print str(row[0])
+			return{'straw_barcode': str(row[0]),
+			'batch_number' : str(row[1]),
+			#'parent' : str(row[2]),
+			'worker_barcode' : str(row[3]),
+			#'create_time' : str(row[4]),
+			}	
+		else: #if there is no parent straw
+			print str(row[0])
+			return{'straw_barcode': str(row[0]),
+			'batch_number' : str(row[1]), 
+			'worker_barcode' : str(row[3]),
+			#'create_time' : str(row[4]),
+			}		
+	for row in upload_file:
+		#print row
+		createRow()			
+		table = "Straws"
 		dataLoader = DataLoader(password,url,group,table)
-
-		aRow = createRow()
-
-		dataLoader.addRow(aRow,'update')
-
+		dataLoader.addRow(createRow())
 		retVal,code,text =  dataLoader.send()
 
 		if retVal:
-			print "succesfully updated straw " + str(row[0])
-	else:
-		print "fail to make or update straw " + str(row[0])
 
-		print code
+			print "succesfuly made straw " + str(row[0])
 
-	dataLoader.clearRows()
+		elif retVal == False:
+
+			dataLoader = DataLoader(password,url,group,table)
+			aRow = createRow()
+			dataLoader.addRow(aRow,'update')
+			retVal,code,text =  dataLoader.send()
+
+			if retVal:
+				print "succesfully updated straw " + str(row[0])
+		else:
+			print "fail to make or update straw " + str(row[0])
+			print code
+
+		dataLoader.clearRows()
 
 def uploadthicknesses():
 
-    for row in upload_file:
+	for row in upload_file:
 
-        def createRow():
+		def createRow():
 			return{'straw_barcode': str(row[0]),
-			'create_time' : str(row[1]),
+                        'create_time' : str(row[1]),
 			'thickness' : str(row[2]),
 			'worker_barcode' : str(row[3]),
 			'workstation_barcode' : str(row[4]),}
@@ -105,85 +102,86 @@ def uploadthicknesses():
 
 def uploadleaktests():
 
-    for row in upload_file:
-        def createRow():
-            return{'straw_barcode': str(row[0]),
-            'create_time' : str(row[1]), #Website gets real time somehow.
-            'test_type' : str(row[2]),
-            'worker_barcode' : str(row[3]),
-            'workstation_barcode' : str(row[4]),
-            #row[5] is channel where it was tested
-            'leak_rate' : str(row[6]),
-            'comments': str(row[7])+' (uncertainty)',}
-        table = "Straw_Leak_Tests"
-        dataLoader = DataLoader(password,url,group,table)
-        dataLoader.addRow(createRow())
-        retVal,code,text =  dataLoader.send()
-        if retVal:
-            print "upload leak test success!\n"
-            print text
-        else:
-            print "upload leak test failed!\n"
-            print code
-            print text
-        dataLoader.clearRows()
-      
+	def createRow():
+		return{'straw_barcode': str(row[0]),
+		'create_time' : str(row[1]), #Website gets real time somehow.
+		'test_type' : str(row[2]),
+		'worker_barcode' : str(row[3]),
+		'workstation_barcode' : str(row[4]),
+		#row[5] is channel where it was tested
+		'leak_rate' : str(row[6]),
+		'comments': str(row[7])+' (uncertainty)',}
+	for row in upload_file:
+		table = "Straw_Leak_Tests"
+		dataLoader = DataLoader(password,url,group,table)
+		dataLoader.addRow(createRow())
+		retVal,code,text =  dataLoader.send()
+		if retVal:
+			print "upload leak test success!\n"
+			print text
+		else:
+			print "upload leak test failed!\n"
+			print code
+			print text
+		dataLoader.clearRows()
+	  
 def strawcutlengths():
 
-    for row in upload_file:
-        def createRow():
-            return{'straw_barcode': str(row[0]),
-            'create_time' : str(row[1]), #Website gets real time somehow.
-            'worker_barcode' : str(row[2]),
-            'workstation_barcode' : str(row[3]),
-            'nominal_length' : str(row[4]),
-            'measured_length': str(row[5]),
-            'temperature' : str(row[6]),
-            'humidity' : str(row[7]),
-            'comments' : str(row[8]),}
-        table = "straw_cut_lengths"
-        dataLoader = DataLoader(password,url,group,table)
-        dataLoader.addRow(createRow())
-        retVal,code,text =  dataLoader.send()
-        if retVal:
-            print "upload straw length success!\n"
-            print text
-        else:
-            print "upload straw length failed!\n"
-            print code
-            print text
-        dataLoader.clearRows()
+	for row in upload_file:
+		def createRow():
+			return{'straw_barcode': str(row[0]),
+			#'create_time' : str(row[1]), #Website gets real time somehow.
+			'worker_barcode' : str(row[2]),
+			'workstation_barcode' : str(row[3]),
+			'nominal_length' : str(row[4]),
+			'measured_length': str(row[5]),
+			'temperature' : str(row[6]),
+			'humidity' : str(row[7]),
+			#'comments' : str(row[8]),
+			}
+		table = "straw_cut_lengths"
+		dataLoader = DataLoader(password,url,group,table)
+		dataLoader.addRow(createRow())
+		retVal,code,text =  dataLoader.send()
+		if retVal:
+			print "upload straw length success!\n"
+			print text
+		else:
+			print "upload straw length failed!\n"
+			print code
+			print text
+		dataLoader.clearRows()
 
 def resistanceupload():
-    for row in upload_file:
-        def createRow():
-            return{'straw_barcode': str(row[0]),
-            'create_time' : str(row[1]), #Website gets real time somehow.
-            'worker_barcode' : str(row[2]),
-            'workstation_barcode' : str(row[3]),
-            'resistance' : str(row[4]),
-            'temperature' : str(row[5]),
-            'humidity' : str(row[6]),
-            'resistance_measurement_type' : str(row[7]),
-            'comments' : str(row[8]),}
-        table = "straw_resistance_measurements"
-        dataLoader = DataLoader(password,url,group,table)
-        dataLoader.addRow(createRow())
-        retVal,code,text =  dataLoader.send()
-        if retVal:
-            print "upload resistance success!\n"
-            print text
-        else:
-            print "upload resistance failed!\n"
-            print code
-            print text
-        dataLoader.clearRows()     
+	for row in upload_file:
+		def createRow():
+			return{'straw_barcode': str(row[0]),
+			'create_time' : str(row[1]), #Website gets real time somehow.
+			'worker_barcode' : str(row[2]),
+			'workstation_barcode' : str(row[3]),
+			'resistance' : str(row[4]),
+			'temperature' : str(row[5]),
+			'humidity' : str(row[6]),
+			'resistance_measurement_type' : str(row[7]),
+			'comments' : str(row[8]),}
+		table = "straw_resistance_measurements"
+		dataLoader = DataLoader(password,url,group,table)
+		dataLoader.addRow(createRow())
+		retVal,code,text =  dataLoader.send()
+		if retVal:
+			print "upload resistance success!\n"
+			print text
+		else:
+			print "upload resistance failed!\n"
+			print code
+			print text
+		dataLoader.clearRows()     
 	
 def uploadglueup():
 
-    for row in upload_file:
+	for row in upload_file:
 
-        def createRow():
+		def createRow():
 			return{'straw_barcode': str(row[0]),
 				'glueup_type' : str(row[1]),
 				'worker_barcode' : str(row[2]),
@@ -214,14 +212,16 @@ def uploadglueup():
 filelist = os.listdir(path) #directory where things are located
 
 #first upload all make_straw files from that day
-filestart= 'make_straw_' + datetime.now().strftime("%Y-%m-%d")
-
+filestart = 'make_straw_all.csv' 
+#filestart = 'make_straw_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
+		#print path + i
 		upload_file = csv.reader(f)
-		makestraw()
+		#makestraw() #COMMENTED TEMPORARILY
 		f.close()
+		
 
 #upload thicknesses from appropriately named files		
 filestart= 'straw_thickness_' + datetime.now().strftime("%Y-%m-%d")
@@ -232,17 +232,20 @@ for i in filelist:
 		uploadthicknesses()
 		f.close()
 		
+		
 #upload leak test data
-filestart= 'leak_test_' + datetime.now().strftime("%Y-%m-%d")
+filestart = 'leak_test_all.csv' 
+#filestart = 'leak_test_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
+		print path + i
 		upload_file = csv.reader(f)
-		strawcutlengths()
+		uploadleaktests()
 		f.close()
 		
 		
-#upload straw cut lengths
+##upload straw cut lengths
 filestart= 'straw_cut_length_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
