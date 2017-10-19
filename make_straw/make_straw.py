@@ -33,7 +33,7 @@ straw1 = raw_input()
 print '\nscan last straw barcode (highest number)'
 straw2 = raw_input()
 
-filename ='make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
+filename ='C:\\Users\\vold\\Desktop\\straw_database\\make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
 output = open(filename,"w")
 
 start = int(straw1[2:])
