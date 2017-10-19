@@ -20,7 +20,11 @@ group = "Straw Tables"
 password = "sdwjmvw"
 
 
+<<<<<<< HEAD
 path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
+=======
+path = '/home/sam/Mu2e-Factory/master_upload/' #where files are located
+>>>>>>> 4d7d2c4d92b8be045c1beec5373225cebedadc69
 	
 #first upload all make_straw files
 def makestraw():
@@ -102,6 +106,7 @@ def uploadthicknesses():
 
 def uploadleaktests():
 
+<<<<<<< HEAD
 	def createRow():
 		return{'straw_barcode': str(row[0]),
 		'create_time' : str(row[1]), #Website gets real time somehow.
@@ -125,6 +130,31 @@ def uploadleaktests():
 			print text
 		dataLoader.clearRows()
 	  
+=======
+    for row in upload_file:
+        def createRow():
+            return{'straw_barcode': str(row[0]),
+            'leak_test_timestamp' : str(row[1]), #Website gets real time somehow.
+            'test_type' : str(row[2]),
+            'worker_barcode' : str(row[3]),
+            'workstation_barcode' : str(row[4]),
+            #row[5] is channel where it was tested
+            'leak_rate' : str(row[6]),
+            'comments': str(row[7])+' (uncertainty)',}
+        table = "Straw_Leak_Tests"
+        dataLoader = DataLoader(password,url,group,table)
+        dataLoader.addRow(createRow())
+        retVal,code,text =  dataLoader.send()
+        if retVal:
+            print "upload leak test success!\n"
+            print text
+        else:
+            print "upload leak test failed!\n"
+            print code
+            print text
+        dataLoader.clearRows()
+      
+>>>>>>> 4d7d2c4d92b8be045c1beec5373225cebedadc69
 def strawcutlengths():
 
 	for row in upload_file:
