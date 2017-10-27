@@ -1,0 +1,18 @@
+\documentclass[12pt]{article}
+\author{Sam Penders}
+\title{Uploading Straw Data to Hardware Database}
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+
+\section{Something}
+
+The {\tt master{\_}upload.py} program works by finding all files of in the directory with naming convention {\tt test{\_}name{\_}YYYY-MM-DD{\_}hhmmss.csv}. For example, {\tt make{\_}straw{\_}2017-07-25{\_}112901.csv} is a {\tt make{\_}straw} data file from July 25, 2017, made at 11:29:01. {\tt master{\_}upload.py} reads in these files and sends the data from that same day to the Mu2e hardware database. This will likely be changed to prompting the user to enter which days to have the data uploaded, are have the data be uploaded after each test is completed. 
+
+\subsection{Updating Existing Data}
+If a straw already has data for a certain test in the database, {\tt master{\_}upload.py} will update the database with the new data.
+
+\end{document}
