@@ -1,0 +1,97 @@
+Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail 
+st00757, 2017/10/16 11:50:58,wb-cobos01,wsb-001,229.9537839,72.5,25, inside-inside, pass
+st00757, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00757, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00757, 2017/10/16 11:51:32,wb-cobos01,wsb-001,283.8335737,72.5,25, outside-outside, fail
+st00758, 2017/10/16 11:50:57,wb-cobos01,wsb-001,171.7850938,72.5,25, inside-inside, pass
+st00758, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00758, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00758, 2017/10/16 11:50:58,wb-cobos01,wsb-001,132.1803211,72.5,25, outside-outside, pass
+st00759, 2017/10/16 11:50:56,wb-cobos01,wsb-001,197.2059447,72.5,25, inside-inside, pass
+st00759, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00759, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00759, 2017/10/16 11:51:17,wb-cobos01,wsb-001,133.6824036,72.5,25, outside-outside, pass
+st00760, 2017/10/16 11:50:55,wb-cobos01,wsb-001,169.0825055,72.5,25, inside-inside, pass
+st00760, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00760, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00760, 2017/10/16 11:51:16,wb-cobos01,wsb-001,128.6577653,72.5,25, outside-outside, pass
+st00761, 2017/10/16 11:50:58,wb-cobos01,wsb-001,164.4324082,72.5,25, inside-inside, pass
+st00761, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00761, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00761, 2017/10/16 11:50:59,wb-cobos01,wsb-001,136.2348972,72.5,25, outside-outside, pass
+st00762, 2017/10/16 11:50:57,wb-cobos01,wsb-001,215.203883,72.5,25, inside-inside, pass
+st00762, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00762, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00762, 2017/10/16 11:50:58,wb-cobos01,wsb-001,125.8797397,72.5,25, outside-outside, pass
+st00763, 2017/10/16 11:50:56,wb-cobos01,wsb-001,214.2776869,72.5,25, inside-inside, pass
+st00763, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00763, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00763, 2017/10/16 11:51:17,wb-cobos01,wsb-001,117.7601573,72.5,25, outside-outside, pass
+st00764, 2017/10/16 11:50:55,wb-cobos01,wsb-001,195.3009771,72.5,25, inside-inside, pass
+st00764, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00764, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00764, 2017/10/16 11:50:55,wb-cobos01,wsb-001,148.6167197,72.5,25, outside-outside, pass
+st00765, 2017/10/16 11:50:58,wb-cobos01,wsb-001,178.5314392,72.5,25, inside-inside, pass
+st00765, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00765, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00765, 2017/10/16 11:51:32,wb-cobos01,wsb-001,263.098502,72.5,25, outside-outside, fail
+st00766, 2017/10/16 11:50:57,wb-cobos01,wsb-001,223.7077241,72.5,25, inside-inside, pass
+st00766, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00766, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00766, 2017/10/16 11:51:18,wb-cobos01,wsb-001,124.317449,72.5,25, outside-outside, pass
+st00767, 2017/10/16 11:50:56,wb-cobos01,wsb-001,175.2440923,72.5,25, inside-inside, pass
+st00767, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00767, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00767, 2017/10/16 11:51:17,wb-cobos01,wsb-001,130.3810871,72.5,25, outside-outside, pass
+st00768, 2017/10/16 11:50:55,wb-cobos01,wsb-001,171.2163046,72.5,25, inside-inside, pass
+st00768, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00768, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00768, 2017/10/16 11:50:55,wb-cobos01,wsb-001,127.9213371,72.5,25, outside-outside, pass
+st00769, 2017/10/16 11:50:58,wb-cobos01,wsb-001,192.4964826,72.5,25, inside-inside, pass
+st00769, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00769, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00769, 2017/10/16 11:51:32,wb-cobos01,wsb-001,188.2688769,72.5,25, outside-outside, fail
+st00770, 2017/10/16 11:50:57,wb-cobos01,wsb-001,179.7292328,72.5,25, inside-inside, pass
+st00770, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00770, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00770, 2017/10/16 11:51:30,wb-cobos01,wsb-001,168.8239873,72.5,25, outside-outside, fail
+st00771, 2017/10/16 11:51:29,wb-cobos01,wsb-001,120.0385249,72.5,25, inside-inside, fail
+st00771, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00771, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00771, 2017/10/16 11:50:57,wb-cobos01,wsb-001,127.0299112,72.5,25, outside-outside, pass
+st00772, 2017/10/16 11:50:55,wb-cobos01,wsb-001,166.351228,72.5,25, inside-inside, pass
+st00772, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00772, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00772, 2017/10/16 11:51:16,wb-cobos01,wsb-001,133.8194716,72.5,25, outside-outside, pass
+st00773, 2017/10/16 11:51:31,wb-cobos01,wsb-001,115.1194549,72.5,25, inside-inside, fail
+st00773, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00773, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00773, 2017/10/16 11:50:59,wb-cobos01,wsb-001,122.722567,72.5,25, outside-outside, pass
+st00774, 2017/10/16 11:50:57,wb-cobos01,wsb-001,183.9334852,72.5,25, inside-inside, pass
+st00774, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00774, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00774, 2017/10/16 11:50:58,wb-cobos01,wsb-001,137.4694196,72.5,25, outside-outside, pass
+st00775, 2017/10/16 11:50:56,wb-cobos01,wsb-001,167.6878646,72.5,25, inside-inside, pass
+st00775, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00775, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00775, 2017/10/16 11:51:29,wb-cobos01,wsb-001,205.2760312,72.5,25, outside-outside, fail
+st00776, 2017/10/16 11:50:55,wb-cobos01,wsb-001,191.3410846,72.5,25, inside-inside, pass
+st00776, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00776, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00776, 2017/10/16 11:51:28,wb-cobos01,wsb-001,165.0987358,72.5,25, outside-outside, fail
+st00777, 2017/10/16 11:50:58,wb-cobos01,wsb-001,172.2564232,72.5,25, inside-inside, pass
+st00777, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00777, 2017/10/16 11:50:58,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00777, 2017/10/16 11:50:59,wb-cobos01,wsb-001,141.7301326,72.5,25, outside-outside, pass
+st00778, 2017/10/16 11:50:57,wb-cobos01,wsb-001,170.2361103,72.5,25, inside-inside, pass
+st00778, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00778, 2017/10/16 11:50:57,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00778, 2017/10/16 11:50:58,wb-cobos01,wsb-001,131.662887,72.5,25, outside-outside, pass
+st00779, 2017/10/16 11:50:56,wb-cobos01,wsb-001,165.5982706,72.5,25, inside-inside, pass
+st00779, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00779, 2017/10/16 11:50:56,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00779, 2017/10/16 11:51:29,wb-cobos01,wsb-001,145.5693774,72.5,25, outside-outside, pass
+st00780, 2017/10/16 11:50:55,wb-cobos01,wsb-001,198.7728611,72.5,25, inside-inside, pass
+st00780, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, inside-outside, pass
+st00780, 2017/10/16 11:50:55,wb-cobos01,wsb-001, inf,72.5,25, outside-inside, pass
+st00780, 2017/10/16 11:51:16,wb-cobos01,wsb-001,134.747328,72.5,25, outside-outside, pass
