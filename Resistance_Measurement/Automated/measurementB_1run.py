@@ -294,8 +294,14 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file
 
 def main():
     colorama.init() #turn colorama ANSII conversion on
-    wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
-
+    #wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
+    wrkr = 'wb'
+    wrkst = 'wsb-001'
+    temp = 72.0
+    humid = 20.0
+    str_start = 'ST00001'
+    str_end = 'ST00024'
+	
     straw_dict = {}
     save_dict = {}
     for value in straw_nums:
@@ -325,7 +331,7 @@ def main():
             repeat = False
         display_resistance(save_dict)
         #repeat = check_repeat()
-		repeat = False
+        repeat = False
     save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end)
     input('Press enter to exit...')
 

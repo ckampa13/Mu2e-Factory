@@ -35,8 +35,6 @@ from colorama import Back#, Fore, Style
 #set a larger window size
 os.system('mode con: cols=115 lines=50')
 
-counter = 0
-
 ##-Global Variables-##
 inf_low_limit = 1000.0 #determining if io and oi measurements are open circuits
 ii_pass_range = [150.0,250.0]
@@ -281,7 +279,7 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file
     else:
         save_file += straw_end + '-' + straw_start + '.csv'
     with open(save_file, 'a') as f:
-		f.write('Number of measurement cycles: '+ str(counter) + '\n')
+        f.write('Number of measurement cycles: '+ str(counter) + '\n')
         f.write('Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail \n')  
         for key, value in sorted(straw_dictionary.items()):
             if key[2:4] == 'ii':
@@ -298,8 +296,16 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file
 
 def main():
     colorama.init() #turn colorama ANSII conversion on
-    wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
-
+    #wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
+    wrkr = 'wb'
+    wrkst = 'wsb-001'
+    temp = 72.0
+    humid = 20.0
+    str_start = 'ST00001'
+    str_end = 'ST00024'
+    
+    counter = 0
+	
     straw_dict = {}
     save_dict = {}
     for value in straw_nums:
@@ -307,11 +313,11 @@ def main():
         save_dict[value+'io'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
         save_dict[value+'oi'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
         save_dict[value+'oo'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
-
-    #print('Using first calibration file...\n')
+    
+	#print('Using first calibration file...\n')
     repeat = True
     while(repeat == True):
-		counter += 1
+        counter += 1
         input("Press enter to measure resistance...")
         straw_dict = measure_resistance(avg_method, meas_cycles,
                                         str_start, str_end,calib_file)
@@ -329,7 +335,7 @@ def main():
         if i == 0:
             repeat = False
         display_resistance(save_dict)
-		print('Number of measurement cycles: ' + str(counter) + '\n')
+        print('Number of measurement cycles: ' + str(counter) + '\n')
         repeat = check_repeat()
     save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end,counter)
     input('Press enter to exit...')

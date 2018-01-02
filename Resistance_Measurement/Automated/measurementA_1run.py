@@ -107,7 +107,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
     #getting calibration info
     Vin, V5, r2_list, meas_dict = calibration_store(c_file)
 	
-	V5 = 1023.0
+    V5 = 1023.0
     '''
     ###TESTING###
     i = 1
@@ -144,7 +144,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         #we must sort straws dict otherwise python iterates over it randomly :( Fixed 9/28/17
         for key, v_out in sorted(straws.items()):
             #v_out = float(bits_list[i])*V5/1023.0
-			v_out = float(bits_list[i])
+            v_out = float(bits_list[i])
 			
             '''
             ##TESTING##
@@ -296,8 +296,14 @@ def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file
 
 def main():
     colorama.init() #turn colorama ANSII conversion on
-    wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
-
+    #wrkr, wrkst, temp, humid, str_start, str_end = gather_info()
+    wrkr = 'wb'
+    wrkst = 'wsb-001'
+    temp = 72.0
+    humid = 20.0
+    str_start = 'ST00001'
+    str_end = 'ST00024'
+	
     straw_dict = {}
     save_dict = {}
     for value in straw_nums:
@@ -327,7 +333,7 @@ def main():
             repeat = False
         display_resistance(save_dict)
         #repeat = check_repeat()
-		repeat = False
+        repeat = False
     save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end)
     input('Press enter to exit...')
 

@@ -104,7 +104,7 @@ def resistor_calib():
 #Measure two resistance values with calibration pallet (150Ohm and 0 Ohm)
 def measurement(vin,v5,r2,avg_type,straw_nums,first_straw):
     v5 = 1023.0
-	meas_dict = {}
+    meas_dict = {}
     #setting averaging method 
     if avg_type == 'average':
         ser.write(b'y')
@@ -128,14 +128,14 @@ def measurement(vin,v5,r2,avg_type,straw_nums,first_straw):
     for key, value in sorted(meas_dict.items()):
         if voltage_1[key] != 0:
             #value[0] = float(r2[(int(key[:2])-1)//4-1]) * (v5 - voltage_1[key]) / voltage_1[key]
-			value[0] = float(r2[(int(key[:2])-1)//4-1]) * (v5/voltage_1[key] - 1)
+            value[0] = float(r2[(int(key[:2])-1)//4-1]) * (v5/voltage_1[key] - 1)
         else:
             #print(key + ': Voltage from first pallet = 0; R=inf\n')
             value[0] = 0  #we just want to set this to inf...may screw with calibration a bit
         if voltage_2[key] != 0:
             #value[1] = float(r2[(int(key[:2])-1)//4-1]) * (v5 - voltage_2[key]) / voltage_2[key]
-			value[1] = float(r2[(int(key[:2])-1)//4-1]) * (v5/voltage_2[key] - 1)
-		else:
+            value[1] = float(r2[(int(key[:2])-1)//4-1]) * (v5/voltage_2[key] - 1)
+        else:
             #print(key + ': Voltage from second pallet = 0; R=inf\n')
             value[0] = 0    
     #TESTING
@@ -163,7 +163,7 @@ def arduino_voltage(v5, first_straw):
         for key in sorted(straws):
             #volt_dict[key] = float(bits_list[i])*v5/1023.0
             volt_dict[key] = float(bits_list[i])
-			i += 1
+            i += 1
     return volt_dict
 
 def calculate_calib(meas_dict, tr1, tr2, straw_nums): #tr = test resistor
