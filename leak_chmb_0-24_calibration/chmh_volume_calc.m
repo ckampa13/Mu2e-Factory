@@ -81,18 +81,26 @@ for k = 1:5
     end
 end
 
-ppmMatrix
-
 co2 = 0:0.1:0.8;
-co2err =[ [0] 0.05*ones(1,4)  0.05*sqrt(2)*ones(1,4)] %estimated error in CO2 volume
+co2err =[ [0.1] 0.03*ones(1,4)  0.03*sqrt(2)*ones(1,4)] %estimated error in CO2 volume
+fitParameters = zeros(8,2); %slope and its uncertainty
 
 for i = 1:5
-   f = errorbar(ppmMatrix(:,i),co2, co2err,'o')
-   plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1),'_calibration.pdf');
-   title(strcat('Chamber ',{' '},num2str(i-1),' Calibration'))
-   ylabel('CO$_2$ Injected [mL]')
-   xlabel('CO$_2$ detected[ppm]' )
-   saveas(f, plotname );
+    f = errorbar(ppmMatrix(:,i),co2, co2err,'o')
+    plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1),'_calibration.pdf');
+    title(strcat('Chamber ',{' '},num2str(i-1),' Calibration'))
+    ylabel('CO$_2$ Injected [mL]')
+    xlabel('CO$_2$ detected[ppm]' )
+    saveas(f, plotname );
+    
+    datafit = fit(ppmMatrix(:,i), co2.', 'poly1','Weights',co2err.^-1)
+    coeff = coeffvalues(datafit);
+    coeff_error = confint(datafit);
+    
+    fitParameters(i,1) = coeff(1); %slope from fit
+    fitParameters(i,2) = abs(coeff(1)-coeff_error(1));
+   
+   
 end
 
 

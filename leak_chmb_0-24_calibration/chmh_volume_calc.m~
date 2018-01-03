@@ -2,11 +2,10 @@
 
 %filename = '/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/row_1/ch0_0.1_0.8mL.txt';
 
-ppmMatrix = zeros(9,10); %matrix to hold averaged p level datapoints
+ppmMatrix = zeros(9,10); %matrix to hold averaged ppm level datapoints
 ppmError = zeros(9,10); %statistical error on averaged ppm datapoints
 transitions = [1514917008.0849, 1514917591.98222, 1514925969.34006, 1514928576.9107, 1514930780.71907
-];
-
+]; %where the highest number chamber (4) switches from the first injected level to second
 % times CO2 level changed from 0 to 0.1; 0.1 to 0.8; 0.2 to 0.7; 0.3 to 0.6; 0.4 to
 % 0.5 on last chamber
 
@@ -17,7 +16,7 @@ for k = 1:5
 
         d = readtable(filename);
         t = table2array(d(:,1)); %times, in epoch time
-        ppm = table2array(d(:,3)); %CO2 level in chamber
+        ppm = table2array(d(:,3)); %temporary -- CO2 level in chamber in each time interval
 
 
         %get initial CO2 level--only do in n=1 case
@@ -31,7 +30,7 @@ for k = 1:5
         end
 
 
-    % For the n = 1 case only
+    % For the n = 1 case only -- get the 0.1 mL and 0.8 mL ppm level
         if n == 1
             for j = 1:2
                 ppmAvg = [];
@@ -53,7 +52,7 @@ for k = 1:5
             end
 
 
-        % if n != 1:
+        % if n != 1: calculate the ppm CO2 level
         else
             for j = 1:2
                 ppmAvg = [];
@@ -82,18 +81,23 @@ for k = 1:5
     end
 end
 
-ppmMatrix
-
 co2 = 0:0.1:0.8;
-co2err =[ [0] 0.05*ones(1,4)  0.05*sqrt(2)*ones(1,4)] %estimated error in CO2 volume
+co2err =[ [0.1] 0.03*ones(1,4)  0.03*sqrt(2)*ones(1,4)] %estimated error in CO2 volume
+fitParameters = ones(8,2); %slope and its uncertainty
 
 for i = 1:5
-   f = errorbar(ppmMatrix(:,i),co2, co2err,'o')
-   plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1),'_calibration.pdf');
-   title(strcat('Chamber ',{' '},num2str(i-1),' Calibration'))
-   ylabel('CO$_2$ Injected [mL]')
-   xlabel('CO$_2$ detected[ppm]' )
-   saveas(f, plotname );
+    f = errorbar(ppmMatrix(:,i),co2, co2err,'o')
+    plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1),'_calibration.pdf');
+    title(strcat('Chamber ',{' '},num2str(i-1),' Calibration'))
+    ylabel('CO$_2$ Injected [mL]')
+    xlabel('CO$_2$ detected[ppm]' )
+    saveas(f, plotname );
+    
+    datafit = fit(ppmMatrix(:,i), co2.', 'poly1','Weights',co2err.^-1)
+    c = coeffvalues(datafit);
+    fitParameters(i,1) = c(1); %slope from fit
+   
+   
 end
 
 
