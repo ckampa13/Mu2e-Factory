@@ -1,4 +1,5 @@
 % Program to calculate the volume of leak test chambers
+% created by Sam Penders (pende061@umn.edu)
 
 %filename = '/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/row_1/ch0_0.1_0.8mL.txt';
 
@@ -101,13 +102,13 @@ ppmMatrix(9,8) = 1431.667;
 ppmMatrix(8,6) = 1365.208;
 
 %fixing incorrect data for ch0, ch3: 0.0, 0.1, 0.8 mL
-% ppmMatrix(1,1) = 94.47;
-% ppmMatrix(2,1) = 274.5;
-% ppmMatrix(9,1) = 1431.667;
-% 
-% ppmMatrix(1,4) = 114.13;
-% ppmMatrix(2,4) = 274.5;
-% ppmMatrix(9,4) = 1431.667;
+ppmMatrix(1,1) = 94.47;
+ppmMatrix(2,1) = 304.227;
+ppmMatrix(9,1) = 1480.05;
+
+ppmMatrix(1,4) = 114.13;
+ppmMatrix(2,4) = 290.25;
+ppmMatrix(9,4) = 1442.118;
 
 
 for i = 1:10 %fit data and make plots 
@@ -115,7 +116,7 @@ for i = 1:10 %fit data and make plots
     coeff = coeffvalues(datafit);
     coeff_error = confint(datafit);
     
-    fitParameters(i,1) = coeff(1); %slope from fit
+    fitParameters(i,1) = coeff(1); %slope from fit -> multiply by 10^6 mL for volume in CC
     fitParameters(i,2) = (abs(coeff(1)-coeff_error(1)))/3; %change 95% confidence interval into 1 sigma
     
     f = errorbar(ppmMatrix(:,i),co2, co2err,'o');
@@ -126,13 +127,14 @@ for i = 1:10 %fit data and make plots
     ylabel('CO$_2$ Injected [mL]');
     xlabel('CO$_2$ detected [ppm]' );
     
-    fiteqn = strcat('y = ', num2str(coeff(1)),'x+',num2str(coeff(2)));
-    legend('data',fiteqn','location','northwest');
+    fiteqn = strcat('Volume = (', num2str(coeff(1)),'\pm' ,num2str(fitParameters(i,2)),') mL');
+    %legend('data',fiteqn,'location','northwest');
+    dim = [.2 .5 .3 .3];
+    annotation('textbox',dim,'String',fiteqn,'FitBoxToText','on');
     saveas(f, plotname );
     hold off;
-    close();
-   
+    close();  
 end
 
-
-
+csvwrite('ch0-ch9_chamber_volumes_datapoints.csv',ppmMatrix) 
+csvwrite('ch0-ch9_chambervolumes.csv',round(10^6*fitParameters)); %file with volume and uncertainty in CC
