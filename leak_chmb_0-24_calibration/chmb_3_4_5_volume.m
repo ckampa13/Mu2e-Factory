@@ -8,7 +8,7 @@ ppmError = zeros(9,15); %statistical error on averaged ppm datapoints %where the
 % times CO2 level changed from 0 to 0.1; 0.1 to 0.8; 0.2 to 0.7; 0.3 to 0.6; 0.4 to
 % 0.5 on last chamber
 
-for m = 3:4 %row 3-5 data folders
+for m = 3:5 %row 3-5 data folders
     for k = 1:5 %5 straws per row
         for n = 0:8 %data file for 0.0-0.8 mL for each straw
             
@@ -69,7 +69,7 @@ for i = 1:15 %fit data and make plots
 end
 
 csvwrite('ch10-ch24_chamber_volumes_datapoints.csv',ppmMatrix) 
-csvwrite('ch1-ch24_chambervolumes.csv',round(10^6*fitParameters)); %file with volume and uncertainty in CC
+csvwrite('ch10-ch24_chambervolumes.csv',round(10^6*fitParameters)); %file with volume and uncertainty in CC
 
 
 
