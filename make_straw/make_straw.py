@@ -23,30 +23,22 @@
 from datetime import datetime
 from DataLoader import DataLoader, DataQuery
 import csv
-#import master_upload
 
-def createRow(data):	
-	#filename = "/home/sam/Mu2e-Factory/make_straw/make_straw_2018-01-08_123724_wsb0001.csv"
-
-#	with open(file_name) as file_input:
-#		reader = csv.reader(file_input)
-#		for row in reader:
-#			#print row
-
+def createRow(data):
 	if str(data[2]) is not '':
 		#print str(data[0])
 		return{'straw_barcode': str(data[0]),
 		'batch_number' : str(data[1]),
-		#'parent' : str(row[2]),
+		#'parent' : str(data[2]),
 		'worker_barcode' : str(data[3]),
-		#'create_time' : str(row[4]),
+		#'create_time' : str(data[4]),
 		}	
 	else: #if there is no parent straw
 		#print str(data[0])
 		return{'straw_barcode': str(data[0]),
 		'batch_number' : str(data[1]), 
 		'worker_barcode' : str(data[3]),
-		#'create_time' : str(row[4]),
+		#'create_time' : str(data[4]),
 		}
 
 def upload(data_file):
@@ -60,31 +52,19 @@ def upload(data_file):
 	with open(data_file) as file_input:
 		reader = csv.reader(file_input)
 		for row in reader:
-			#print row
 			dataLoader = DataLoader(password,url,group,table)
 			dataLoader.addRow(createRow(row))
 			retVal,code,text =  dataLoader.send()
 	
 			if retVal:
-				print "Success!"
+				print(row[0]," successful upload")
 				print text
 			else:
-				print "Failed!"
+				print (row[0], "FAILED upload")
 				print code
 				print text
 
 			dataLoader.clearRows()
-#if forceError == False:
-    # Sleep so we don't do 2 records with the same timestamp, which will
-    # cause a Postgresql primary key error for this table.
-#    time.sleep(2) 
-
-#aRow = createRow()
-#dataLoader.addRow(aRow)
-
-#dataLoader.addRow(aRow,'update')
-
-
 
 
 correct_straws = False
@@ -112,7 +92,6 @@ while correct_straws == False:
 		
 		if( i == start):
 			straw_name = []
-			#print("sam")
 			
 		n=0
 		if i < 10000:
