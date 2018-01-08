@@ -1,0 +1,228 @@
+Good Range: 80-140 Ohms
+
+II
+---------------------------------------------------------------
+A:
+-----
+Channel 01ii A: % non-conduct = 0.018519, % in-range = 0.314815
+Channel 02ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 03ii A: % non-conduct = 0.000000, % in-range = 0.796296
+Channel 04ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 05ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 06ii A: % non-conduct = 0.000000, % in-range = 0.851852
+Channel 07ii A: % non-conduct = 0.018519, % in-range = 0.833333
+Channel 08ii A: % non-conduct = 0.000000, % in-range = 0.629630
+Channel 09ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 10ii A: % non-conduct = 0.000000, % in-range = 0.981481
+Channel 11ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 12ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 13ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 14ii A: % non-conduct = 0.000000, % in-range = 0.870370
+Channel 15ii A: % non-conduct = 0.000000, % in-range = 0.944444
+Channel 16ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 17ii A: % non-conduct = 0.000000, % in-range = 0.962963
+Channel 18ii A: % non-conduct = 0.000000, % in-range = 0.814815
+Channel 19ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 20ii A: % non-conduct = 0.000000, % in-range = 0.981481
+Channel 21ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 22ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 23ii A: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 24ii A: % non-conduct = 0.000000, % in-range = 1.000000
+
+B:
+-----
+Channel 01ii B: % non-conduct = 0.000000, % in-range = 0.365385
+Channel 02ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 03ii B: % non-conduct = 0.000000, % in-range = 0.826923
+Channel 04ii B: % non-conduct = 0.000000, % in-range = 0.980769
+Channel 05ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 06ii B: % non-conduct = 0.000000, % in-range = 0.711538
+Channel 07ii B: % non-conduct = 0.000000, % in-range = 0.826923
+Channel 08ii B: % non-conduct = 0.000000, % in-range = 0.596154
+Channel 09ii B: % non-conduct = 0.000000, % in-range = 0.980769
+Channel 10ii B: % non-conduct = 0.000000, % in-range = 0.961538
+Channel 11ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 12ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 13ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 14ii B: % non-conduct = 0.000000, % in-range = 0.923077
+Channel 15ii B: % non-conduct = 0.000000, % in-range = 0.923077
+Channel 16ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 17ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 18ii B: % non-conduct = 0.000000, % in-range = 0.807692
+Channel 19ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 20ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 21ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 22ii B: % non-conduct = 0.000000, % in-range = 0.980769
+Channel 23ii B: % non-conduct = 0.000000, % in-range = 1.000000
+Channel 24ii B: % non-conduct = 0.000000, % in-range = 1.000000
+
+
+IO
+---------------------------------------------------------------
+A:
+-----
+Channel 01io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 02io A: % non-conduct = 0.962963, % in-range = 0.037037
+Channel 03io A: % non-conduct = 0.962963, % in-range = 0.018519
+Channel 04io A: % non-conduct = 0.944444, % in-range = 0.018519
+Channel 05io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 06io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 07io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 08io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 09io A: % non-conduct = 0.907407, % in-range = 0.092593
+Channel 10io A: % non-conduct = 0.962963, % in-range = 0.037037
+Channel 11io A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 12io A: % non-conduct = 0.962963, % in-range = 0.018519
+Channel 13io A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 14io A: % non-conduct = 0.962963, % in-range = 0.037037
+Channel 15io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16io A: % non-conduct = 0.944444, % in-range = 0.037037
+Channel 17io A: % non-conduct = 0.944444, % in-range = 0.055556
+Channel 18io A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 19io A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 20io A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 21io A: % non-conduct = 0.870370, % in-range = 0.111111
+Channel 22io A: % non-conduct = 0.814815, % in-range = 0.185185
+Channel 23io A: % non-conduct = 0.777778, % in-range = 0.111111
+Channel 24io A: % non-conduct = 0.611111, % in-range = 0.388889
+
+B:
+-----
+Channel 01io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 02io B: % non-conduct = 0.961538, % in-range = 0.038462
+Channel 03io B: % non-conduct = 0.961538, % in-range = 0.038462
+Channel 04io B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 05io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 06io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 07io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 08io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 09io B: % non-conduct = 0.903846, % in-range = 0.096154
+Channel 10io B: % non-conduct = 0.961538, % in-range = 0.038462
+Channel 11io B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 12io B: % non-conduct = 0.980769, % in-range = 0.000000
+Channel 13io B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 14io B: % non-conduct = 0.961538, % in-range = 0.019231
+Channel 15io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16io B: % non-conduct = 0.942308, % in-range = 0.019231
+Channel 17io B: % non-conduct = 0.942308, % in-range = 0.057692
+Channel 18io B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 19io B: % non-conduct = 0.980769, % in-range = 0.000000
+Channel 20io B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 21io B: % non-conduct = 0.884615, % in-range = 0.115385
+Channel 22io B: % non-conduct = 0.807692, % in-range = 0.153846
+Channel 23io B: % non-conduct = 0.769231, % in-range = 0.134615
+Channel 24io B: % non-conduct = 0.596154, % in-range = 0.384615
+
+
+OI
+---------------------------------------------------------------
+A:
+-----
+Channel 01oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 02oi A: % non-conduct = 0.962963, % in-range = 0.037037
+Channel 03oi A: % non-conduct = 0.962963, % in-range = 0.018519
+Channel 04oi A: % non-conduct = 0.944444, % in-range = 0.037037
+Channel 05oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 06oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 07oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 08oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 09oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 10oi A: % non-conduct = 0.981481, % in-range = 0.000000
+Channel 11oi A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 12oi A: % non-conduct = 0.981481, % in-range = 0.000000
+Channel 13oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 14oi A: % non-conduct = 0.962963, % in-range = 0.018519
+Channel 15oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16oi A: % non-conduct = 0.944444, % in-range = 0.000000
+Channel 17oi A: % non-conduct = 0.944444, % in-range = 0.037037
+Channel 18oi A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 19oi A: % non-conduct = 0.981481, % in-range = 0.000000
+Channel 20oi A: % non-conduct = 0.981481, % in-range = 0.018519
+Channel 21oi A: % non-conduct = 0.870370, % in-range = 0.074074
+Channel 22oi A: % non-conduct = 0.814815, % in-range = 0.111111
+Channel 23oi A: % non-conduct = 0.796296, % in-range = 0.092593
+Channel 24oi A: % non-conduct = 0.611111, % in-range = 0.203704
+
+B:
+-----
+Channel 01oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 02oi B: % non-conduct = 0.961538, % in-range = 0.019231
+Channel 03oi B: % non-conduct = 0.961538, % in-range = 0.019231
+Channel 04oi B: % non-conduct = 0.980769, % in-range = 0.000000
+Channel 05oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 06oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 07oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 08oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 09oi B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 10oi B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 11oi B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 12oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 13oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 14oi B: % non-conduct = 0.961538, % in-range = 0.019231
+Channel 15oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16oi B: % non-conduct = 0.942308, % in-range = 0.000000
+Channel 17oi B: % non-conduct = 0.942308, % in-range = 0.038462
+Channel 18oi B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 19oi B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 20oi B: % non-conduct = 0.980769, % in-range = 0.019231
+Channel 21oi B: % non-conduct = 0.884615, % in-range = 0.038462
+Channel 22oi B: % non-conduct = 0.826923, % in-range = 0.115385
+Channel 23oi B: % non-conduct = 0.730769, % in-range = 0.096154
+Channel 24oi B: % non-conduct = 0.596154, % in-range = 0.192308
+
+
+OO
+---------------------------------------------------------------
+A:
+-----
+Channel 01oo A: % non-conduct = 0.000000, % in-range = 0.611111
+Channel 02oo A: % non-conduct = 0.000000, % in-range = 0.666667
+Channel 03oo A: % non-conduct = 0.000000, % in-range = 0.370370
+Channel 04oo A: % non-conduct = 0.000000, % in-range = 0.703704
+Channel 05oo A: % non-conduct = 0.000000, % in-range = 0.500000
+Channel 06oo A: % non-conduct = 0.000000, % in-range = 0.351852
+Channel 07oo A: % non-conduct = 0.000000, % in-range = 0.425926
+Channel 08oo A: % non-conduct = 0.000000, % in-range = 0.351852
+Channel 09oo A: % non-conduct = 0.092593, % in-range = 0.370370
+Channel 10oo A: % non-conduct = 0.018519, % in-range = 0.444444
+Channel 11oo A: % non-conduct = 0.000000, % in-range = 0.740741
+Channel 12oo A: % non-conduct = 0.148148, % in-range = 0.185185
+Channel 13oo A: % non-conduct = 0.018519, % in-range = 0.259259
+Channel 14oo A: % non-conduct = 0.000000, % in-range = 0.537037
+Channel 15oo A: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16oo A: % non-conduct = 0.000000, % in-range = 0.314815
+Channel 17oo A: % non-conduct = 0.000000, % in-range = 0.611111
+Channel 18oo A: % non-conduct = 0.129630, % in-range = 0.407407
+Channel 19oo A: % non-conduct = 0.000000, % in-range = 0.574074
+Channel 20oo A: % non-conduct = 0.000000, % in-range = 0.388889
+Channel 21oo A: % non-conduct = 0.000000, % in-range = 0.703704
+Channel 22oo A: % non-conduct = 0.000000, % in-range = 0.740741
+Channel 23oo A: % non-conduct = 0.000000, % in-range = 0.537037
+Channel 24oo A: % non-conduct = 0.000000, % in-range = 0.611111
+
+B:
+-----
+Channel 01oo B: % non-conduct = 0.000000, % in-range = 0.557692
+Channel 02oo B: % non-conduct = 0.000000, % in-range = 0.750000
+Channel 03oo B: % non-conduct = 0.000000, % in-range = 0.423077
+Channel 04oo B: % non-conduct = 0.019231, % in-range = 0.769231
+Channel 05oo B: % non-conduct = 0.000000, % in-range = 0.634615
+Channel 06oo B: % non-conduct = 0.000000, % in-range = 0.461538
+Channel 07oo B: % non-conduct = 0.000000, % in-range = 0.519231
+Channel 08oo B: % non-conduct = 0.000000, % in-range = 0.307692
+Channel 09oo B: % non-conduct = 0.076923, % in-range = 0.480769
+Channel 10oo B: % non-conduct = 0.019231, % in-range = 0.480769
+Channel 11oo B: % non-conduct = 0.000000, % in-range = 0.711538
+Channel 12oo B: % non-conduct = 0.134615, % in-range = 0.307692
+Channel 13oo B: % non-conduct = 0.019231, % in-range = 0.384615
+Channel 14oo B: % non-conduct = 0.019231, % in-range = 0.538462
+Channel 15oo B: % non-conduct = 1.000000, % in-range = 0.000000
+Channel 16oo B: % non-conduct = 0.000000, % in-range = 0.442308
+Channel 17oo B: % non-conduct = 0.000000, % in-range = 0.557692
+Channel 18oo B: % non-conduct = 0.153846, % in-range = 0.365385
+Channel 19oo B: % non-conduct = 0.000000, % in-range = 0.557692
+Channel 20oo B: % non-conduct = 0.000000, % in-range = 0.500000
+Channel 21oo B: % non-conduct = 0.000000, % in-range = 0.634615
+Channel 22oo B: % non-conduct = 0.019231, % in-range = 0.807692
+Channel 23oo B: % non-conduct = 0.000000, % in-range = 0.673077
+Channel 24oo B: % non-conduct = 0.000000, % in-range = 0.634615

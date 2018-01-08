@@ -46,7 +46,7 @@ com_port = 'COM3'
 #calib_file = 'calib_testing.csv'
 calib_file = 'Calibration\\calib.csv'
 #calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
-dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\resistanceB_allpass_'
+dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\raw_data\\resistanceB_allpass_'
 #dataFile = 'Resistance_Data\\StrawResistance_'
 #dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
