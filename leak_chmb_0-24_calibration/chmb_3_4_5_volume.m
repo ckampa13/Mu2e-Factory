@@ -49,7 +49,7 @@ for i = 1:15 %fit data and make plots
     coeff_error = confint(datafit);
     
     fitParameters(i,1) = coeff(1); %slope from fit -> multiply by 10^6 mL for volume in CC
-    fitParameters(i,2) = (abs(coeff(1)-coeff_error(1)))/3; %change 95% confidence interval into 1 sigma
+    fitParameters(i,2) = (abs(coeff(1)-coeff_error(1)))/2; %change 95% confidence interval into 1 sigma
     
     f = errorbar(ppmMatrix(:,i),co2, co2err,'o');
     hold on;

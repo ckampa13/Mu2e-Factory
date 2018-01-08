@@ -103,6 +103,8 @@ def uploadthicknesses():
 	dataLoader.clearRows()
 
 def uploadleaktests():
+
+
 	def createRow():
 		return{'straw_barcode': str(row[0]),
 		'create_time' : str(row[1]), #Website gets real time somehow.
@@ -124,10 +126,11 @@ def uploadleaktests():
 			print "upload leak test failed!\n"
 			print code
 			print text
-		dataLoader.clearRows()	  
+		dataLoader.clearRows()
+	  
 
     for row in upload_file:
-		def createRow():
+        def createRow():
             return{'straw_barcode': str(row[0]),
             'leak_test_timestamp' : str(row[1]), #Website gets real time somehow.
             'test_type' : str(row[2]),
