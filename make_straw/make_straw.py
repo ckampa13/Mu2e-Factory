@@ -1,4 +1,5 @@
-#
+#!C:\Python27\python27
+
 #   Author:             Sam Penders
 #   Email:         <pende061@umn.edu>
 #   Institution: University of Minnesota
@@ -17,8 +18,7 @@
 #	The script could be changed to ask the user to enter batch number for every
 #	straw, or there could be a prompt to change the batch number. The files should be
 #	saved to a central location.
-
-
+#! c:\Python27\python27.exe
 
 from datetime import datetime
 from DataLoader import DataLoader, DataQuery
@@ -57,12 +57,12 @@ def upload(data_file):
 			retVal,code,text =  dataLoader.send()
 	
 			if retVal:
-				print(row[0]," successful upload")
-				print text
+				print(str(row[0])+" successful upload")
+				print(text)
 			else:
-				print (row[0], "FAILED upload")
-				print code
-				print text
+				print (str(row[0])+ "FAILED upload")
+				print(code)
+				print(text)
 
 			dataLoader.clearRows()
 
@@ -70,17 +70,17 @@ def upload(data_file):
 correct_straws = False
 
 while correct_straws == False:
-	print 'scan worker ID'
+	print('scan worker ID')
 	worker_id = raw_input()
-	print 'scan workstation ID'
+	print('scan workstation ID')
 	workstn_id = raw_input()
-	print 'scan batch number'
+	print('scan batch number')
 	batchnum = raw_input()
-	print '\nscan first straw barcode (lowest number)'
+	print('\nscan first straw barcode (lowest number)')
 	straw1 = raw_input()
-	print '\nscan last straw barcode (highest number)'
+	print('\nscan last straw barcode (highest number)')
 	straw2 = raw_input()
-	print '\n'
+	print('\n')
 
 	filename ='make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
 	output = open(filename,"w")

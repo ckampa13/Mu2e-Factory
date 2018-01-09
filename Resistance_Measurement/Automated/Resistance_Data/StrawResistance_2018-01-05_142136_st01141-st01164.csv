@@ -1,0 +1,97 @@
+Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail 
+st01164, 2018/01/05 14:19:19, wb-sabid01, wsb-001,125.7364952,72.5,24, inside-inside, fail
+st01164, 2018/01/05 14:18:25, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01164, 2018/01/05 14:18:25, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01164, 2018/01/05 14:09:54, wb-sabid01, wsb-001,110.9899199,72.5,24, outside-outside, pass
+st01163, 2018/01/05 14:19:20, wb-sabid01, wsb-001,136.5994109,72.5,24, inside-inside, fail
+st01163, 2018/01/05 14:18:26, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01163, 2018/01/05 14:18:26, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01163, 2018/01/05 14:08:57, wb-sabid01, wsb-001,116.2038475,72.5,24, outside-outside, pass
+st01162, 2018/01/05 14:19:21, wb-sabid01, wsb-001,98.9084169,72.5,24, inside-inside, fail
+st01162, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01162, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01162, 2018/01/05 14:08:58, wb-sabid01, wsb-001,129.0211918,72.5,24, outside-outside, pass
+st01161, 2018/01/05 14:19:22, wb-sabid01, wsb-001,128.7401835,72.5,24, inside-inside, fail
+st01161, 2018/01/05 14:18:28, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01161, 2018/01/05 14:18:28, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01161, 2018/01/05 14:09:58, wb-sabid01, wsb-001,122.9846513,72.5,24, outside-outside, pass
+st01160, 2018/01/05 14:19:19, wb-sabid01, wsb-001,115.9594595,72.5,24, inside-inside, fail
+st01160, 2018/01/05 14:08:55, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01160, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01160, 2018/01/05 14:08:56, wb-sabid01, wsb-001,131.8391493,72.5,24, outside-outside, pass
+st01159, 2018/01/05 14:08:56, wb-sabid01, wsb-001,162.209294,72.5,24, inside-inside, pass
+st01159, 2018/01/05 14:18:26, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01159, 2018/01/05 14:09:55, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01159, 2018/01/05 14:08:57, wb-sabid01, wsb-001,132.5382702,72.5,24, outside-outside, pass
+st01158, 2018/01/05 14:08:57, wb-sabid01, wsb-001,180.0128426,72.5,24, inside-inside, pass
+st01158, 2018/01/05 14:19:22, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01158, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01158, 2018/01/05 14:19:22, wb-sabid01, wsb-001,124.5636835,72.5,24, outside-outside, pass
+st01157, 2018/01/05 14:08:58, wb-sabid01, wsb-001,245.1198398,72.5,24, inside-inside, pass
+st01157, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01157, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01157, 2018/01/05 14:18:29, wb-sabid01, wsb-001,131.6374306,72.5,24, outside-outside, pass
+st01156, 2018/01/05 14:19:19, wb-sabid01, wsb-001,82.17731719,72.5,24, inside-inside, fail
+st01156, 2018/01/05 14:18:25, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01156, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01156, 2018/01/05 14:18:25, wb-sabid01, wsb-001,136.0028019,72.5,24, outside-outside, pass
+st01155, 2018/01/05 14:19:20, wb-sabid01, wsb-001,80.80511857,72.5,24, inside-inside, fail
+st01155, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01155, 2018/01/05 14:08:57, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01155, 2018/01/05 14:19:21, wb-sabid01, wsb-001,116,72.5,24, outside-outside, fail
+st01154, 2018/01/05 14:08:57, wb-sabid01, wsb-001,246.3527907,72.5,24, inside-inside, pass
+st01154, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01154, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01154, 2018/01/05 14:18:28, wb-sabid01, wsb-001,119.3283666,72.5,24, outside-outside, pass
+st01153, 2018/01/05 14:19:22, wb-sabid01, wsb-001,76.56481602,72.5,24, inside-inside, fail
+st01153, 2018/01/05 14:18:28, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01153, 2018/01/05 14:18:28, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01153, 2018/01/05 14:08:59, wb-sabid01, wsb-001,113.4657288,72.5,24, outside-outside, pass
+st01152, 2018/01/05 14:19:19, wb-sabid01, wsb-001,89.83355202,72.5,24, inside-inside, fail
+st01152, 2018/01/05 14:08:55, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01152, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01152, 2018/01/05 14:08:56, wb-sabid01, wsb-001,139.0519938,72.5,24, outside-outside, pass
+st01151, 2018/01/05 14:19:20, wb-sabid01, wsb-001,84.60152306,72.5,24, inside-inside, fail
+st01151, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01151, 2018/01/05 14:08:57, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01151, 2018/01/05 14:09:56, wb-sabid01, wsb-001,117.3989544,72.5,24, outside-outside, pass
+st01150, 2018/01/05 14:19:21, wb-sabid01, wsb-001,86.25043439,72.5,24, inside-inside, fail
+st01150, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01150, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01150, 2018/01/05 14:08:58, wb-sabid01, wsb-001,129.5888791,72.5,24, outside-outside, pass
+st01149, 2018/01/05 14:18:28, wb-sabid01, wsb-001,229.5541368,72.5,24, inside-inside, pass
+st01149, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01149, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01149, 2018/01/05 14:18:29, wb-sabid01, wsb-001,113.2523016,72.5,24, outside-outside, pass
+st01148, 2018/01/05 14:19:19, wb-sabid01, wsb-001,92.26140354,72.5,24, inside-inside, fail
+st01148, 2018/01/05 14:08:55, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01148, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01148, 2018/01/05 14:08:56, wb-sabid01, wsb-001,139.3025761,72.5,24, outside-outside, pass
+st01147, 2018/01/05 14:09:55, wb-sabid01, wsb-001,239.754933,72.5,24, inside-inside, pass
+st01147, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01147, 2018/01/05 14:08:57, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01147, 2018/01/05 14:18:26, wb-sabid01, wsb-001,121.3569336,72.5,24, outside-outside, pass
+st01146, 2018/01/05 14:19:21, wb-sabid01, wsb-001,226.2079064,72.5,24, inside-inside, pass
+st01146, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01146, 2018/01/05 14:08:58, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01146, 2018/01/05 14:08:58, wb-sabid01, wsb-001,125.3530946,72.5,24, outside-outside, pass
+st01145, 2018/01/05 14:08:58, wb-sabid01, wsb-001,181.8125184,72.5,24, inside-inside, pass
+st01145, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01145, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01145, 2018/01/05 14:08:59, wb-sabid01, wsb-001,129.5013722,72.5,24, outside-outside, pass
+st01144, 2018/01/05 14:19:19, wb-sabid01, wsb-001,84.11956315,72.5,24, inside-inside, fail
+st01144, 2018/01/05 14:08:55, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01144, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01144, 2018/01/05 14:08:56, wb-sabid01, wsb-001,111.1692472,72.5,24, outside-outside, pass
+st01143, 2018/01/05 14:19:20, wb-sabid01, wsb-001,223.423829,72.5,24, inside-inside, pass
+st01143, 2018/01/05 14:08:56, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01143, 2018/01/05 14:08:57, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01143, 2018/01/05 14:08:57, wb-sabid01, wsb-001,136.4842836,72.5,24, outside-outside, pass
+st01142, 2018/01/05 14:08:57, wb-sabid01, wsb-001,244.0971856,72.5,24, inside-inside, pass
+st01142, 2018/01/05 14:09:56, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01142, 2018/01/05 14:09:56, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01142, 2018/01/05 14:08:58, wb-sabid01, wsb-001,133.1334489,72.5,24, outside-outside, pass
+st01141, 2018/01/05 14:08:58, wb-sabid01, wsb-001,231.5791756,72.5,24, inside-inside, pass
+st01141, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, inside-outside, pass
+st01141, 2018/01/05 14:08:59, wb-sabid01, wsb-001, inf,72.5,24, outside-inside, pass
+st01141, 2018/01/05 14:18:29, wb-sabid01, wsb-001,130.2568881,72.5,24, outside-outside, pass
