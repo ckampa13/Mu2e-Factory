@@ -1,0 +1,97 @@
+Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail 
+st00877, 2017/11/13 09:50:13, WK-CKAMPA01,WSB-01,125,72.5,25, inside-inside, fail
+st00877, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00877, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00877, 2017/11/13 09:50:13, WK-CKAMPA01,WSB-01,70.7,72.5,25, outside-outside, fail
+st00878, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01,108,72.5,25, inside-inside, fail
+st00878, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00878, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00878, 2017/11/13 09:50:12, WK-CKAMPA01,WSB-01,80,72.5,25, outside-outside, fail
+st00879, 2017/11/13 09:50:10, WK-CKAMPA01,WSB-01,259.7226414,72.5,25, inside-inside, fail
+st00879, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00879, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00879, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,120.1632557,72.5,25, outside-outside, pass
+st00880, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,174.6561431,72.5,25, inside-inside, pass
+st00880, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00880, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00880, 2017/11/13 09:49:07, WK-CKAMPA01,WSB-01,122.5136102,72.5,25, outside-outside, pass
+st00881, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,166.6368978,72.5,25, inside-inside, pass
+st00881, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00881, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00881, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01,126.3140345,72.5,25, outside-outside, pass
+st00882, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,221.6504835,72.5,25, inside-inside, pass
+st00882, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00882, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00882, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,123.1516614,72.5,25, outside-outside, pass
+st00883, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,189.9745674,72.5,25, inside-inside, pass
+st00883, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00883, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00883, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,128.7359931,72.5,25, outside-outside, pass
+st00884, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,181.3290843,72.5,25, inside-inside, pass
+st00884, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00884, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00884, 2017/11/13 09:50:10, WK-CKAMPA01,WSB-01,263.9064404,72.5,25, outside-outside, fail
+st00885, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,173.3799521,72.5,25, inside-inside, pass
+st00885, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00885, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00885, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01,124.8015224,72.5,25, outside-outside, pass
+st00886, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,169.5706759,72.5,25, inside-inside, pass
+st00886, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00886, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00886, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,132.4749056,72.5,25, outside-outside, pass
+st00887, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,197.2299333,72.5,25, inside-inside, pass
+st00887, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00887, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00887, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01,129.9880406,72.5,25, outside-outside, pass
+st00888, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,197.7264796,72.5,25, inside-inside, pass
+st00888, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00888, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00888, 2017/11/13 09:50:10, WK-CKAMPA01,WSB-01,288.2482831,72.5,25, outside-outside, fail
+st00889, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,245.9126326,72.5,25, inside-inside, pass
+st00889, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00889, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00889, 2017/11/13 09:49:10, WK-CKAMPA01,WSB-01,132.3662701,72.5,25, outside-outside, pass
+st00890, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01,444.8859428,72.5,25, inside-inside, fail
+st00890, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00890, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00890, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,132.2563218,72.5,25, outside-outside, pass
+st00891, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,194.4399002,72.5,25, inside-inside, pass
+st00891, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00891, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00891, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-outside, fail
+st00892, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,204.1048832,72.5,25, inside-inside, pass
+st00892, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00892, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00892, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,133.315922,72.5,25, outside-outside, pass
+st00893, 2017/11/13 09:49:09, WK-CKAMPA01,WSB-01,200.959619,72.5,25, inside-inside, pass
+st00893, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00893, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00893, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01,120.8082,72.5,25, outside-outside, pass
+st00894, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01,244.3675506,72.5,25, inside-inside, pass
+st00894, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00894, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00894, 2017/11/13 09:49:09, WK-CKAMPA01,WSB-01,139.8742233,72.5,25, outside-outside, pass
+st00895, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,180.5422012,72.5,25, inside-inside, pass
+st00895, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00895, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00895, 2017/11/13 09:50:11, WK-CKAMPA01,WSB-01,231.444439,72.5,25, outside-outside, fail
+st00896, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,229.8431727,72.5,25, inside-inside, pass
+st00896, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00896, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00896, 2017/11/13 09:50:10, WK-CKAMPA01,WSB-01,127.2574694,72.5,25, outside-outside, pass
+st00897, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01,179.4720908,72.5,25, inside-inside, pass
+st00897, 2017/11/13 09:48:09, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00897, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00897, 2017/11/13 09:48:10, WK-CKAMPA01,WSB-01,120.2932215,72.5,25, outside-outside, pass
+st00898, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,172.8374275,72.5,25, inside-inside, pass
+st00898, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00898, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00898, 2017/11/13 09:49:09, WK-CKAMPA01,WSB-01,129.5499294,72.5,25, outside-outside, pass
+st00899, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01,171.981895,72.5,25, inside-inside, pass
+st00899, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00899, 2017/11/13 09:48:07, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00899, 2017/11/13 09:48:08, WK-CKAMPA01,WSB-01,125.6005886,72.5,25, outside-outside, pass
+st00900, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01,202.6596011,72.5,25, inside-inside, pass
+st00900, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, inside-outside, pass
+st00900, 2017/11/13 09:48:06, WK-CKAMPA01,WSB-01, inf,72.5,25, outside-inside, pass
+st00900, 2017/11/13 09:49:07, WK-CKAMPA01,WSB-01,129.3064198,72.5,25, outside-outside, pass

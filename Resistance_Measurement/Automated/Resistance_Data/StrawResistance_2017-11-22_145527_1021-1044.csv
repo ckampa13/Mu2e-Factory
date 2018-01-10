@@ -1,0 +1,97 @@
+Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail 
+st01021, 2017/11/22 14:54:38, wk-jchristy01, resistance,81.27575324,76.2,28, inside-inside,pass
+st01021, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01021, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01021, 2017/11/22 14:53:49, wk-jchristy01, resistance,126.9805152,76.2,28, outside-outside, pass
+st01022, 2017/11/22 14:54:39, wk-jchristy01, resistance,86.10036928,76.2,28, inside-inside,pass
+st01022, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01022, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01022, 2017/11/22 14:54:20, wk-jchristy01, resistance,127.5954276,76.2,28, outside-outside, pass
+st01023, 2017/11/22 14:54:40, wk-jchristy01, resistance,82.58929849,76.2,28, inside-inside, pass
+st01023, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01023, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01023, 2017/11/22 14:53:51, wk-jchristy01, resistance,126.3216036,76.2,28, outside-outside, pass
+st01024, 2017/11/22 14:53:52, wk-jchristy01, resistance,224.2334108,76.2,28, inside-inside, pass
+st01024, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01024, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01024, 2017/11/22 14:53:53, wk-jchristy01, resistance,141.0440298,76.2,28, outside-outside, pass
+st01025, 2017/11/22 14:54:06, wk-jchristy01, resistance,218.6950959,76.2,28, inside-inside, pass
+st01025, 2017/11/22 14:54:39, wk-jchristy01, resistance,261.9348426,76.2,28, inside-outside,pass
+st01025, 2017/11/22 14:54:39, wk-jchristy01, resistance,119.5042453,76.2,28, outside-inside,pass
+st01025, 2017/11/22 14:54:07, wk-jchristy01, resistance,126.0969886,76.2,28, outside-outside, pass
+st01026, 2017/11/22 14:53:50, wk-jchristy01, resistance,202.7668281,76.2,28, inside-inside, pass
+st01026, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01026, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01026, 2017/11/22 14:53:50, wk-jchristy01, resistance,123.4578821,76.2,28, outside-outside, pass
+st01027, 2017/11/22 14:53:51, wk-jchristy01, resistance,168.4323862,76.2,28, inside-inside, pass
+st01027, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01027, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01027, 2017/11/22 14:53:51, wk-jchristy01, resistance,140.9972474,76.2,28, outside-outside, pass
+st01028, 2017/11/22 14:54:41, wk-jchristy01, resistance,86.02466163,76.2,28, inside-inside, pass
+st01028, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01028, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01028, 2017/11/22 14:54:32, wk-jchristy01, resistance,145.2591069,76.2,28, outside-outside, pass
+st01029, 2017/11/22 14:54:38, wk-jchristy01, resistance, inf,76.2,28, inside-inside,pass
+st01029, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01029, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01029, 2017/11/22 14:54:39, wk-jchristy01, resistance, inf,76.2,28, outside-outside,pass
+st01030, 2017/11/22 14:54:07, wk-jchristy01, resistance,221.8777499,76.2,28, inside-inside, pass
+st01030, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01030, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01030, 2017/11/22 14:54:40, wk-jchristy01, resistance, inf,76.2,28, outside-outside,pass
+st01031, 2017/11/22 14:54:21, wk-jchristy01, resistance,245.8745883,76.2,28, inside-inside, pass
+st01031, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01031, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01031, 2017/11/22 14:53:51, wk-jchristy01, resistance,129.8881248,76.2,28, outside-outside, pass
+st01032, 2017/11/22 14:54:41, wk-jchristy01, resistance,86.96742093,76.2,28, inside-inside, pass
+st01032, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01032, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01032, 2017/11/22 14:54:23, wk-jchristy01, resistance,146.9691812,76.2,28, outside-outside, pass
+st01033, 2017/11/22 14:53:49, wk-jchristy01, resistance,222.7266861,76.2,28, inside-inside, pass
+st01033, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01033, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01033, 2017/11/22 14:53:49, wk-jchristy01, resistance,127.9622511,76.2,28, outside-outside, pass
+st01034, 2017/11/22 14:53:50, wk-jchristy01, resistance,165.9657233,76.2,28, inside-inside, pass
+st01034, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01034, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01034, 2017/11/22 14:54:20, wk-jchristy01, resistance,134.4307295,76.2,28, outside-outside, pass
+st01035, 2017/11/22 14:54:21, wk-jchristy01, resistance,218.0385388,76.2,28, inside-inside, pass
+st01035, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01035, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01035, 2017/11/22 14:54:31, wk-jchristy01, resistance,146.4262839,76.2,28, outside-outside, pass
+st01036, 2017/11/22 14:54:41, wk-jchristy01, resistance,94.38519339,76.2,28, inside-inside, pass
+st01036, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01036, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01036, 2017/11/22 14:54:10, wk-jchristy01, resistance,136.7263358,76.2,28, outside-outside, pass
+st01037, 2017/11/22 14:54:38, wk-jchristy01, resistance,97.44933779,76.2,28, inside-inside, pass
+st01037, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01037, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01037, 2017/11/22 14:54:19, wk-jchristy01, resistance,126.7821201,76.2,28, outside-outside, pass
+st01038, 2017/11/22 14:53:50, wk-jchristy01, resistance,186.8542824,76.2,28, inside-inside, pass
+st01038, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01038, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01038, 2017/11/22 14:54:30, wk-jchristy01, resistance,125.9211231,76.2,28, outside-outside, pass
+st01039, 2017/11/22 14:53:51, wk-jchristy01, resistance,197.1082769,76.2,28, inside-inside, pass
+st01039, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01039, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01039, 2017/11/22 14:53:51, wk-jchristy01, resistance,123.7081337,76.2,28, outside-outside, pass
+st01040, 2017/11/22 14:53:52, wk-jchristy01, resistance,199.4322163,76.2,28, inside-inside, pass
+st01040, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01040, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01040, 2017/11/22 14:53:53, wk-jchristy01, resistance,126.233766,76.2,28, outside-outside, pass
+st01041, 2017/11/22 14:54:19, wk-jchristy01, resistance,243.9218726,76.2,28, inside-inside, pass
+st01041, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01041, 2017/11/22 14:53:49, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01041, 2017/11/22 14:54:07, wk-jchristy01, resistance,124.6523968,76.2,28, outside-outside, pass
+st01042, 2017/11/22 14:53:50, wk-jchristy01, resistance,171.2151679,76.2,28, inside-inside, pass
+st01042, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01042, 2017/11/22 14:53:50, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01042, 2017/11/22 14:54:40, wk-jchristy01, resistance,130.231674,76.2,28, outside-outside, pass
+st01043, 2017/11/22 14:54:40, wk-jchristy01, resistance,82.90263713,76.2,28, inside-inside, pass
+st01043, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01043, 2017/11/22 14:53:51, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01043, 2017/11/22 14:53:51, wk-jchristy01, resistance,131.9808033,76.2,28, outside-outside, pass
+st01044, 2017/11/22 14:54:41, wk-jchristy01, resistance,358.991315,76.2,28, inside-inside, pass
+st01044, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, inside-outside, pass
+st01044, 2017/11/22 14:53:52, wk-jchristy01, resistance, inf,76.2,28, outside-inside, pass
+st01044, 2017/11/22 14:53:53, wk-jchristy01, resistance,129.4079666,76.2,28, outside-outside, pass

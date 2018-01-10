@@ -1,0 +1,6 @@
+File Flags:
+-pre_fix1: there was a sorting error that caused straw IDs to assign to a random channel rather than in order...this data may be meaningless...caution!
+	-fix1 date: 9/28/17
+-ADJUSTED_CALIB took place during testing/initally finding fix1 issue
+
+Note: I improperly sorted the 9-20 data after the fact (11/17), so this set is very meaningless.

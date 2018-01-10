@@ -45,8 +45,8 @@ com_port = 'COM3'
 #calib_file = 'calib_testing.csv'
 calib_file = 'Calibration\\calib.csv'
 #calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
-dataFile = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '.csv'
-dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
+dataFile = 'Resistance_Data\\StrawResistance_'
+#dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
 meas_cycles = 'abcdefghijklmnop'
 
@@ -85,17 +85,18 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
 
     #creating iterable dictionary of key: straw # (1-24) and value: [strawID, measuredBits]
     straw_ids = {}
-    i = 1
-    if int(straw_start[2:]) <= int(straw_end[2:]):
-        s1 = int(straw_start[2:])
-        s24 = int(straw_end[2:])
+    s1 = int(straw_start[2:])
+    s24 = int(straw_end[2:])
+    if s1 <= s24:
+        i = 1
+        for x in range(s1,s24+1):
+            straw_ids[i] = 'st' + str('%05d'%(x))
+            i += 1
     else:
-        s1 = int(straw_end[2:])
-        s24 = int(straw_start[2:])
-        
-    for x in range(s1,s24+1):
-        straw_ids[i] = 'st' + str('%05d'%(x))
-        i += 1
+        i = 1
+        for x in range(s1,s24-1,-1):
+            straw_ids[i] = 'st' + str('%05d'%(x))
+            i += 1        
     
     #setting averaging method 
     if avg_type == 'average':
@@ -268,9 +269,13 @@ def check_repeat():
         print("Repeating measurements...\n")
         return True
 
-def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file):
+def save_resistance(worker, workstation, temp, humid, straw_dictionary,save_file,straw_start,straw_end):
     print("Saving file...\n")
-    data_file = 'straw_resistance_' + datetime.now().strftime("%Y-%m-%d_%H%M%S_") + workstation + '.csv' 
+    save_file += datetime.now().strftime("%Y-%m-%d_%H%M%S_")
+    if straw_start < straw_end:
+        save_file += straw_start + '-' + straw_end + '.csv'
+    else:
+        save_file += straw_end + '-' + straw_start + '.csv'
     with open(save_file, 'a') as f:
         f.write('Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail \n')  
         for key, value in sorted(straw_dictionary.items()):
@@ -319,7 +324,7 @@ def main():
             repeat = False
         display_resistance(save_dict)
         repeat = check_repeat()
-    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile)
+    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end)
     input('Press enter to exit...')
 
     ''' This section was used in testing different calibration methods

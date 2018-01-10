@@ -19,27 +19,27 @@
 
 from datetime import datetime
 
-print 'scan worker ID'
-worker_id = raw_input()
+print('scan worker ID')
+worker_id = input()
 
-print 'scan workstation ID'
-workstn_id = raw_input()
+print('scan workstation ID')
+workstn_id = input()
 
 filename ='glueup_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+ '_' + workstn_id+ '.csv'
 output = open(filename,"w")
 
 print('enter glue batch number:')
-batch_num = raw_input()
+batch_num = input()
 
-print '\nscan straw barcode (scan end code to stop or type "end")'
-straw = raw_input()
+print('\nscan straw barcode (scan end code to stop or type "end")')
+straw = input()
 
 while straw != 'end':
 	output.write(straw)
 	output.write(',')
 
 	print('scan glueup type')
-	glueup_type = raw_input()
+	glueup_type = input()
 	output.write(glueup_type)
 	output.write(',')
 		
@@ -50,7 +50,7 @@ while straw != 'end':
 	output.write(',')
 	
 	print('comments (if any): ')
-	comments = raw_input()
+	comments = input()
 	output.write(comments)	
 	output.write(',')
 
@@ -60,7 +60,7 @@ while straw != 'end':
 	output.write( datetime.now().strftime("%Y-%m-%d_%H%M%S") )
 	output.write('\n')
 
-	print '\nscan straw barcode (scan end code to stop) or type "end"'
-	straw = raw_input()
+	print('\nscan straw barcode (scan end code to stop) or type "end"')
+	straw = input()
 output.close()
 
