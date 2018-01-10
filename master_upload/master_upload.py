@@ -34,7 +34,7 @@ def makestraw():
 			#'create_time' : str(row[4]),
 			}	
 		else: #if there is no parent straw
-			print str(row[0])
+			#print str(row[0])
 			return{'straw_barcode': str(row[0]),
 			'batch_number' : str(row[1]), 
 			'worker_barcode' : str(row[3]),
@@ -89,7 +89,7 @@ def uploadthicknesses():
 			print text
 
 		else:
-
+			
 			print "thickness upload failed!\n"
 			print code
 			print text
@@ -105,7 +105,8 @@ def uploadleaktests():
             'workstation_barcode' : str(row[4]),
             #row[5] is channel where it was tested
             'leak_rate' : str(row[6]),
-            'comments': str(row[7])+' (uncertainty)',}  
+            'comments' : '',
+            'uncertainty': str(row[7])}  
 	for row in upload_file:
 		table = "Straw_Leak_Tests"
 		dataLoader = DataLoader(password,url,group,table)
@@ -115,9 +116,20 @@ def uploadleaktests():
 			print "upload leak test success!\n"
 			print text
 		else:
-			print "upload leak test failed!\n"
-			print code
-			print text
+
+			dataLoader = DataLoader(password,url,group,table)
+			aRow = createRow()
+			dataLoader.addRow(aRow,'update')
+			retVal,code,text =  dataLoader.send()
+
+			if retVal:
+				print "succesfully updated straw " + str(row[0])
+				
+			else:
+				print "upload leak test failed!\n"
+				print code
+				print text
+	
 		dataLoader.clearRows()
         
 	#def createRow():
@@ -233,7 +245,7 @@ for i in filelist:
 		f = open(path + i)
 		#print path + i
 		upload_file = csv.reader(f)
-		makestraw()
+		#makestraw()
 		f.close()
 		
 
@@ -248,8 +260,8 @@ for i in filelist:
 		
 		
 #upload leak test data
-#filestart = 'leak_test_all.csv' 
-filestart = 'leak_test_' + datetime.now().strftime("%Y-%m-%d")
+filestart = 'leak_test_all.csv' 
+#filestart = 'leak_test_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
