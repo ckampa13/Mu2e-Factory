@@ -5,6 +5,7 @@ from DataLoader import DataLoader, DataQuery
 from time import strftime
 from datetime import datetime
 from Run_Fit import fit
+import sys
 
 def createRow(data):
 		return{'straw_barcode': str(data[0]),
@@ -41,11 +42,22 @@ def uploadleaktests(data): #takes string of data as argument
 
 print("which day to you want to fit leak test data for?")
 date = raw_input("Enter 't' for today, or any date in YYYY_MM_DD format\n")
+print
 
-if date == "today":
-	date = datetime.now().strftime("%Y_%m_%d")
-
-date = "2018_01_09"	
+proper_date = False
+while proper_date == False:
+	if date == "t":
+		date = datetime.now().strftime("%Y_%m_%d")
+		proper_date = True
+		
+	elif len(date) != 10 or int(date[:4])<2000:
+		proper_date = False
+		print "\nPlease enter date in correct format."
+		date = raw_input("Enter 't' for today, or any date in YYYY_MM_DD format\n")
+	else:
+		proper_date = True
+		
+#date = "2018_01_09"	
 path = "/home/sam/Mu2e-Factory/leak_test_upload/Leak Test Results/"
 files = [] #put files from certain day into this list
 straws = [] #straw names
@@ -62,14 +74,17 @@ for i in filelist:
 		line = f.readline();
 		data = line.split()
 		times.append(str(data[3]) + ' '+ str(data[4])[:-3] )
-		
 
-for i in range (0,len(files)):
-	print(files[i])
+entry = "fsdfsdfsd"		
+if files != []:
+	for i in range (0,len(files)):
+		print(files[i])
+else:
+	print "No files for today."
+	sys.exit()
 	
+		
 entry = raw_input("\nFit and upload these leak test files? (y/n)\n")
-print('\n')
-
 
 if( entry == 'y' ):
 	savefile = 'leak_data_' + date+ '.csv'
@@ -81,7 +96,7 @@ if( entry == 'y' ):
 		#print('%s %f %f' % (straws[i], fitdata[0]*10**5,fitdata[1]*10**5))
 		
 		data2upload = straws[i]+','+'co2,wk-spenders01,wsb0001,'+chambers[i]+',' + str(fitdata[0]*10**5)+',,'+str(fitdata[1]*10**5)+','+times[i]
-		print(data2upload)
+		#print(data2upload)
 		
 		f.write('%s %s %s %f %s %f %s %s %s' % (straws[i]+',','co2,wk-spenders01,wsb0001,',chambers[i]+',' ,fitdata[0]*10**5,',,',fitdata[1]*10**5,',',times[i],'\n'))
 	f.close()
