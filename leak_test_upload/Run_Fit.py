@@ -115,7 +115,7 @@ def fit(filename):
 							#error = sqrt((lr/slope)^2 * slope_err^2 + (lr/ch_vol)^2 * ch_vol_err^2)
 							leak_rate_err = ((leak_rate/slope[f])**2 * slope_err[f]**2 + (leak_rate/chamber_volume[f])**2 * chamber_volume_err[f]**2) ** 0.5
 									 
-							return( leak_rate, leak_rate_err)
+							return( leak_rate, leak_rate_err, chamber_num)
 						   #Graph and save graph of fit
 							"""x = np.linspace(0,max(timestamp[f]))
 							y = slope[f]*x + intercept[f]
