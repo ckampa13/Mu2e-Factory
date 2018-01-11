@@ -46,13 +46,17 @@ When leak testing straws for quality control purposes, the volume of the leak ch
 \section{Instructions}
 \begin{itemize}
 	\item Pick a row of chambers to test. Flush each chamber for 20 seconds with N$_2$. Close off N$_2$ valve on leak chamber, and immediately plug leak chamber with CO$_2$ injection plug.
-	\item Let chambers sit for two minutes to equilibrate. Now, for the $N^{th}$ row of chambers, open \verb|Run_Background_RowN.py| from the desktop. When prompted, enter \verb|0.1| for 0.1 mL. Let the program run for $(5 \pm 0.25)$ minutes.
-	\item After the 5 minute mark, take the CO$_2$ syringe, insert the needle directly into the CO$_2$ tank hose (while the tank is open), and push the plunger in and out 2|3 times. Now, slowly pull the plunger back until its bottom is at 0.1 mL
+	\item Let chambers sit for two minutes to equilibrate. Now, for the $N^{th}$ row of chambers, open \verb|Run_Background_RowN.py| from the desktop. When prompted, enter \verb|0.1| for 0.1 mL of CO$_2$. Let the program run for $(5 \pm 0.25)$ minutes.
+	\item After the 5 minute mark, take the CO$_2$ syringe, insert the needle directly into the CO$_2$ tank hose (while the tank is open), and push the plunger in and out 2--3 times. Now, slowly pull the plunger back until its bottom is at 0.1 mL.
 	
-	\item Inject 0.1 mL of CO$_2$ into the chamber. After injecting into the last chamber, let the program run for $(7 \pm 0.25)$ minutes. 
-	\item Close the program. Inject an additional 0.7 mL of CO$_2$ into each chamber to reach 0.8 .mL of CO$_2$. Wait 2 minutes after injecting into the last chamber.
+	\item Inject 0.1 mL of CO$_2$ into the chamber. After injecting into the last chamber, let the program run for $(7 \pm 0.25)$ minutes. It's okay if the times is more than 7 minutes.
+	\item Close the program. Inject an additional 0.7 mL of CO$_2$ into each chamber to reach 0.8 mL of CO$_2$. Wait 2 minutes after injecting into the last chamber.
 	\item Double-click on \verb|Run_Background_RowN.py| and enter \verb|0.8| for 0.8 mL into the program. Let run for $(5 \pm 0.25)$ minutes. Close the program.
 	\item Repeat for the combinations of 0.2\&0.7 mL, 0.3\&0.6 mL, and 0.4\&0.5 mL.
+	
+\section{Data Fitting and Volume Entry}
+	With the data all gathered, use the MATLAB script (this will be created by Sam soon) in the GitHub repository to easily fit the data. This will save the data to a CSV file. This data should be entered manually into the leak test programs (this may be automated eventually). When using the \verb|leak_test_upload.py| program to upload straw leak test data, the program will access this CSV file to get the updated chamber volumes automatically.
+
 \end{itemize}
 
 
