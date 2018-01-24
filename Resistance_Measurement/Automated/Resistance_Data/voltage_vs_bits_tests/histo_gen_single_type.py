@@ -17,7 +17,7 @@ new_directory = 'channel_histos\\'
 
 good_range_oo = [80,140]
 
-meas_type_flag = 'oo'
+meas_type_flag = 'ii'
 calc_type_flag = 'A'
 
 new_file = '_' + calc_type_flag + new_file
@@ -50,8 +50,9 @@ def calculate_in_range(dat,good_range):
 def histoPlot(chan_name,calc_type,data_list):
     fig, ax = plt.subplots()
     
-    binwidth = 5
-    binslist = range(80,305,binwidth)
+    binwidth = 0.5
+    #binslist = range(80,140,binwidth)
+    binslist = np.arange(80.0,140.0,binwidth)
     
     ax.hist(np.clip(data_list, binslist[0], binslist[-1]+5), bins = binslist, facecolor='blue', edgecolor='black', linewidth=1)
 
@@ -69,8 +70,9 @@ def histoPlot(chan_name,calc_type,data_list):
 def histoPlotSave(chan_name,calc_type,data_list,new_dir,new_fil):
     fig, ax = plt.subplots()
     
-    binwidth = 5
-    binslist = range(80,310,binwidth)
+    binwidth = 0.5
+    #binslist = range(80,140,binwidth)
+    binslist = np.arange(80.0,140.0,binwidth)
     
     ax.hist(np.clip(data_list, binslist[0], binslist[-1]), bins = binslist, facecolor='blue', edgecolor='black', linewidth=1)
 

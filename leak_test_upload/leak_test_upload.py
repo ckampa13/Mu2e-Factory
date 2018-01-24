@@ -1,3 +1,21 @@
+#
+#   Author:             Sam Penders
+#   Email:         <pende061@umn.edu>
+#   Institution: University of Minnesota
+#   Project:              Mu2e
+#   Date:				1-08-2018
+#
+#	Description:
+#	python2.7 script which will ask the user to enter a specified date to
+#	upload leak test data from. The program will then fit the data from that 
+#	date, and upload to the database. 
+#	NOTE: straws must already be entered in the database using make_straw.bat
+#
+#	Possible improvements:
+#	Change saving to some central location.
+
+
+
 import csv
 import os
 import time
@@ -62,23 +80,23 @@ path = "C:\\Users\\vold\\Desktop\\Leak Test Results\\"
 files = [] #put files from certain day into this list
 straws = [] #straw names
 chambers = [] #chamber for each straw
-times = []
+times = [] #time of test
 
 
-filelist = os.listdir(path)
+filelist = os.listdir(path) #read in all files
 for i in filelist:
 	if i.endswith(date+ "_rawdata.txt"):
 		f = open(path + i)
 		files.append(path+i) #make list of files
-		straws.append( i[0: i.find('_')])
+		straws.append( i[0: i.find('_')]) #get straw name
 		line = f.readline();
-		data = line.split()
-		times.append(str(data[3]) + ' '+ str(data[4])[:-3] )
+		data = line.split() #get first line of data in file
+		times.append(str(data[3]) + ' '+ str(data[4])[:-3]) #get time 
 
 entry = "fsdfsdfsd"		
 if files != []:
 	for i in range (0,len(files)):
-		print(files[i])
+		print(files[i]) #print all files to be uploaded
 else:
 	print "No files for today."
 	sys.exit()
@@ -91,16 +109,19 @@ if( entry == 'y' ):
 	f = open(savefile,'w')
 
 	for i in range (0,len(files)):
-		fitdata = fit(files[i])
+		fitdata = fit(files[i]) #fit all data from specified day
 		chambers.append('ch' + str(fitdata[2]))
 		#print('%s %f %f' % (straws[i], fitdata[0]*10**5,fitdata[1]*10**5))
 		
-		data2upload = straws[i]+','+'co2,wk-spenders01,wsb0001,'+chambers[i]+',' + str(fitdata[0]*10**5)+',,'+str(fitdata[1]*10**5)+','+times[i]
+		data2upload = straws[i]+','+'co2,wk-spenders01,wsb0001,'
+		+chambers[i]+',' + str(fitdata[0]*10**5)+',,'+str(fitdata[1]*10**5)+','+times[i]
 		#print(data2upload)
 		
-		f.write(straws[i]+','+'co2,wk-spenders01,wsb0001,'+chambers[i]+','+str(fitdata[0])+',,'+str(fitdata[1])+','+times[i]+'\n')
+		f.write(straws[i]+','+'co2,wk-spenders01,wsb0001,'+chambers[i]+
+		','+str(fitdata[0])+',,'+str(fitdata[1])+','+times[i]+'\n')
 	f.close()
-		
+	
+	#upload all leak test data	
 	with open(savefile) as readfile:
 			file_to_read = csv.reader(readfile)
 			for row in file_to_read:

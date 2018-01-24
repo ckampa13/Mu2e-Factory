@@ -25,7 +25,7 @@ max_time = 7200 #When time exceeds 2 hours stops fitting data (still saving it)
 max_co2_level = 1800 # when PPM exceeds 1800 stops fitting and warns user of failure
 #calibration volumes from pure CO2 on 9/1/2015
 chamber_volume = [594,607,595,605,595]
-chamber_volume_err = [9,20,10,6,14]
+chamber_volume_err = [13,31,15,10,21]
 number_of_chambers = 5
 straw_volume = 26.0
 for n in range(number_of_chambers) :
@@ -94,7 +94,7 @@ def Update_names() :
 
 
 #Main Code
-print ('Connected to port 4' )
+print ('Connected to port 11' )
 Need_for_change()
 Update_names()
 

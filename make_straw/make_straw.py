@@ -90,11 +90,12 @@ def upload(data_file):
 correct_straws = False
 
 while correct_straws == False:
-	print('scan worker ID')
+	print('\nscan worker ID--must be your real ID (e.g. "wk-spenders01")')
 	worker_id = raw_input()
-	print('scan workstation ID')
-	workstn_id = raw_input()
-	print('scan batch number')
+	#print('scan workstation ID (e.g. "wsb0001")')
+	#workstn_id = raw_input()
+	workstn_id = "wsb0001" #temporarily set to default value
+	print('\nscan batch number (e.g. "5 12-15-17")')
 	batchnum = raw_input()
 	print('\nscan first straw barcode (lowest number)')
 	straw1 = raw_input()
@@ -134,7 +135,7 @@ while correct_straws == False:
 				for i in range (start,end+1):
 					print( straw_name[i-start] )
 				print('%s %s' % ('\nworker id: ', worker_id) )
-				print('%s %s' % ('workstation id: ', workstn_id) )
+				#print('%s %s' % ('workstation id: ', workstn_id) )
 				print('%s %s' % ('batchnumber: ', batchnum) )
 
 				

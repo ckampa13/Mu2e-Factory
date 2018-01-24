@@ -17,8 +17,8 @@ new_directory = 'channel_histos\\'
 
 good_range_oo = [80,140]
 
-meas_type_flag = 'oo'
-calc_type_flag = 'B'
+meas_type_flag = 'ii'
+calc_type_flag = 'A'
 
 new_file = '_' + calc_type_flag + new_file
 new_directory += meas_type_flag + '\\' + calc_type_flag + '\\'
@@ -55,8 +55,8 @@ def fitStats(histo_data):
 def histoPlot(chan_name,calc_type,data_list,mu,sig):
     fig, ax = plt.subplots()
     
-    binwidth = 5
-    binslist = range(80,310,binwidth)
+    binwidth = 0.5
+    binslist = range(80,120,binwidth)
     
     #ax.hist(np.clip(data_list, binslist[0], binslist[-1]), bins = binslist, facecolor='blue', edgecolor='black', linewidth=1)
     ax.hist(np.clip(data_list, binslist[0], binslist[-1]), bins = binslist, normed=1, facecolor='blue', edgecolor='black', linewidth=1)
