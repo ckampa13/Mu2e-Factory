@@ -25,7 +25,7 @@ max_time = 7200 #When time exceeds 2 hours stops fitting data (still saving it)
 max_co2_level = 1800 # when PPM exceeds 1800 stops fitting and warns user of failure
 #calibration volumes from pure CO2 on 9/1/2015
 chamber_volume = [585,575,610,615,587] #volume calculated on 1-2-2018 -SP
-chamber_volume_err = [5,10,4,7,8]
+chamber_volume_err = [8,15,6,10,11]
 number_of_chambers = 5
 straw_volume = 26.0
 for n in range(number_of_chambers) :
@@ -42,11 +42,13 @@ max_leakrate = float(total_leak_detector)/float(straws_in_detector)  #CC/min
 max_leakrate = max_leakrate/3
 
 #name of chambers
-chamber_id = { "ch15" : 15, "ch16" : 16, "ch17" : 17, "ch18" : 18, "ch19" : 19 } 
+chamber_id = { "ch15" : 0, "ch16" : 1, "ch17" : 2, "ch18" : 3, "ch19" : 4, 0 : "ch15", 1 : "ch16", 2: "ch17", 3 : "ch18", 4 : "ch19" } 
 Choosenames = [ "empty15", "empty16", "empty17", "empty18", "empty19" ]
 files = {}
+
+com = "COM12"
 #create a csv file to store leak test results
-result = open('C:\\Users\\vold\\Desktop\\Leak Test Results\\' + datetime.now().strftime("%Y-%m-%d_%H%M%S") + '_COM12.csv', "a+",1)
+result = open('C:\\Users\\vold\\Desktop\\Leak Test Results\\' + datetime.now().strftime("%Y-%m-%d_%H%M%S") + '_' + com + '.csv', "a+",1)
 #list of passed straws
 straw_list=[]
 #changing straws
@@ -58,7 +60,7 @@ def Change_straws() :
                 for i in chamber_id :
                         if i == chamber :
                                 this_chamber = chamber_id[i]
-                                print("Chamber is %s" % chamber_id[chamber])
+                                print("Chamber is %s" % chamber_id[chamber_id[chamber]])
                                 chamber_input = True
                                 break
                 else :
@@ -68,7 +70,7 @@ def Change_straws() :
                 straw = "empty%s" % this_chamber
                 Choosenames[this_chamber] = straw
         else:
-                Choosenames[this_chamber] = straw + '_chamber%.0f_' % this_chamber + datetime.now().strftime("%Y_%m_%d") 
+                Choosenames[this_chamber] = straw + '_chamber%.0f_' % (this_chamber + 15) + datetime.now().strftime("%Y_%m_%d") 
         print(straw)
         Need_for_change()
 #Do we want to change straws
@@ -94,12 +96,12 @@ def Update_names() :
 
 
 #Main Code
-print ('Connected to port 4' )
+print ('Connected to port 7' )
 Need_for_change()
 Update_names()
 
 #access Arduino
-arduino = serial.Serial("COM12",115200)
+arduino = serial.Serial(com,115200)
 
 #Main code
 pasttime = time.time()
@@ -119,7 +121,7 @@ while True:
 
         if epoctime >= (pasttime + 15.0) :
                 print("")
-                print("COM12")
+                print(com)
                 print(currenttime)
                 pasttime = epoctime
                 PPM = {}
@@ -152,19 +154,19 @@ while True:
                                                 PPM_err[f].append(((float(numbers_float[2])*0.02)**2 + 20**2)**0.5)
                                                 timestamp[f].append(eventtime)
                                 if (str(Choosenames[f])[0:5] == "empty") :
-                                        print("No straw in chamber %.0f" % f)
+                                        print("No straw in chamber %s" % chamber_id[f])
                                         continue
                                 if len(PPM[f]) < min_number_datapoints :
-                                        print("Straw %s in chamber %.0f is in preperation stage. Please wait for more data" %(Choosenames[f][:7],f))
+                                        print("Straw %s in chamber %s is in preperation stage. Please wait for more data" %(Choosenames[f][:7],chamber_id[f]))
                                         #time.sleep(5)
                                         continue
                                 if max(PPM[f]) > max_co2_level :
-                                        print("CO2 in chamber %.0f exceed 1800. Significant leak?!? Please flush and remove straw" %f)
+                                        print("CO2 in chamber %s exceed 1800. Significant leak?!? Please flush and remove straw" % chamber_id[f])
                                         #time.sleep(5)
                                         #failed()
                                         continue
                                 if max(timestamp[f]) > max_time :
-                                        print("Straw %s has been in Chamber %.0f for over 2 hours.  Data is saving but no longer fitting." %(Choosenames[f][:7],f))
+                                        print("Straw %s has been in Chamber %s for over 2 hours. Data is saving but no longer fitting." %(Choosenames[f][:7],chamber_id[f]))
                                         #time.sleep(5)
                                         continue
                                 slope[f] = get_slope(timestamp[f], PPM[f], PPM_err[f])
@@ -177,9 +179,9 @@ while True:
                                 leak_rate_err = ((leak_rate/slope[f])**2 * slope_err[f]**2 +
                                          (leak_rate/chamber_volume[f])**2 * chamber_volume_err[f]**2) ** 0.5
                                 straw_status = "unknown status"
-                                print("Leak rate for straw %s in chamber %.0f is %.2f +- %.2f CC per minute * 10^-5" % (Choosenames[f][:7],f,leak_rate *(10**5),leak_rate_err*(10**5)))
+                                print("Leak rate for straw %s in chamber %s is %.2f +- %.2f CC per minute * 10^-5" % (Choosenames[f][:7],chamber_id[f],leak_rate *(10**5),leak_rate_err*(10**5)))
                                 if len(PPM[f]) > 20 and leak_rate < max_leakrate and leak_rate_err < max_leakrate/10:
-                                        print("Straw in chamber %.0f has Passed, Please remove" % f)
+                                        print("Straw in chamber %s has Passed, Please remove" % chamber_id[f])
                                         straw_status = "Passed leak requirement"
                                         #passed()
                                         #save to csv file
@@ -197,14 +199,14 @@ while True:
                                                                         result.write(currenttime + ",")
                                                                         result.write("CO2"+",")
                                                                         result.write("wb0001"+",")
-                                                                        result.write("ch" + str(f) + ",")
+                                                                        result.write(chamber_id[f] + ",")
                                                                         result.write(str(leak_rate) + ",")
                                                                         result.write(str(leak_rate_err) + "\n")
                                                                 break
                                                         if time.time() > endtime:
                                                                 break
                                 if len(PPM[f]) > 20 and leak_rate > max_leakrate and leak_rate_err < max_leakrate/10:
-                                        print("FAILURE SHAME DISHONOR: Straw in chamber %.0f has failed, Please remove and reglue ends" % f)
+                                        print("FAILURE SHAME DISHONOR: Straw in chamber %s has failed, Please remove and reglue ends" % chamber_id[f])
                                         straw_status = "Failed leak requirement"
                                         #failed()
                                         #save to csv file
@@ -222,7 +224,7 @@ while True:
                                                                         result.write(currenttime + ",")
                                                                         result.write("CO2"+",")
                                                                         result.write("wb0001"+",")
-                                                                        result.write("ch" + str(f) + ",")
+                                                                        result.write(chamber_id[f] + ",")
                                                                         result.write(str(leak_rate) + ",")
                                                                         result.write(str(leak_rate_err) + "\n")
                                                                 break
