@@ -19,7 +19,14 @@ queryUrl = "http://dbweb6.fnal.gov:8088/QE/mu2e_hw_dev/app/SQ/query"
 group = "Straw Tables"
 password = "sdwjmvw"
 
+<<<<<<< HEAD
 path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
+=======
+
+
+#path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
+path = '/home/sam/Mu2e-Factory/master_upload/' #where files are located
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 	
 #first upload all make_straw files
 def makestraw():
@@ -78,7 +85,43 @@ def uploadthicknesses():
 			'worker_barcode' : str(row[3]),
 			'workstation_barcode' : str(row[4]),}
 
+<<<<<<< HEAD
 		table = "straw_thicknesses"
+=======
+	table = "straw_thicknesses"
+	dataLoader = DataLoader(password,url,group,table)
+	dataLoader.addRow(createRow())
+	retVal,code,text =  dataLoader.send()
+
+	if retVal:
+
+		print "thickness upload success!\n"
+
+		print text
+
+	else:
+
+		print "thickness upload failed!\n"
+
+		print code
+
+		print text
+
+	dataLoader.clearRows()
+
+def uploadleaktests():
+	def createRow():
+		return{'straw_barcode': str(row[0]),
+		'create_time' : str(row[1]), #Website gets real time somehow.
+		'test_type' : str(row[2]),
+		'worker_barcode' : str(row[3]),
+		'workstation_barcode' : str(row[4]),
+		#row[5] is channel where it was tested
+		'leak_rate' : str(row[6]),
+		'comments': str(row[7])+' (uncertainty)',}
+	for row in upload_file:
+		table = "Straw_Leak_Tests"
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 		dataLoader = DataLoader(password,url,group,table)
 		dataLoader.addRow(createRow())
 		retVal,code,text =  dataLoader.send()
@@ -93,11 +136,18 @@ def uploadthicknesses():
 			print "thickness upload failed!\n"
 			print code
 			print text
+<<<<<<< HEAD
 			
 		dataLoader.clearRows()
 
 def uploadleaktests():
 	def createRow():
+=======
+		dataLoader.clearRows()	  
+
+    for row in upload_file:
+		def createRow():
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
             return{'straw_barcode': str(row[0]),
             'leak_test_timestamp' : str(row[1]), #Website gets real time somehow.
             'test_type' : str(row[2]),
@@ -155,6 +205,10 @@ def uploadleaktests():
 			#print text
 		#dataLoader.clearRows()
       
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 def strawcutlengths():
 	
 	def createRow():
