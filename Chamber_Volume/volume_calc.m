@@ -6,7 +6,9 @@
 % Following that procedure, this program may be used to easily calculate
 % the volume for any rows.
 
-%chamber rows to be analyzed
+% chamber rows to be analyzed
+% change this to whatever chambers need to be done
+% save location must be changed though
 min_row = 6;
 max_row = 10;
 
@@ -49,7 +51,6 @@ for m = min_row:max_row
                        injection = false;
                        i = 1;
                        while injection == false && i < length(ppm)-3 %true before transition happens
-                           %for i = 1:length(ppm)-3
                             if ppm(i+3) >= ppm(i)+100 
                                 transitions(n) = i; %point where co2 gets injected
                                 ppm_initial(n) = mean(ppm(1:transitions(n)));
@@ -58,9 +59,7 @@ for m = min_row:max_row
                                 injection = true;
                             end
                             i = i+1;                             
-                       end           
-                       %disp(filename)
-                       %disp(ppm(transitions(n)));
+                       end
 
 % get avg co2 level for 0.5-0.8 mL injection
                 else
@@ -83,14 +82,13 @@ for i = min_chmb:max_chmb
     
     % fit data to line through origin
     datafit = fit(x(~isnan(x)), co2.', 'x.*a','Weights',co2err.^-2);
-    %datafit = fit(x, co2.','x .* a','Weights',co2err.^-1);
     coeff = coeffvalues(datafit);
     coeff_error = confint(datafit);
     
     fitParameters(i,1) = coeff(1); %slope from fit -> multiply by 10^6 mL for volume in CC
     fitParameters(i,2) = (abs(coeff(1)-coeff_error(1)))/2; %change 95% confidence interval into 1 sigma
     
-    f = errorbar(x,co2, co2err,'o');
+    f = errorbar(x,co2, co2err,'o');S
     hold on;
     fplot( @(x) coeff(1)*x );
     plotname = strcat('/home/sam/Mu2e-Factory/Chamber_Volume/fits/ch',num2str(i),'_calibration.png');
