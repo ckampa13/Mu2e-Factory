@@ -17,7 +17,7 @@ new_directory = 'channel_histos\\'
 
 good_range_oo = [80,140]
 
-meas_type_flag = 'ii'
+meas_type_flag = 'oo'
 calc_type_flag = 'A'
 
 new_file = '_' + calc_type_flag + new_file
