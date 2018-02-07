@@ -49,8 +49,8 @@ for m = min_row:max_row
                     ppmMatrix(n,(m-min_row)*5+k) = mean(ppm)-ppm_initial(n)
                 end
 
-                %co2 = 0.1:0.1:0.8;
-                %error = [0.03*ones(1,4) 0.03*sqrt(2)*ones(1,4) ]; 
+                co2 = 0.1:0.1:0.8;
+                error = [0.03*ones(1,4) 0.03*sqrt(2)*ones(1,4) ]; 
                 %errorbar(ppmMatrix(:,k+5*(m-7)),co2,error,'o');
             
             end
