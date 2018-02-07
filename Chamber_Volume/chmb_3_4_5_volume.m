@@ -22,7 +22,7 @@ for m = 3:5 %row 3-5 data folders
             %disp(co2_in);
             CO2_in = strcat('0.',a);
             
-            filename = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/row_',num2str(m),'/','ch',num2str(k-1+5*(m-1)),'_',CO2_in,'mL.txt');
+            filename = strcat('/home/sam/Mu2e-Factory/Chamber_Volume/row_',num2str(m),'/','ch',num2str(k-1+5*(m-1)),'_',CO2_in,'mL.txt');
             d = readtable(filename);
             t = table2array(d(:,1)); %times, in epoch time
             ppm = table2array(d(:,3)); %temporary -- CO2 level in chamber in each time interval
@@ -54,7 +54,7 @@ for i = 1:15 %fit data and make plots
     f = errorbar(ppmMatrix(:,i),co2, co2err,'o');
     hold on;
     fplot( @(x) coeff(1)*x + coeff(2) );
-    plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1+10),'_calibration.png');
+    plotname = strcat('/home/sam/Mu2e-Factory/Chamber_Volume/fits/ch',num2str(i-1+10),'_calibration.png');
     title(strcat('Chamber ',{' '},num2str(i-1+10),' Calibration'));
     ylabel('CO$_2$ Injected [mL]');
     xlabel('CO$_2$ detected [ppm]' );

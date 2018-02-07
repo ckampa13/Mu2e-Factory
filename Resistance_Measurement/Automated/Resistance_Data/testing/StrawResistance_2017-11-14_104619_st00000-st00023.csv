@@ -1,0 +1,97 @@
+Straw Id,   Timestamp,    Worker ID,     Workstation Id,  Resistance(Ohms),  Temp(F),  Humidity(%), Measurement Type, Pass/Fail 
+st00023, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00023, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00023, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00023, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00022, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00022, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00022, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00022, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00021, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00021, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00021, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00021, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00020, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00020, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00020, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00020, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00019, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00019, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00019, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00019, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00018, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00018, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00018, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00018, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00017, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00017, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00017, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00017, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00016, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00016, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00016, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00016, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00015, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00015, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00015, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00015, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00014, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00014, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00014, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00014, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00013, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00013, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,109.7633402,70,50, inside-outside, fail
+st00013, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00013, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00012, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,334.1261608,70,50, inside-inside, fail
+st00012, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00012, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00012, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00011, 2017/11/14 10:46:48, wb-ckampa01, wsb-01,113.3209064,70,50, inside-inside, fail
+st00011, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00011, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00011, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00010, 2017/11/14 10:46:49, wb-ckampa01, wsb-01,149.8090133,70,50, inside-inside, fail
+st00010, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00010, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00010, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00009, 2017/11/14 10:46:50, wb-ckampa01, wsb-01,147.5127715,70,50, inside-inside, fail
+st00009, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00009, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00009, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,69.0986802,70,50, outside-outside, pass
+st00008, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-inside, fail
+st00008, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00008, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00008, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00007, 2017/11/14 10:46:48, wb-ckampa01, wsb-01,207.2686632,70,50, inside-inside, pass
+st00007, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00007, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00007, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00006, 2017/11/14 10:46:49, wb-ckampa01, wsb-01,116.0655229,70,50, inside-inside, fail
+st00006, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00006, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00006, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00005, 2017/11/14 10:46:50, wb-ckampa01, wsb-01,185.8404133,70,50, inside-inside, pass
+st00005, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00005, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00005, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,30.43958835,70,50, outside-outside, fail
+st00004, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,79.32057216,70,50, inside-inside, fail
+st00004, 2017/11/14 10:46:52, wb-ckampa01, wsb-01,93.57911255,70,50, inside-outside, fail
+st00004, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00004, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00003, 2017/11/14 10:46:48, wb-ckampa01, wsb-01,98.98467368,70,50, inside-inside, fail
+st00003, 2017/11/14 10:46:48, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00003, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00003, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00002, 2017/11/14 10:46:49, wb-ckampa01, wsb-01,147.0745008,70,50, inside-inside, fail
+st00002, 2017/11/14 10:46:49, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00002, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00002, 2017/11/14 10:46:50, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00001, 2017/11/14 10:46:50, wb-ckampa01, wsb-01,69.17525046,70,50, inside-inside, fail
+st00001, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00001, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00001, 2017/11/14 10:46:51, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail
+st00000, 2017/11/14 10:46:51, wb-ckampa01, wsb-01,121.1030977,70,50, inside-inside, fail
+st00000, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, inside-outside, pass
+st00000, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-inside, pass
+st00000, 2017/11/14 10:46:52, wb-ckampa01, wsb-01, inf,70,50, outside-outside, fail

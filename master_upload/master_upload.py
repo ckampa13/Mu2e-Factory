@@ -19,17 +19,21 @@ queryUrl = "http://dbweb6.fnal.gov:8088/QE/mu2e_hw_dev/app/SQ/query"
 group = "Straw Tables"
 password = "sdwjmvw"
 
+<<<<<<< HEAD
+path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
+=======
 
 
 #path = 'C:\\Users\\vold\\Desktop\\straw_database\\' #where files are located
 path = '/home/sam/Mu2e-Factory/master_upload/' #where files are located
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 	
 #first upload all make_straw files
 def makestraw():
 	
 	def createRow():
 		if str(row[2]) is not '':
-			print str(row[0])
+			#print str(row[0])
 			return{'straw_barcode': str(row[0]),
 			'batch_number' : str(row[1]),
 			#'parent' : str(row[2]),
@@ -37,7 +41,7 @@ def makestraw():
 			#'create_time' : str(row[4]),
 			}	
 		else: #if there is no parent straw
-			print str(row[0])
+			#print str(row[0])
 			return{'straw_barcode': str(row[0]),
 			'batch_number' : str(row[1]), 
 			'worker_barcode' : str(row[3]),
@@ -81,6 +85,9 @@ def uploadthicknesses():
 			'worker_barcode' : str(row[3]),
 			'workstation_barcode' : str(row[4]),}
 
+<<<<<<< HEAD
+		table = "straw_thicknesses"
+=======
 	table = "straw_thicknesses"
 	dataLoader = DataLoader(password,url,group,table)
 	dataLoader.addRow(createRow())
@@ -114,20 +121,33 @@ def uploadleaktests():
 		'comments': str(row[7])+' (uncertainty)',}
 	for row in upload_file:
 		table = "Straw_Leak_Tests"
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 		dataLoader = DataLoader(password,url,group,table)
 		dataLoader.addRow(createRow())
 		retVal,code,text =  dataLoader.send()
+
 		if retVal:
-			print "upload leak test success!\n"
+
+			print "thickness upload success!\n"
 			print text
+
 		else:
-			print "upload leak test failed!\n"
+			
+			print "thickness upload failed!\n"
 			print code
 			print text
+<<<<<<< HEAD
+			
+		dataLoader.clearRows()
+
+def uploadleaktests():
+	def createRow():
+=======
 		dataLoader.clearRows()	  
 
     for row in upload_file:
 		def createRow():
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
             return{'straw_barcode': str(row[0]),
             'leak_test_timestamp' : str(row[1]), #Website gets real time somehow.
             'test_type' : str(row[2]),
@@ -135,35 +155,74 @@ def uploadleaktests():
             'workstation_barcode' : str(row[4]),
             #row[5] is channel where it was tested
             'leak_rate' : str(row[6]),
-            'comments': str(row[7])+' (uncertainty)',}
-        table = "Straw_Leak_Tests"
-        dataLoader = DataLoader(password,url,group,table)
-        dataLoader.addRow(createRow())
-        retVal,code,text =  dataLoader.send()
-        if retVal:
-            print "upload leak test success!\n"
-            print text
-        else:
-            print "upload leak test failed!\n"
-            print code
-            print text
-        dataLoader.clearRows()
-      
-
-def strawcutlengths():
-
+            'comments' : '',
+            'uncertainty': str(row[7])}  
 	for row in upload_file:
-		def createRow():
-			return{'straw_barcode': str(row[0]),
-			#'create_time' : str(row[1]), #Website gets real time somehow.
-			'worker_barcode' : str(row[2]),
-			'workstation_barcode' : str(row[3]),
-			'nominal_length' : str(row[4]),
-			'measured_length': str(row[5]),
-			'temperature' : str(row[6]),
-			'humidity' : str(row[7]),
-			#'comments' : str(row[8]),
-			}
+		table = "Straw_Leak_Tests"
+		dataLoader = DataLoader(password,url,group,table)
+		dataLoader.addRow(createRow())
+		retVal,code,text =  dataLoader.send()
+		if retVal:
+			print "upload leak test success!\n"
+			print text
+		else:
+
+			dataLoader = DataLoader(password,url,group,table)
+			aRow = createRow()
+			dataLoader.addRow(aRow,'update')
+			retVal,code,text =  dataLoader.send()
+
+			if retVal:
+				print "succesfully updated straw " + str(row[0])
+				
+			else:
+				print "upload leak test failed!\n"
+				print code
+				print text
+	
+		dataLoader.clearRows()
+        
+	#def createRow():
+		#return{'straw_barcode': str(row[0]),
+		#'create_time' : str(row[1]), #Website gets real time somehow.
+		#'test_type' : str(row[2]),
+		#'worker_barcode' : str(row[3]),
+		#'workstation_barcode' : str(row[4]),
+		##row[5] is channel where it was tested
+		#'leak_rate' : str(row[6]),
+		#'comments': str(row[7])+' (uncertainty)',}
+	#for row in upload_file:
+		#table = "Straw_Leak_Tests"
+		#dataLoader = DataLoader(password,url,group,table)
+		#dataLoader.addRow(createRow())
+		#retVal,code,text =  dataLoader.send()
+		#if retVal:
+			#print "upload leak test success!\n"
+			#print text
+		#else:
+			#print "upload leak test failed!\n"
+			#print code
+			#print text
+		#dataLoader.clearRows()
+      
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
+def strawcutlengths():
+	
+	def createRow():
+				return{'straw_barcode': str(row[0]),
+				#'create_time' : str(row[1]), #Website gets real time somehow.
+				'worker_barcode' : str(row[2]),
+				'workstation_barcode' : str(row[3]),
+				'nominal_length' : str(row[4]),
+				'measured_length': str(row[5]),
+				'temperature' : str(row[6]),
+				'humidity' : str(row[7]),
+				#'comments' : str(row[8]),
+				}
+	for row in upload_file:
 		table = "straw_cut_lengths"
 		dataLoader = DataLoader(password,url,group,table)
 		dataLoader.addRow(createRow())
@@ -178,8 +237,7 @@ def strawcutlengths():
 		dataLoader.clearRows()
 
 def resistanceupload():
-	for row in upload_file:
-		def createRow():
+	def createRow():
 			return{'straw_barcode': str(row[0]),
 			'create_time' : str(row[1]), #Website gets real time somehow.
 			'worker_barcode' : str(row[2]),
@@ -189,6 +247,7 @@ def resistanceupload():
 			'humidity' : str(row[6]),
 			'resistance_measurement_type' : str(row[7]),
 			'comments' : str(row[8]),}
+	for row in upload_file:
 		table = "straw_resistance_measurements"
 		dataLoader = DataLoader(password,url,group,table)
 		dataLoader.addRow(createRow())
@@ -204,47 +263,43 @@ def resistanceupload():
 	
 def uploadglueup():
 
+	def createRow():
+		return{'straw_barcode': str(row[0]),
+			'glueup_type' : str(row[1]),
+			'worker_barcode' : str(row[2]),
+			'workstation_barcode' : str(row[3]),
+			'comments' : str(row[4]),
+			'glue_batch_number' : str(row[5]),}
 	for row in upload_file:
+		table = "straw_glueups"
+		dataLoader = DataLoader(password,url,group,table)
+		dataLoader.addRow(createRow())
+		retVal,code,text =  dataLoader.send()
 
-		def createRow():
-			return{'straw_barcode': str(row[0]),
-				'glueup_type' : str(row[1]),
-				'worker_barcode' : str(row[2]),
-				'workstation_barcode' : str(row[3]),
-				'comments' : str(row[4]),
-				'glue_batch_number' : str(row[5]),}
-	table = "straw_glueups"
-	dataLoader = DataLoader(password,url,group,table)
-	dataLoader.addRow(createRow())
-	retVal,code,text =  dataLoader.send()
+		if retVal:
 
-	if retVal:
+			print "glueup upload success!\n"
+			print text
 
-		print "glueup upload success!\n"
+		else:
 
-		print text
+			print "glueup upload failed!\n"
+			print code
+			print text
 
-	else:
-
-		print "glueup upload failed!\n"
-
-		print code
-
-		print text
-
-	dataLoader.clearRows()
+		dataLoader.clearRows()
 
 filelist = os.listdir(path) #directory where things are located
 
 #first upload all make_straw files from that day
-filestart = 'make_straw_all.csv' 
-#filestart = 'make_straw_' + datetime.now().strftime("%Y-%m-%d")
+#filestart = 'make_straw_all.csv' 
+filestart = 'make_straw_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
 		#print path + i
 		upload_file = csv.reader(f)
-		#makestraw() #COMMENTED TEMPORARILY
+		#makestraw()
 		f.close()
 		
 
@@ -264,13 +319,13 @@ filestart = 'leak_test_all.csv'
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):
 		f = open(path + i)
-		print path + i
+		#print path + i
 		upload_file = csv.reader(f)
 		uploadleaktests()
 		f.close()
 		
 		
-##upload straw cut lengths
+#upload straw cut lengths
 filestart= 'straw_cut_length_' + datetime.now().strftime("%Y-%m-%d")
 for i in filelist:
 	if i.startswith(filestart) & i.endswith(".csv"):

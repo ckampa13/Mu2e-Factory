@@ -11,7 +11,7 @@ ppmError = zeros(9,10); %statistical error on averaged ppm datapoints %where the
 for m = 1:2 %row 1 and row 2 data
     for k = 1:5
         for n = 1:4 %read in all four files
-            filename = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/row_',num2str(m),'/','ch',num2str(k-1+5*(m-1)),'_',num2str(n/10), '_',num2str(0.8-n/10+0.1),'mL.txt');
+            filename = strcat('/home/sam/Mu2e-Factory/Chamber_Volume/row_',num2str(m),'/','ch',num2str(k-1+5*(m-1)),'_',num2str(n/10), '_',num2str(0.8-n/10+0.1),'mL.txt');
 
             d = readtable(filename);
             t = table2array(d(:,1)); %times, in epoch time
@@ -122,7 +122,7 @@ for i = 1:10 %fit data and make plots
     f = errorbar(ppmMatrix(:,i),co2, co2err,'o');
     hold on;
     fplot( @(x) coeff(1)*x + coeff(2) );
-    plotname = strcat('/home/sam/Mu2e-Factory/leak_chmb_0-24_calibration/fits/ch',num2str(i-1),'_calibration.png');
+    plotname = strcat('/home/sam/Mu2e-Factory/Chamber_Volume/fits/ch',num2str(i-1),'_calibration.png');
     title(strcat('Chamber ',{' '},num2str(i-1),' Calibration'));
     ylabel('CO$_2$ Injected [mL]');
     xlabel('CO$_2$ detected [ppm]' );
