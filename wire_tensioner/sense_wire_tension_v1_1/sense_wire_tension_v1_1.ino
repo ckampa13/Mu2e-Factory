@@ -19,16 +19,37 @@
 #define highLED 7
 //---buzzer---
 #define buzzerPin 12
+#define buzz_delay 200
+#define freq 220
 
 #define tension_good 80.0
 #define tension_low 79.5
 #define tension_high 80.5
 
+//---linear equation definitions--- following y = m*x + b
+#define low_tension_m -0.2214
+#define low_tension_b 129.36
+//#define high_tension_threshold 36.0 //specified minimum force by spring manufacturer, verified by consistency tests
+#define high_tension_threshold 31.0 //specified minimum force by spring manufacturer, verified by consistency tests
+#define high_tension_m -1.5997
+#define high_tension_b 172.83
+
+//---reversing button------------------------//
+int startButton = 8;        // the number of the input pin
+int state = HIGH;     // the current state of the output pin
+int reading;          // the current reading from the input pin
+int previous = LOW;   // the previous reading from the input pin
+// the follow variables are long's because the time, measured in miliseconds, will quickly become a bigger number than can be stored in an int.
+long time = 0;        // the last time the output pin was toggled
+long debounce = 200;  // the debounce time, increase if the output flickers
+
+/* relic of v1.0
 //looping through spring and pulling only measures 1/2 the actual tension that the spring will give, so we set limits to half the actual values (40-70gf)
 #define min_pull_tension 20.0
 #define max_pull_tension 35.0
 #define min_tension_start 35.0
 #define max_tension_start 75.0
+*/
 
 //#define small_change 5.0 //number of grams before changing to fine tuning
 
@@ -69,6 +90,7 @@ void setup() {
   pinMode(goodLED, OUTPUT);
   pinMode(highLED, OUTPUT);
   pinMode(buzzerPin, OUTPUT);
+  pinMode(startButton, INPUT);
  
   actuator.attach(actuatorPin);
   actuator.write(position_last);
@@ -102,17 +124,53 @@ void loop() {
     }
   }
 
+  //---start/stop button---
+  reading = digitalRead(startButton);
+  // if the input just went from LOW and HIGH and we've waited long enough to ignore any noise on the circuit, toggle the output pin and remember the time
+  if (reading == HIGH && previous == LOW && millis() - time > debounce) {
+    if (mode == "RESET")
+      mode = "TENSION";
+    else
+      mode = "RESET";
+    time = millis();    
+  }
+  //the state measured in this loop becomes 'previous' for the next loop 
+  previous = reading;
+  
   if (mode == "RESET") {
-    tensioner_ready = return_actuator(tension_before);
+    //tensioner_ready = return_actuator(tension_before);
+    if (position_last != 45) {
+      actuator.write(45);
+      digitalWrite(lowLED, LOW);
+      digitalWrite(goodLED, LOW);
+      digitalWrite(highLED, LOW);
+    }
     position_last = 45;
+    delay(500); //can increase delay to save processing
   }
   if (mode == "TENSION") {
-    if (tensioner_ready == true) {
-      position_last = actuator_adjust(position_last,tension_before);  
+    position_last = actuator_adjust(position_last,tension_before);
+    if (position_last >= 140) {
+      mode = "RESET";
+      tone(buzzerPin,freq);
+      delay(buzz_delay);
+      noTone(buzzerPin);
+      delay(buzz_delay);
+      tone(buzzerPin,freq);
+      delay(buzz_delay);
+      noTone(buzzerPin);
+      delay(buzz_delay);
+      tone(buzzerPin,freq);
+      delay(buzz_delay);
+      noTone(buzzerPin);
+      //beep(buzzerPin,98,150,3); //98Hz (G2), 250 millis duration per beep, 3 beeps 
     }
-    else {
-      mode == "RESET";
-    }
+    //if (tensioner_ready == true) {
+      //position_last = actuator_adjust(position_last,tension_before);  
+    //}
+    //else {
+      //mode == "RESET";
+    //}
     //position_hold = actuator_adjust(position_last,tension_before);
     //position_last = position_hold;
   }
@@ -128,11 +186,16 @@ void loop() {
   Serial.print("; Position: ");
   Serial.println(position_last);
 
+  delay(250);
+
   //****maybe move this delay into the loops for more control***
   //delay(1000); //FOR TESTING ONLY
 }
 
-bool return_actuator(float current_tension) {
+/* this whole function may be superfluous
+//bool return_actuator(float current_tension) {
+void return_actuator(float current_tension) {  
+  // relics from v1.0 (tests with threshold tension)
   bool tension_ready = false;
   //let user know when pull tension is in a good range
   if (current_tension > min_pull_tension && current_tension < max_pull_tension) {
@@ -141,7 +204,7 @@ bool return_actuator(float current_tension) {
   else {
     noTone(buzzerPin);
   }
-
+  
   if (current_tension < min_tension_start) {
     digitalWrite(lowLED, HIGH);
     digitalWrite(goodLED, LOW);
@@ -158,17 +221,56 @@ bool return_actuator(float current_tension) {
     digitalWrite(highLED, LOW);
     tension_ready = true; //this is really the only important line of this entire conditional...the rest is just lights. could simplify to a one line conditional.
   }
-
+  
+  
   actuator.write(45);
-  //return tension_ready;
   delay(500); //increase this number to save processing power
-  return tension_ready;
+  //return tension_ready;
 }
+*/
 
 int actuator_adjust(int position_old, float tension){
   int position_new;
-  float delta_position;
+  int delay_time = 800; //default delay for incrementing by 1
+  //float delta_position;
   float delta_tension;
+  
+  //new method for first time through
+  if (position_old == 45) {
+    if (tension < high_tension_threshold) {
+      position_new = floor(low_tension_m * tension + low_tension_b);
+    }
+    else {
+      position_new = floor(high_tension_m * tension + high_tension_b);
+    }
+    delay_time = 4000; //5 s delay to start, adjust as necessary
+  }
+  else {
+    if(tension < tension_low) {
+      position_new = position_old + 1;
+      digitalWrite(lowLED, HIGH);
+      digitalWrite(goodLED, LOW);
+      digitalWrite(highLED, LOW);
+      //delay(50*abs(delta_position));
+    }
+    else if (tension > tension_high) {
+      position_new = position_old - 1;
+      digitalWrite(lowLED, LOW);
+      digitalWrite(goodLED, LOW);
+      digitalWrite(highLED, HIGH);
+      //delay(50*abs(delta_position));
+    }
+    else {
+      position_new = position_old;
+      //delta_position = 10; //for the delay
+      digitalWrite(lowLED, LOW);
+      digitalWrite(goodLED, HIGH);
+      digitalWrite(highLED, LOW);
+      delay_time = 50;
+      //delay(50); // change to change how often we see the tension...low number will help us see initial fluctuations in tension once desired tension range is met
+      //ADD BUZZER?
+    }  
+  }
   //---check whether to extend or retract actuator based on tension
   /*
   if(tension < tension_good) {
@@ -187,6 +289,7 @@ int actuator_adjust(int position_old, float tension){
   actuator.write(position_new);
   */
   //turn on proper LED
+  /*
   delta_tension = abs(tension_good - tension);
   if (delta_tension > 10.0) {
     delta_position = 1.5*delta_tension; //positive if we need to increase tension (retract arm), negative to decrease
@@ -196,29 +299,8 @@ int actuator_adjust(int position_old, float tension){
   }
   delta_position = floor(delta_position);
   //position_new = position_old + delta_position;
-  if(tension < tension_low) {
-    position_new = position_old + delta_position;
-    digitalWrite(lowLED, HIGH);
-    digitalWrite(goodLED, LOW);
-    digitalWrite(highLED, LOW);
-    //delay(50*abs(delta_position));
-  }
-  else if (tension > tension_high) {
-    position_new = position_old - delta_position;
-    digitalWrite(lowLED, LOW);
-    digitalWrite(goodLED, LOW);
-    digitalWrite(highLED, HIGH);
-    //delay(50*abs(delta_position));
-  }
-  else {
-    position_new = position_old;
-    //delta_position = 10; //for the delay
-    digitalWrite(lowLED, LOW);
-    digitalWrite(goodLED, HIGH);
-    digitalWrite(highLED, LOW);
-    delay(50); // change to change how often we see the tension...low number will help us see initial fluctuations in tension once desired tension range is met
-    //ADD BUZZER?
-  }
+  */
+  
   if(position_new < 45) {
     position_new = 45;
   }
@@ -226,16 +308,25 @@ int actuator_adjust(int position_old, float tension){
     position_new = 140;
   }
   actuator.write(position_new);
+  delay(delay_time);
   //delay(50*abs(delta_position));
+  /*
   if (delta_position == 1) {
     delay(750);
   }
   else {
     delay(2000);
   }
+  */
   return position_new; //position_new becomes postion_last
 }
 
+/*
 //--CALIBRATION FUNCTION HERE---
-//bool calibrate () {
-//}
+bool calibrate () {
+  while (calib_reading != 50) {
+    //adjust calib to get the value to 50!
+  }
+
+}
+*/
