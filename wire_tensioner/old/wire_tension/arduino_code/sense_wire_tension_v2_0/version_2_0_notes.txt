@@ -1,0 +1,6 @@
+-Version 2 marks the transition from the actuonix actuator (controled by sending a pulse, similar to a servo)
+  to a stepper motor. The finer linear resolution achieved by the stepper should allow removal of the weak spring.
+  This simplifies the mechanical task of alignment (massive spring sags, precise angle of sense wire with comb unknown).
+-Code side control of stepper is very different than for the old actuator, thus the push to version 2.
+-Adding a calibration function to the main Arduino script so that on the fly or scheduled calibrations can occur
+  without having to change the code.

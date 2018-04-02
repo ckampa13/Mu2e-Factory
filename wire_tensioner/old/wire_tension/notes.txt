@@ -1,0 +1,6 @@
+-Add HX711-Load-Cell-Amplifier-master.zip to Arduino libraries (import .zip library)
+-Servo library should be in the standard Arduino libraries
+-Calibration code found in library (also put in main directory as "SparkFun_HX711_Calibration")
+  +initially have no force on load cell to tare, then with load cell clamped in place, hang 50gf
+    from bent paper clip on load cell, send "+" or "-" via serial until output reads 50. Make note of the calibration factor
+  +in main Arduino code setup() function, change line with "load_cell_set_scale(-11690.f)" to reflect new calibration factor
