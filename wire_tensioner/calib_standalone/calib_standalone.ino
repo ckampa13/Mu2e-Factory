@@ -5,24 +5,24 @@
 #include "HX711.h"
 
 //load cell
-#define DOUT  7
-#define CLK  6
-#define ref_mass 49.8839
+#define loadDAT  7
+#define loadCLK  6
+#define ref_mass 49.9495
 //others
 #define LED 4
 #define buzzerPin 13
-#define buzz_delay 200
-#define freq 220
-#define buzz_delay_bad 500
-#define freq_bad 320
+//#define buzz_delay 200
+//#define freq 220
+//#define buzz_delay_bad 500
+//#define freq_bad 320
 
-char inByte;
+char user_input;
 String mode = "WAIT";
 String last_mode;
 
 float calibration_factor = 11880.0;
 
-HX711 scale(DOUT, CLK);
+HX711 scale(loadDAT, loadCLK);
 
 void setup() {
   Serial.begin(9600);
@@ -44,14 +44,14 @@ void setup() {
 
 void loop() {
   if (Serial.available()) {
-    inByte = Serial.read();
-    if (inByte == '0') {
+    user_input = Serial.read();
+    if (user_input == '0') {
       mode = "WAIT";
     }
-    if (inByte == '1') {
+    if (user_input == '1') {
       mode = "TARE";
     }
-    if (inByte == '2') {
+    if (user_input == '2') {
       mode = "SET";
     }
   }
