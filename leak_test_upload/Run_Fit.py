@@ -21,7 +21,7 @@ def fit(filename):
 	excluded_max_time = 7200
 	
 	#get up-to-date chamber volumes
-	volumes_file = "C:\\Users\\vold\\Desktop\\Mu2e-Factory\\leak_chmb_0-24_calibration\\ch0-ch24_chambervolumes.csv"
+	volumes_file = "C:\\Users\\vold\\Desktop\\Mu2e-Factory\\leak_test_upload\\ch0-ch49_chambervolumes.csv"
 	chamber_volume = [] 
 	chamber_volume_err = []
 	

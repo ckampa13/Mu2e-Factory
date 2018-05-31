@@ -7,7 +7,7 @@ from datetime import datetime
 
 ser = serial.Serial('/dev/ttyACM0',9600) #port on computer
 
-#filename ='C:\\Users\\kahn\\Desktop\\temp_humid\\data' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+ '.csv'
+#filename ='C:\\Users\\vold\\Desktop\\Mu2e-Factory\\temp_humid_sensor\\' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+ '.csv'
 filename = 'test.csv'
 
 f = open(filename,"w")

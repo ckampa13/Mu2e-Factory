@@ -1,0 +1,78 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{lipsum}  
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+
+\graphicspath {{figures/}}
+
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Version:} \#\#  \textbf{Revision:} MM/DD/YY}
+\rhead{\thepage}
+\lfoot{AUTHOR}
+\rfoot{\textit{Mu2e: University of Minnesota}}
+
+\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{mu2e_logo_oval.png}\par\vspace{2cm}
+	{\scshape\LARGE DESCRIPTIVE TITLE\par}
+	\vspace{3cm}
+	{\Large AUTHOR\par}
+	\vspace{3cm}
+	{\large University of Minnesota\par}
+ 	\vspace{.5cm}
+	{\large MONTH DAY, YYYY\par}
+	% Bottom of the page
+	\vfill
+	{EMAIL\par}
+\end{titlepage}
+
+\clearpage
+\setcounter{page}{2}
+
+
+\section{Goal}
+Use as many or few of these sections as you see fit.
+%%Insert your text here...same follows below%%
+
+\section{Equipment}
+
+
+\section{Risks and Dangers}
+
+
+\section{Diagram}
+%%Here is a sample for inserting a picture. Keep all image files in figure/ directory
+	\begin{figure} [h]
+		\centering
+		\includegraphics[width=0.25\textwidth]{dummy.png}
+		\caption{Dummy figure.}
+		\label{fig:dummy}
+	\end{figure}
+
+A figure can be referenced using "\char`\~ \textbackslash ref\{fig:LABEL\}": figure~\ref{fig:dummy}
+
+
+
+\section{Methods}
+\subsection{Preparation}
+
+
+\subsection{Partial Assembly}
+
+\subsection{Complete Assembly}
+
+	
+\subsection{Cleanup}
+
+
+
+\end{document}
