@@ -1,0 +1,1 @@
+this python program compiles the hours worked by each Mu2e worker (from the login computer) and sends out an email each Saturday to the managers. These emails tell how many hours were worked and give plots showing individual worker hours, as well as bar graphs comparing that week's hours to previous weeks.

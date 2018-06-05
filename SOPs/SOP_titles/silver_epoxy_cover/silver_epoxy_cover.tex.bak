@@ -1,0 +1,51 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{changepage}
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[font={small,it}]{caption}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Version:} 2.1  \textbf{Revision:} 4/27/18}
+\rhead{\thepage}
+\lfoot{Sam Penders and Caleb Lindsey}
+\rfoot{\textit{Mu2e: University of Minnesota}}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{mu2e_logo_oval}\par\vspace{2cm}
+	{\scshape\LARGE Silver Epoxy \\
+		Standard Operating Procedures\par}
+	\vspace{3cm}
+
+	{\large Contents:
+	\begin{itemize}
+	\item Silver Epoxy SOP
+	\item Loctite Ablestick 2902 BIPAX (silver epoxy) MSDS
+	\end{itemize}
+	}
+	
+	
+	% Bottom of the page
+\end{titlepage}
+
+\newpage
+\medskip
+{\Large Silver Eopxy SOPS}
+
+\end{document}
