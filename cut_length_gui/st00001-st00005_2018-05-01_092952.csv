@@ -1,0 +1,6 @@
+straw,intended length (in.),measured (inch part),measured (1/64" part),difference from intended length (1/64"),worker id, time (yyyy-mm-dd_HHMMSS)
+st00001,47.5234,47,33,-0.5,wk-spenders01,2018-05-01_092952
+st00002,46.9002,46,57,-0.6,wk-spenders01,2018-05-01_092952
+st00003,46.2479,46,15.4,-0.5,wk-spenders01,2018-05-01_092952
+st00004,45.5651,45,36,-0.2,wk-spenders01,2018-05-01_092952
+st00005,44.8505,44,54,-0.4,wk-spenders01,2018-05-01_092952

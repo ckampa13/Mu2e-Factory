@@ -1,0 +1,25 @@
+straw,intended length (in.),measured length (in), measured - intended (in) ,worker id1, worker id2, time (yyyy-mm-dd_HHMMSS)
+st00001,47.5234,47.0781,-0.4453,worker1,worker2,2018-05-02_101610
+st00002,46.9002,46.7813,-0.1189,worker1,worker2,2018-05-02_101610
+st00003,46.2479,46.3125,0.0646,worker1,worker2,2018-05-02_101610
+,45.5651,,,worker1,worker2,2018-05-02_101610
+,44.8505,,,worker1,worker2,2018-05-02_101610
+,44.1025,,,worker1,worker2,2018-05-02_101610
+,43.3193,,,worker1,worker2,2018-05-02_101610
+,42.4991,,,worker1,worker2,2018-05-02_101610
+,41.6395,,,worker1,worker2,2018-05-02_101610
+,40.7382,,,worker1,worker2,2018-05-02_101610
+,39.7922,,,worker1,worker2,2018-05-02_101610
+,38.7983,,,worker1,worker2,2018-05-02_101610
+,37.7526,,,worker1,worker2,2018-05-02_101610
+,36.6507,,,worker1,worker2,2018-05-02_101610
+,35.4874,,,worker1,worker2,2018-05-02_101610
+,34.2563,,,worker1,worker2,2018-05-02_101610
+,32.9498,,,worker1,worker2,2018-05-02_101610
+,31.5584,,,worker1,worker2,2018-05-02_101610
+,30.0703,,,worker1,worker2,2018-05-02_101610
+,28.4702,,,worker1,worker2,2018-05-02_101610
+,26.7378,,,worker1,worker2,2018-05-02_101610
+,24.8452,,,worker1,worker2,2018-05-02_101610
+,22.7522,,,worker1,worker2,2018-05-02_101610
+,20.8654,,,worker1,worker2,2018-05-02_101610

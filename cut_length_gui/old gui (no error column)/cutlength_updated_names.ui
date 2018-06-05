@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1181</width>
+    <height>946</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="upload_button">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>630</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>8777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Upload data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="upload_button_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>630</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>8777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 229, 0);</string>
+    </property>
+    <property name="text">
+     <string>Save data</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_5">
+    <property name="geometry">
+     <rect>
+      <x>71</x>
+      <y>41</y>
+      <width>166</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="0" column="0">
+      <widget class="QLineEdit" name="worker_barcode">
+       <property name="placeholderText">
+        <string>worker barcode</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>71</x>
+      <y>94</y>
+      <width>493</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Panel Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lowest_st">
+         <property name="placeholderText">
+          <string>lowest straw</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="highest_st">
+         <property name="placeholderText">
+          <string>highest straw</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QComboBox" name="panelType">
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>0, 4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2, 6</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>964</width>
+      <height>439</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Straw</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_0"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_1"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_2"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_3"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_4"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_5"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_6"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_7"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_8"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_9"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_10"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_11"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Intended (in.)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_0"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_1"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_2"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_3"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_4"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_5"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_6"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_7"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_8"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_9"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_10"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_11"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Measured (in.)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_0"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_1"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_2"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_3"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_4"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_5"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_6"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_7"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_8"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_9"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_10"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_11"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_3">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Straw</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_12"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_13"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_14"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_15"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_16"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_17"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_18"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_19"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_20"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_21"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_22"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="straw_23"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Intended (in.)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_12"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_13"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_14"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_15"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_16"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_17"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_18"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_19"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_20"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_21"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_22"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="intended_len_23"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Measured  (in.)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_12"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_13"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_14"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_15"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_16"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_17"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_18"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_19"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_20"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_21"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_22"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mlen_23"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>frame_5</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>upload_button</zorder>
+   <zorder>upload_button_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1181</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>upload_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>upload_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>589</x>
+     <y>682</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>823</x>
+     <y>676</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upload_button_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>482</x>
+     <y>682</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>panelType</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>fill_info()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>441</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>short_st_name()</slot>
+  <slot>long_st_name()</slot>
+  <slot>fill_names()</slot>
+  <slot>fill_info()</slot>
+  <slot>upload_data()</slot>
+  <slot>save_data()</slot>
+ </slots>
+</ui>
