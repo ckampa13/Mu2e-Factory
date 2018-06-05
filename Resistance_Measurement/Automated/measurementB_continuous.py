@@ -20,7 +20,7 @@
 #
 #   adjusted order: 1)erfrgrhr 2)arbrcrdr 3)mrnrorpr 4)irjrkrlr
 
-#### TEST A: New Method (calculate from bits only) ####
+#### TEST B: Original Method (calculate from reference voltage) ####
 
 import serial
 from datetime import datetime
@@ -35,9 +35,6 @@ from colorama import Back#, Fore, Style
 #set a larger window size
 os.system('mode con: cols=115 lines=50')
 
-clear = lambda: os.system('cls')
-clear()
-
 ##-Global Variables-##
 inf_low_limit = 1000.0 #determining if io and oi measurements are open circuits
 ii_pass_range = [150.0,250.0]
@@ -49,11 +46,11 @@ com_port = 'COM3'
 #calib_file = 'calib_testing.csv'
 calib_file = 'Calibration\\calib.csv'
 #calib_file_adjusted = 'Calibration\\calib_adjusted.csv'
-#<<<<<<< HEAD
-#dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\resistanceA_1run_'
-#=======
-dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\raw_data\\resistanceA_1run_'
-#>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
+<<<<<<< HEAD
+dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\resistanceB_1run_'
+=======
+dataFile = 'Resistance_Data\\voltage_vs_bits_tests\\raw_data\resistanceB_1run_'
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 #dataFile_adjusted = 'Resistance_Data\\StrawResistance_' + datetime.now().strftime('%Y-%m-%d_%H%M%S') + '_ADJUSTED_CALIB.csv'
 
 meas_cycles = 'abcdefghijklmnop'
@@ -113,8 +110,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         ser.write(b'z')
     #getting calibration info
     Vin, V5, r2_list, meas_dict = calibration_store(c_file)
-	
-    V5 = 1023.0
+
     '''
     ###TESTING###
     i = 1
@@ -150,9 +146,8 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
         i = 0
         #we must sort straws dict otherwise python iterates over it randomly :( Fixed 9/28/17
         for key, v_out in sorted(straws.items()):
-            #v_out = float(bits_list[i])*V5/1023.0
-            v_out = float(bits_list[i])
-			
+            v_out = float(bits_list[i])*V5/1023.0
+
             '''
             ##TESTING##
             print(key + ', ' + str(bits_list[i]) + ', ' + str(v_out))
@@ -165,7 +160,7 @@ def measure_resistance(avg_type, meas_cycles, straw_start, straw_end, c_file):
             i += 1
             #straws dictionary now contains key: straw#+measurement type and value: measured voltage
             if v_out != 0:
-                meas_dict[key][3] = float(r2_list[(int(key[:2])-1)//4]) * (V5/v_out - 1)
+                meas_dict[key][3] = float(r2_list[(int(key[:2])-1)//4]) * (V5 - v_out) / v_out
             else:
                 meas_dict[key][3] = 1000000
             ############
@@ -246,7 +241,7 @@ def display_resistance(straw_dictionary):
     print('#/Type   Ohms    p/f ')
     print('---------------------')
     i = 1
-    for key, value in sorted(straw_dictionary.items(),reverse=True):
+    for key, value in sorted(straw_dictionary.items()):
         print('(' + str(key) + ': ' , end='')
         #print('(' + str(key) + ', ' + str(value[2]) + ': [' , end='')
         #this if statement just formats the printing to look pretty
@@ -308,8 +303,8 @@ def main():
     wrkst = 'wsb-001'
     temp = 72.0
     humid = 20.0
-    str_start = 'ST00024'
-    str_end = 'ST00001'
+    str_start = 'ST00001'
+    str_end = 'ST00024'
 	
     straw_dict = {}
     save_dict = {}
@@ -322,7 +317,6 @@ def main():
     #print('Using first calibration file...\n')
     repeat = True
     while(repeat == True):
-        clear()
         input("Press enter to measure resistance...")
         straw_dict = measure_resistance(avg_method, meas_cycles,
                                         str_start, str_end,calib_file)
@@ -379,8 +373,8 @@ def main():
     
     colorama.deinit()  #turn colorama ANSII conversion off
 
-#<<<<<<< HEAD
+<<<<<<< HEAD
 main()
-#=======
-#main()
-#>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
+=======
+main()
+>>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa

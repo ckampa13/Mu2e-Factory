@@ -21,26 +21,26 @@
 #! c:\Python27\python27.exe
 
 from datetime import datetime
-<<<<<<< HEAD
 
-print 'scan worker ID'
-worker_id = raw_input()
-print 'scan workstation ID'
-workstn_id = raw_input()
-print 'scan batch number'
-batchnum = raw_input()
-print '\nscan first straw barcode (lowest number)'
-straw1 = raw_input()
-print '\nscan last straw barcode (highest number)'
-straw2 = raw_input()
+# print('\nscan worker ID--must be your real ID (e.g. "wk-spenders01")')
+# worker_id = raw_input()
+# #print 'scan workstation ID'
+# #workstn_id = raw_input()
+# workstn_id = 'wsb0001'
+# print 'scan batch number'
+# batchnum = raw_input()
+# print '\nscan first straw barcode (lowest number)'
+# straw1 = raw_input()
+# print '\nscan last straw barcode (highest number)'
+# straw2 = raw_input()
 
-filename ='C:\\Users\\vold\\Desktop\\straw_database\\make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
-output = open(filename,"w")
+# #filename ='C:\\Users\\vold\\Desktop\\straw_database\\make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
+# filename ='data\\make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
+# output = open(filename,"w")
 
-start = int(straw1[2:])
-end = int(straw2[2:])
+# start = int(straw1[2:])
+# end = int(straw2[2:])
 
-=======
 from DataLoader import DataLoader, DataQuery
 import csv
 
@@ -149,7 +149,6 @@ while correct_straws == False:
 				else:
 					input_in = False
 	
->>>>>>> 4200f5ff179bdd039f7f5afeab69bcc4ed327bfa
 for i in range (start,end+1):
 	output.write(straw_name[i-start] )
 	output.write(',')
@@ -168,7 +167,7 @@ output.close()
 #('straw barcode --  batch num -- parent -- worker -- time workstation ID time')
 # need workstation id for database
 
-
+#filename = 'C://Users//LArTPC//Desktop//Mu2e-Factory//make_straw//make_straw_2018-04-10_091937_wsb0001.csv'
 upload(filename)
 
 

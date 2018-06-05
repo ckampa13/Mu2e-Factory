@@ -245,13 +245,20 @@ def display_resistance(straw_dictionary):
     print()
     print('#/Type   Ohms    p/f ')
     print('---------------------')
-    i = 1
-    for key, value in sorted(straw_dictionary.items(),reverse=True):
-        print('(' + str(key) + ': ' , end='')
+    #i = 1
+	for straws in sorted(straw_nums,reverse=True):
+	    print('(' + str(key) + ': ' , end='')
+		print('(' + str(key) + ': ' , end='')
+		print('(' + str(key) + ': ' , end='')
+		print('(' + str(key) + ': ' , end='')
+    r_num = 0;
+	rows = []
+	for key, value in sorted(straw_dictionary.items()):
+        rows.append(print('(' + str(key) + ': ' , end='')
         #print('(' + str(key) + ', ' + str(value[2]) + ': [' , end='')
         #this if statement just formats the printing to look pretty
         if str(value[4]) == 'inf':
-            print('%7s' % str(value[4]), end='')
+            rows[r_num] += ('%7s' % str(value[4]), end='')
         else:
             print('%7.2f' % float(value[4]), end='')
         print(', ', end='')

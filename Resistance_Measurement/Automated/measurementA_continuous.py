@@ -35,9 +35,6 @@ from colorama import Back#, Fore, Style
 #set a larger window size
 os.system('mode con: cols=115 lines=50')
 
-clear = lambda: os.system('cls')
-clear()
-
 ##-Global Variables-##
 inf_low_limit = 1000.0 #determining if io and oi measurements are open circuits
 ii_pass_range = [150.0,250.0]
@@ -246,7 +243,7 @@ def display_resistance(straw_dictionary):
     print('#/Type   Ohms    p/f ')
     print('---------------------')
     i = 1
-    for key, value in sorted(straw_dictionary.items(),reverse=True):
+    for key, value in sorted(straw_dictionary.items()):
         print('(' + str(key) + ': ' , end='')
         #print('(' + str(key) + ', ' + str(value[2]) + ': [' , end='')
         #this if statement just formats the printing to look pretty
@@ -321,10 +318,17 @@ def main():
 
     #print('Using first calibration file...\n')
     repeat = True
-    while(repeat == True):
-        clear()
-        input("Press enter to measure resistance...")
-        straw_dict = measure_resistance(avg_method, meas_cycles,
+    iteration = 0
+	input("Press enter to measure resistance...")
+	while(iteration < 50):
+        #input("Press enter to measure resistance...")
+        for value in straw_nums:
+            save_dict[value+'ii'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+            save_dict[value+'io'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+            save_dict[value+'oi'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+            save_dict[value+'oo'] = [0,0,'',0,0,0,'fail']  #[% error, device resistance, pass/fail]
+		
+		straw_dict = measure_resistance(avg_method, meas_cycles,
                                         str_start, str_end,calib_file)
         i = 0
         for key, value in sorted(save_dict.items()):
@@ -342,7 +346,9 @@ def main():
         display_resistance(save_dict)
         #repeat = check_repeat()
         repeat = False
-    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end)
+	    save_resistance(wrkr, wrkst, temp, humid, save_dict,dataFile,str_start,str_end)	
+        iteration += 1
+		time.sleep(1)
     input('Press enter to exit...')
 
     ''' This section was used in testing different calibration methods
