@@ -1,4 +1,4 @@
-\documentclass[A4,12pt]{article}
+\documentclass[letterpaper,12pt]{article}
 \usepackage{geometry}
 \usepackage{multicol}
 \usepackage{lipsum}
@@ -110,7 +110,7 @@ Care must be taken when cleaning with isopropyl alcohol. Contact with skin can c
 
 \subsection{Emptying Leak Chamber}
 	\begin{enumerate}
-		\item On computer, go to the window with the leak test program running (if the window . If a straw passed or failed test, select the $j^{th}$ chamber (where $j$ is the chamber number, e.g. 1) by entering: \texttt{chj} 
+		\item On computer, go to the window with the leak test program running (if the program is open and running. If not, proceed to section \ref{performing test}). If a straw passed or failed the test, select the $j^{th}$ chamber (where $j$ is the chamber number, e.g. 1) by entering: \texttt{chj} 
 		
 Then, enter: \texttt{empty}
 
@@ -124,7 +124,7 @@ The $j^{th}$ leak chamber is now ready to be physically emptied. \label{empty1}
 	
 \end{enumerate}
 
-\subsection{Performing Test}
+\subsection{Performing Test} \label{performing test}
 	\begin{enumerate}
 		\item On N$_2$ tank, open center and regulator valves by a full turn. Make sure N$_2$ valve is closed on each leak chamber.
 		\item Insert nozzle into straw endpiece hose and let flush for 10 seconds. Meanwhile, apply a dab of vacuum grease to a hose plug, and plug hose on side opposite to CO$_2$ nozzle. \label{1}
@@ -159,7 +159,7 @@ The $j^{th}$ leak chamber is now ready to be physically emptied. \label{empty1}
 		\begin{adjustwidth}{1cm}{}
 		{\bf Solution:} Empty the chamber in the program. Ask a manager to delete the incorrectly named file. Re-enter the correct straw in the leak test program.
 		\end{adjustwidth}
-		
+\newpage		
 \item {\bf Problem:} A straw is epoxied at the endpiece to the pallet, so I can't remove it.
 		\begin{adjustwidth}{1cm}{}
 		{\bf Solution:} Carefully try to peel stuck end off of plastic. If it looks okay, leak test it as usual. If it is obviously damaged, cut damaged end off of straw and give to epoxy station to re-epoxy and endpiece in.

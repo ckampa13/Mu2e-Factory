@@ -17,7 +17,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\textbf{Version:} 2.1  \textbf{Revision:} 4/27/18}
+\lhead{\textbf{Version:} 3.0 \textbf{Revision:} 6/7/2018}
 \rhead{\thepage}
 \lfoot{Sam Penders and Caleb Lindsey}
 \rfoot{\textit{Mu2e: University of Minnesota}}
@@ -30,16 +30,14 @@
 	\centering
 	\includegraphics[width=0.5\textwidth]{mu2e_logo_oval.png}\par\vspace{2cm}
 	{\scshape\LARGE CO$_2$ Leak Testing of Straws \\
-		Standard Operating Procedure\par}
+		Standard Operating Procedure \\ Version 3.0 \par}
 	\vspace{3cm}
 	{\Large Sam Penders\par}
     \vspace{.5cm}
-    {\small Revised by Caleb Lindsey\par}
-    {\small 4/27/18\par}
 	\vspace{3cm}
 	{\large University of Minnesota\par}
  	\vspace{.5cm}
-	{\large October 27, 2017\par}
+	{\large June 7, 2018\par}
 	% Bottom of the page
 	\vfill
 	{\href{mailto:pende061@physics.umn.edu}
@@ -70,6 +68,7 @@ All Mylar straws in the Mu2e electron tracker panels will be inflated with a mix
 \begin{multicols}{2}
 \begin{myitemize}
 	\item Pallet with Mylar straws
+	\item An empty pallet
 	\item CO$_2$ tank with regulator attached
 	\item N$_2$ tank with regulator attached
 	\item CO$_2$ pressure gauge and flow meter with hose 
@@ -79,7 +78,7 @@ All Mylar straws in the Mu2e electron tracker panels will be inflated with a mix
 	\item Plastic straw loading tubes
 	\item Magnetic grabber
 	\item Arduino Unos connected to leak chambers and computer
-	\item Isopropyl alcohol and paper towels
+	%\item Isopropyl alcohol and paper towels
 	\item Form--fitting nitrile gloves
 \end{myitemize}
 \end{multicols}
@@ -93,7 +92,7 @@ There is an inherent danger when working with pressurized gases. Because the N$_
 
 High levels of CO$_2$ in the air can make a person feel dizzy. To CO$_2$ levels from getting high, the lab has a good ventilation system. Make sure that you can hear the sound of fans from the laboratory ventilation system when working with the CO$_2$. If you do feel dizzy, close the CO$_2$ tank valve and step outside for a few minutes. Always close the gas tanks when not in use.
 
-Care must be taken when cleaning with isopropyl alcohol. Contact with skin can cause irritation, so nitrile gloves should be worn at all times. If alcohol gets on skin, it should be washed off with soap and water. If alcohol gets in your eyes, they should be rinsed in the eye wash for several minutes. Then, go to a doctor.
+%Care must be taken when cleaning with isopropyl alcohol. Contact with skin can cause irritation, so nitrile gloves should be worn at all times. If alcohol gets on skin, it should be washed off with soap and water. If alcohol gets in your eyes, they should be rinsed in the eye wash for several minutes. Then, go to a doctor.
 
 
 \newpage
@@ -115,36 +114,39 @@ Care must be taken when cleaning with isopropyl alcohol. Contact with skin can c
 \end{figure}
 
 
-    
-    
-
-
-\subsection{Loading Straws} \label{performing test}
+\subsection{Inflating Straws} \label{performing test}
+{\bf Note: Avoid bending the straws in any way}
 	\begin{enumerate}
-		\item On N$_2$ tank, open center and regulator valves by a full turn. Make sure N$_2$ valve is closed on each leak chamber.
-		\item Insert nozzle into straw end-piece hose and let flush for 10 seconds. Meanwhile, apply a dab of vacuum grease to a hose plug, and plug hose on side opposite to CO$_2$ nozzle. \label{1}
-		\item Apply dab of vacuum grease to another plug. On CO$_2$ hose side of straw, pinch end-piece hose with pliers and remove CO$_2$ hose. While continuing to pinch hose, insert plug into straw hose.
-		\item If testing entire pallet, inflate all straws and then carry loaded pallet over to loading station.  For individual straws, slide inflated straw into a tube and skip to step \ref{load}.
-		\item Carefully lift each straw from one end and push it into a tube about 5 inches.  Then pull the tube over the straw so that each straw is inside a tube and still on the pallet.
-        \item Make sure leak chambers are empty before sliding in tubes.  Load desired straws into chambers. \label{load}
-		\item With straw in chamber and the chamber open, open black N$_2$ valve lever on chamber so it will flush.  Flush chamber for about 30 seconds.  Flush only one chamber at a time. \label{flush}
-		\item After flushing, close black N$_2$ valve and seal chamber by turning the white lever to the left.  
+		\item Gently hold an endpiece hose with the pliers, resting the plier's tip on the pallet. With the CO$_2$ on and the flow gauge set to 10 scfh, insert the nozzle on the CO$_2$ hose into the first straw endpiece hose. \label{flush step}
+		\item While the CO$_2$ flushes the straw, apply a minimal amount of vacuum grease to a hose plug. Hold the endpiece hose on the side opposite with the pliers, as in step \ref{flush step}, and insert the plug. The straw should have flushed for $\sim 10$ seconds.
+		\item Apply a minimal amount of vacuum grease to another endpiece plug. On the CO$_2$ hose side of straw, pinch the end-piece hose with pliers while resting the pliers firmly against the pallet, and pull the CO$_2$ hose away from the hose. While continuing to pinch the hose, insert the plug into the straw hose.
+		\item Listen for a leak in the straw. If you hear one, try to find where it is coming from and circle the hole. Do not bother leak testing a straw with an apparent leak.
+		\item Repeat for all straws on the pallet.
+		\item With a cotton swab, wipe off all excess vacuum grease from the endpiece hoses.
+
+\subsection{Loading and Flushing Chambers}	
+		\item Transfer the pallet full of straws to the table by the leak testing chambers. Place the empty pallet with its end next to the end of the full one and place 24 plastic loading tubes onto the empty pallet.		
+		\item Carefully lift the end of a straw about by the hose about 1 cm. Slide a plastic tube onto the straw to about half of the straw's length. Lift up the other end of the straw by the hose, and slide the rest of the straw into the tube. Repeat for all straws.
+		 \item Pick up a tube with a straw inside and slide it into a leak chamber, with the end of the tube with the nut going in last. Leave the end of the chamber open, and turn the black nitrogen valve clockwise on the leak chamber to allow nitrogen to flush out the chamber. \label{load}
+		 \item Go get another loading tube with a straw inside, and put it into the next chamber, in the same way as Step \ref{load}. Now, close the nitrogen valve on the previous chamber, and close the loading valve on the previous chamber. {\bf Close the nitrogen valve, THEN close the loading valve. The previous chamber should have flushed for about 15 seconds.} With the loading valve open on the chamber you just filled, open its nitrogen value (clockwise). Repeat this step until all straws are in a chamber.
+		 \item When all chambers are loaded and flushed, close the two valves on the nitrogen tank.
         
 \end{enumerate}
 
+
 \subsection{Measuring Leak Rate}
 	\begin{enumerate}
-    	\item Open the leak test GUI, titled "Leak Test GUI Launcher.py".  It is located on the desktop.  A picture of the right-half of the GUI is shown in figure \ref{GUI}.
-        \item Before loading or unloading straws, log into the worker portal.  Do this by clicking the "log in" button at the top of the GUI and entering your worker ID.
-        \item Make sure straws have been properly loaded into the chambers, following section \ref{performing test}.  Nitrogen supply should be cut off and the white lever should be closed.
+    	\item Open the leak test GUI, named {\tt Leak Test GUI Launcher.py}, located on the desktop.  A picture of the right-half of the GUI is shown in figure \ref{GUI}.
+        \item Click the login button on the top of the GUI screen and enter your name.
+        \item Make sure all nitrogen valves on the leak chambers are closed, and all leak test chambers are closed.
         \item To start taking data on a specific row, click the "Start Data" button below the desired chamber row.  When a chamber row is active the square in which the number resides will turn green.
-        \item To load each straw, click "Load Straw", enter the straw ID, and click ok.
-        \item Straws take 60-90 minutes to test.  A plot of the measured data can be viewed for each straw by clicking the "Plot" icon below each straw.  This can be used to make sure straw leak rates are being measured correctly.  A proper plot will have a strong linear trend.
+        \item To load each straw, click ``Load Straw'', scan the straw barcode into the box, and click ``OK.'' This is quickest if one person clicks on the boxes, and one person scans the barcodes.
+        \item Straws take 45-60 minutes to test.  A plot of the measured data can be viewed for each straw by clicking the ``Plot'' icon below each straw. This can be used to make sure straw leak rates are being measured correctly. A good straw will have a clearly linear leak plot.
         \end{enumerate}
 
-\begin{figure}
+\begin{figure}[ht]
 	\center
-	\includegraphics[scale=0.5]{GUI.JPG}
+	\includegraphics[scale=0.5]{GUI}
 	\caption{Right-half of the Leak Test GUI.  Row 6 is the only row running.  The straws with green backgrounds pass, the red one has failed, and the blue ones are either empty or still testing.} \label{GUI}
 \end{figure}
 
@@ -156,11 +158,12 @@ Care must be taken when cleaning with isopropyl alcohol. Contact with skin can c
 \subsection{Emptying Leak Chamber}
 	\begin{enumerate}
 		\item When a straw is done testing it will light up either red or green.  Green straws meet the minimum leak rate requirement, but red ones have failed.  
-	\item Before physically removing finished straws, click "Unload", and make sure the straw name disappears from the GUI.  
-	\item Open the white lever and use the magnetic grabber to gently remove the tube.  Slide the straw out of the tube.  Pick up straw by gently pulling straw hoses taut. Put straw back into spot on pallet.  Pull hose plugs out of straw.  
+	\item Before physically removing finished straws, click ``Unload'', and make sure the straw name disappears from the GUI.  
+	\item Open the white lever and use the magnetic grabber to gently remove the tube. Place the tube on the pallet spot the straw came from, and carefully slide the tube off of the straw so the straw goes back in its place. Carefully pull the plugs out of the straw hoses and put them back into their bin.
+	\item Repeat for all straws.
 	\item If a row has no straws being tested, click "Stop Data" to turn it off.
-    \item Repeat x21000
-	
+	\item Put a check mark in the box next to the straw in the ``L'' section (``L'' for ``leak'') if the straw passed. If it failed, but a ``X in the box.
+	''
 \end{enumerate}
 
 \subsection{Cleanup}
@@ -196,15 +199,9 @@ Care must be taken when cleaning with isopropyl alcohol. Contact with skin can c
 		\begin{adjustwidth}{1cm}{}
 		{\bf Solution:} Empty the chamber in the program. Ask a manager to delete the incorrectly named file. Re-enter the correct straw in the leak test program.
 		\end{adjustwidth}
-\newpage		
 \item {\bf Problem:} A straw is epoxied at the end-piece to the pallet, so I can't remove it.
 		\begin{adjustwidth}{1cm}{}
-		{\bf Solution:} Carefully try to peel stuck end off of plastic. If it looks okay, leak test it as usual. If it is obviously damaged, cut damaged end off of straw and give to epoxy station to re-epoxy and end-piece in.
-		\end{adjustwidth}
-		
-\item {\bf Problem:} A straw is stuck in the chamber.
-		\begin{adjustwidth}{1cm}{}
-		{\bf Solution:} Unplug sensor cable from chamber, and slide entire chamber off of rack. With the straw loading valve open and hold over valve, tip chamber upside down and try to shake straw out. If this doesn't work, try to grab onto the straw with claw grabber. If this doesn't work, consult manager.
+		{\bf Solution:} Carefully try to peel stuck end off of plastic. If it looks okay, leak test it as usual. If it is obviously damaged, cut damaged end off of straw and give to epoxy station to re-epoxy an endpiece in.
 		\end{adjustwidth}
 		
 
