@@ -3,6 +3,7 @@
 \usepackage{subcaption}
 \usepackage[english]{babel}
 \usepackage{fancyhdr}
+\usepackage{siunitx}
 
 \graphicspath {{figures/}}
 
@@ -31,7 +32,7 @@
 	{\large November 2, 2017\par}
 	% Bottom of the page
 	\vfill
-	{kampa041@umn.edu\par}
+	{\verb|kampa041@umn.edu|\par}
 \end{titlepage}
 
 \clearpage
@@ -108,20 +109,26 @@ The primary risk associated with this measurement is the risk of damaging the st
 
 \subsection{Collect Data}
 \begin{enumerate}
-	\item Run measurement.py (or corresponding shortcut on Desktop)
+	\item Open resistance test GUI from shortcut, named \verb|RUN_RESISTANCE_TEST|, on desktop. A screenshot of the GUI is shown in Figure \ref{gui}.
 	\item Using barcode scanner at computer, scan worker ID and workstation ID
-	\item Check the MyAcurite page bookmarked on Internet Explorer on the computer and enter the current temperature and humidity (from 'Electron' device)
-	\item Scan in the straw ID for the bottom straw in the pallet (nearest the edge of the desk), then the top straw.
+	\item Scan in the straw barcode for the lowest-numbered straw on the pallet into the box in the GUI.
 	\item Have one person stand at the left connector. They should use their forearm to apply even pressure to the top of the left connector, while the operator applies even pressure to the right connector (figure 4).
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.075 , angle=270]{closed_right_pressure}
 		\caption{Putting pressure on the right connector. Make sure to wear gloves when connector is actually attached to straws.}
 	\end{figure}
-	\item Press enter to measure the resistance.
-	\item Display will show measurements with pass or fail rankings. If more measurement cycles are necessary, respond 'n' to the prompt and repeat steps 6. \& 7. until satisfactory measurements are taken.
-	\item Type 'y' instead of 'n' and hit enter to save.
+	\item Click on ``generate'' in the GUI to measure the resistances.
+	\item The display will show measurements with pass or fail ratings, with green for pass and red for fail. To retest the straws that failed, simply hit ``generate'' again.
+	\item The data saves automatically. When finished, either exit out of the program, or click on ``reset'' to test another pallet of straws.
 \end{enumerate}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{gui}
+	\caption{Resistance testing GUI.}
+	\label{gui}
+\end{figure}
 
 \subsection{Cleanup}
 \begin{enumerate}
@@ -149,29 +156,35 @@ $ \$ python measurement.py \$ $
 	\item Hardware Errors:
 	\begin{itemize}
 		\item Crashes immediately upon running:
+		\begin{itemize}
 		\item Verify Arduino is plugged in to power and USB to computer
 		\item Using Arduino software, check port of board (‘COM\#\#’ on Windows, ‘dev/...’ on Linux) using Tools-Port (should be listed as Arduino Uno)
-		\item make sure com\_port variable in measurement.py line 42 matches port
+		\item make sure \verb|com_port| variable in \verb|measurement.py| line 42 matches port
+		\end{itemize}
 	\end{itemize}
 	\item Typographical Errors:
 	\begin{itemize}
 		\item Fails at Temp or Humid:
+		\begin{itemize}
 		\item Make sure to enter int or float values
 		\item Fails after entering start and end straws
 		\item Verify format of ‘st\#\#\#\#\#’ where \# are digits 0-9
 		\item Difference between start and end straw should be 23 (i.e. full pallet of 24 straws, in order)
+		\end{itemize}
 	\end{itemize}
 	\item Bad Measurements:
 	\begin{itemize}
 		\item Check last time of calibration (kept in log sheet on desk above resistance meter)
 		\item Try redoing calibration (see SOP for calibration)
 		\item Make sure connections are solid
-		\item One channel always reads 0 Ohms or inf when it shouldn’t:
+		\item One channel always reads zero ohms or inf when it shouldn’t:
+		\begin{itemize}
 		\item Use handheld multimeter to measure resistance from connection point at straw to cable end (see pinout diagrams). If resistance is high, check connection points along the way: ribbon connector (upside down), solder points (copper tape), copper tape to aluminum bullet in bottom half.
 		\item Isolate problem and resolder if necessary
 		\item Connect calibration pallet 1 (150 Ohm resistors) to resistance meter and run measurement.py, if channel still measures improperly, there might be a problem with the PCB (likely a failed multiplexer or a broken trace, which are not easy to fix. Put to side to be inspected by electronics specialist)
 		\item Multiple lines going to the same analog input of Arduino (see pinout diagrams) are not working, test PCB with a new Arduino
 		\item Test a new PCB if necessary
+		\end{itemize}
 	\end{itemize}
 \end{enumerate}
 
