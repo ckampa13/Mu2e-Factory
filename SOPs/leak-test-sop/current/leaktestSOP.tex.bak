@@ -1,4 +1,4 @@
-\documentclass[A4,12pt]{article}
+\documentclass[letterpaper,12pt]{article}
 \usepackage{geometry}
 \usepackage{multicol}
 \usepackage{lipsum}
@@ -9,7 +9,7 @@
 \usepackage{cite}
 \usepackage{float}
 \usepackage{hyperref}
-\usepackage[font={small,it}]{caption}
+\usepackage[font={small}]{caption}
 \usepackage[english]{babel}
 \usepackage{fancyhdr}
 
@@ -80,6 +80,7 @@ All Mylar straws in the Mu2e electron tracker panels will be inflated with a mix
 	\item Arduino Unos connected to leak chambers and computer
 	%\item Isopropyl alcohol and paper towels
 	\item Form--fitting nitrile gloves
+	\item Cotton swabs
 \end{myitemize}
 \end{multicols}
 
@@ -104,14 +105,9 @@ High levels of CO$_2$ in the air can make a person feel dizzy. To CO$_2$ levels 
 	\item Put on nitrile gloves that fit snuggly. These must be worn at all times when handling straws.
 	\item Check that the regulator is attached to CO$_2$ tank. Do not touch center regulator knob. Open both the gas cylinder and regulator exit valve completely. (Figure \ref{co2tank}) If these are only partially opened, gas may leak from the valve.   
 	\item Check cylinder pressure. If below 200 psi, stop using cylinder immediately. If below 500 psi, have Dan order a new cylinder.
-	\item Adjust flow meter on near pressure gauge to 10 scfh. Cover end of CO$_2$ nozzle with finger and confirm that the pressure on near pressure gauge reads $15.0 \pm 0.1$ psi. If not, consult a supervisor.
+	\item Adjust flow gauge (Figure \ref{flow gauge}) on near pressure gauge to 10 scfh. Cover end of CO$_2$ nozzle with finger and confirm that the pressure on near pressure gauge reads $15.0 \pm 0.1$ psi. If not, consult a supervisor.
 \end{enumerate}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth,angle=-90]{flow_gauge}
-	\caption{Flow gauge. The left gauge adjusts the flow rate, and should be set to 10 scfh. The right gauge shows the gas pressure, which should be approximately 15 PSI.}
-\end{figure}
 
 \begin{figure}
 	\center
@@ -119,45 +115,78 @@ High levels of CO$_2$ in the air can make a person feel dizzy. To CO$_2$ levels 
 	\caption{CO$_2$ tank with regulator attached. The regulator adjustment knob in the center should not be adjusted. The N$_2$ tank regulator is identical.} \label{co2tank}
 \end{figure}
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth,angle=-90]{flow_gauge}
+	\caption{Flow gauge. The left gauge adjusts the flow rate, and should be set to 10 scfh. The right gauge shows the gas pressure, which should be approximately 15 PSI.}
+	\label{flow gauge}
+\end{figure}
+
 
 \subsection{Inflating Straws} \label{performing test}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[width=0.6\textwidth, angle=-90]{inflate_setup}
+	\caption{Straw inflation setup.}
+	\label{inflate setup}
+\end{figure}
 {\bf Note: Avoid bending the straws in any way}
 	\begin{enumerate}
 		\item Gently hold an endpiece hose with the pliers, resting the plier's tip on the pallet. With the CO$_2$ on and the flow gauge set to 10 scfh, insert the nozzle on the CO$_2$ hose into the first straw endpiece hose. \label{flush step}
 		\item While the CO$_2$ flushes the straw, apply a minimal amount of vacuum grease to a hose plug. Hold the endpiece hose on the side opposite with the pliers, as in step \ref{flush step}, and insert the plug. The straw should have flushed for $\sim 10$ seconds.
-		\item Apply a minimal amount of vacuum grease to another endpiece plug. On the CO$_2$ hose side of straw, pinch the end-piece hose with pliers while resting the pliers firmly against the pallet, and pull the CO$_2$ hose away from the hose. While continuing to pinch the hose, insert the plug into the straw hose.
+		\item Apply a minimal amount of vacuum grease to another endpiece plug. On the CO$_2$ hose side of straw, pinch the endpiece hose with pliers while resting the pliers firmly against the pallet, and carefully pull the CO$_2$ hose away from the hose. While continuing to pinch the hose, insert the plug into the straw hose.
 		\item Listen for a leak in the straw. If you hear one, try to find where it is coming from and circle the hole. Do not bother leak testing a straw with an apparent leak.
 		\item Repeat for all straws on the pallet.
 		\item With a cotton swab, wipe off all excess vacuum grease from the endpiece hoses.
+		
 
 \subsection{Loading and Flushing Chambers}	
 		\item Transfer the pallet full of straws to the table by the leak testing chambers. Place the empty pallet with its end next to the end of the full one and place 24 plastic loading tubes onto the empty pallet (Figure \ref{tubes on pallet}).	Note that the ends of the tubes with nuts on them are away from the straws.	
-		\item Carefully lift the end of a straw about by the hose about 1 cm. Slide a plastic tube onto the straw to about half of the straw's length. Lift up the other end of the straw by the hose, and slide the rest of the straw into the tube. Repeat for all straws.
+		\item Carefully lift the end of the straw by the hose about 1 cm. Slide a plastic tube onto the straw to about half of the straw's length. Lift up the other end of the straw by the hose, and slide the rest of the straw into the tube. Repeat for all straws.
 		 \item Pick up a tube with a straw inside and slide it into a leak chamber, with the end of the tube with the nut going in last. Leave the end of the chamber open, and turn the black nitrogen valve clockwise on the leak chamber to allow nitrogen to flush out the chamber. \label{load}
 		 \item Go get another loading tube with a straw inside, and put it into the next chamber, in the same way as Step \ref{load}. Now, close the nitrogen valve on the previous chamber, and close the loading valve on the previous chamber. {\bf Close the nitrogen valve, THEN close the loading valve. The previous chamber should have flushed for about 15 seconds.} With the loading valve open on the chamber you just filled, open its nitrogen value (clockwise). Repeat this step until all straws are in a chamber.
 		 \item When all chambers are loaded and flushed, close the two valves on the nitrogen tank.
-        
+		        
 \end{enumerate}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth,angle=-90]{adjacent_pallets}
-	\caption{}
+	\caption{Two pallets aligned to slide plastic tubes onto inflated straws.}
 	\label{tubes on pallet}
 \end{figure}
 
+\begin{figure}[ht]
+	\center
+	\includegraphics[width=0.7\textwidth]{valves_edited}
+	\caption{Leak test chamber, showing which direction closes the chamber and nitrogen valve.}
+\end{figure}
 
-\subsection{Measuring Leak Rate}
+\clearpage
+
+
+\subsection{Measuring Leak Rates}
 	\begin{enumerate}
     	\item Open the leak test GUI, named {\tt Leak Test GUI Launcher.py}, located on the desktop.  A picture of the right-half of the GUI is shown in figure \ref{GUI}.
         \item Click the login button on the top of the GUI screen and enter your name.
         \item Make sure all nitrogen valves on the leak chambers are closed, and all leak test chambers are closed.
         \item To start taking data on a specific row, click the "Start Data" button below the desired chamber row.  When a chamber row is active the square in which the number resides will turn green.
         \item To load each straw, click ``Load Straw'', scan the straw barcode into the box, and click ``OK.'' This is quickest if one person clicks on the boxes, and one person scans the barcodes.
-        \item Straws take 45-60 minutes to test.  A plot of the measured data can be viewed for each straw by clicking the ``Plot'' icon below each straw. This can be used to make sure straw leak rates are being measured correctly. A good straw will have a clearly linear leak plot.
+        \item Straws take 45-60 minutes to test.  A plot of the measured data can be viewed for each straw by clicking the ``Plot'' icon below each straw. This can be used to make sure straw leak rates are being measured correctly. A good straw will have a clearly linear leak plot. Example leak test plots are shown in Figure \ref{plots}.
         \end{enumerate}
+        
+\begin{figure}
+	\center
+	\includegraphics[width=0.48\textwidth]{good_plot}
+	\includegraphics[width=0.48\textwidth]{bad_plot}
+	\caption{Left: A leak test plot of a straw that passed, i.e. a leak rate below about $10 \times 10^{-5}$ CC/hr. Right: A leak test plot of a straw that badly failed. Note the timescales and linearity on both plots.}
+	\label{plots}
+\end{figure}
 
-\begin{figure}[ht]
+\clearpage
+
+\begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{GUI}
 	\caption{Right-half of the Leak Test GUI.  Row 6 is the only row running.  The straws with green backgrounds pass, the red one has failed, and the blue ones are either empty or still testing.} \label{GUI}
@@ -166,25 +195,23 @@ High levels of CO$_2$ in the air can make a person feel dizzy. To CO$_2$ levels 
 
 
 
-
-
-\subsection{Emptying Leak Chamber}
+\subsection{Emptying Leak Chambers}
 	\begin{enumerate}
 		\item When a straw is done testing it will light up either red or green.  Green straws meet the minimum leak rate requirement, but red ones have failed.  
 	\item Before physically removing finished straws, click ``Unload'', and make sure the straw name disappears from the GUI.  
 	\item Open the white lever and use the magnetic grabber to gently remove the tube. Place the tube on the pallet spot the straw came from, and carefully slide the tube off of the straw so the straw goes back in its place. Carefully pull the plugs out of the straw hoses and put them back into their bin.
 	\item Repeat for all straws.
 	\item If a row has no straws being tested, click "Stop Data" to turn it off.
-	\item Put a check mark in the box next to the straw in the ``L'' section (``L'' for ``leak'') if the straw passed. If it failed, but a ``X in the box.
-	''
+	\item Put a check mark in the box next to the straw in the ``L'' section (``L'' for ``leak'') if the straw passed. If it failed, put an ``X'' in the box.
 \end{enumerate}
 
 \subsection{Cleanup}
 	\begin{enumerate}
 		\item Make sure that N$_2$ and CO$_2$ cylinder and regulator valves are closed.
-		\item Put any extra straw end-piece hose plugs back into their container.
+		\item Put any extra straw endpiece hose plugs back into their container.
 		\item Wipe and clean any vacuum grease off of work surface with alcohol and paper towel.
 		\item Throw away gloves|they likely have vacuum grease on them.
+		\item Put pallet of straws onto storage rack.
 	\end{enumerate}
 
 
