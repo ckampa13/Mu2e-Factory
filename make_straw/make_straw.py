@@ -63,11 +63,13 @@ def createRow(data):
 
 def upload(data_file):
 	table = "Straws"
-	url = "http://dbweb6.fnal.gov:8080/mu2edev/hdb/loader"
-	#url = "http://rexdb02.fnal.gov:8500/swhite/HdbHandler.py/loader"
-	queryUrl = "http://dbweb6.fnal.gov:8088/QE/mu2e_hw_dev/app/SQ/query"
+	#url = "http://dbweb6.fnal.gov:8080/mu2edev/hdb/loader" dev
+	url = "http://ifb-data.fnal.gov:8133/mu2e/hdb/loader"
+	#queryUrl = "http://dbweb6.fnal.gov:8088/QE/mu2e_hw_dev/app/SQ/query" dev
+        queryUrl = "http://ifb-data.fnal.gov:8131/QE/mu2e_hw/app/SQ/query"
 	group = "Straw Tables"
-	password = "sdwjmvw"
+	password = "0cvkwic"
+	#password = "sdwjmvw"
 
 	with open(data_file) as file_input:
 		reader = csv.reader(file_input)
@@ -103,7 +105,7 @@ while correct_straws == False:
 	straw2 = raw_input()
 	print('\n')
 
-	filename ='make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
+	filename ='data/make_straw_' + datetime.now().strftime("%Y-%m-%d_%H%M%S")+'_' + workstn_id + '.csv'
 	output = open(filename,"w")
 
 	start = int(straw1[2:])
