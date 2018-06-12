@@ -16,7 +16,7 @@ import time
 
 def updateDateToUpload(filename,old_dates,dates2remove):
 	new_dates = list(set(old_dates) - set(dates2remove))
-	new_dates = sorted(new_dates, key=lambda d: map(int, d.split('-')))
+	new_dates = sorted(new_dates, key=lambda d: map(int, d.split('_')))
 
 	f = open(filename,'w')
 	for date in new_dates:
@@ -71,7 +71,7 @@ while a == True: # run program indefinitely
 		time.sleep(5)
 		
 	# check email for confirmation during time window, around 8pm	
-	if (minutes_since >= 1200 and minutes_since <= 1265):
+	if (minutes_since >= 629 and minutes_since <= 645):
 		dates_not_uploaded = open(datefile,'r').read().splitlines()
 		dates_not_uploaded.append(str(yesterday))
 		confirmed_dates = []

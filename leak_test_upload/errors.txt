@@ -1,0 +1,11 @@
+Data upload program running
+
+2018-06-11 10:15:09.454000: Checking for confirmation emails...
+
+
+Traceback (most recent call last):
+  File "C:\Users\vold\Desktop\Mu2e-Factory\leak_test_upload\email_main.py", line 82, in <module>
+    if check_for_confirmation(M, date):
+  File "C:\Users\vold\Desktop\Mu2e-Factory\leak_test_upload\check_email.py", line 34, in check_for_confirmation
+    date_of_email = body.splitlines()[5]
+IndexError: list index out of range
