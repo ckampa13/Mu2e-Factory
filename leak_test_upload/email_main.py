@@ -64,14 +64,14 @@ while a == True: # run program indefinitely
 	if (minutes_since >= 480 and minutes_since <= 545):
 		print( str(now.strftime("%Y_%m_%d")) + ': sending leak data email\n')
 		f = open(datefile,'a')
-		ask2upload('C:\\Users\\vold\\Desktop\\LeakTestGUI - Current Version\\Leak Test Results\\',str(yesterday))
+		ask2upload('C:\\Users\\vold\\Desktop\\LeakTestGUI - Current Version\\Leak Test Results\\',str(yesterday),['mu2efactory@gmail.com','ambrose0028@gmail.com'])
 		#ask2upload('C:\\Users\\vold\\Desktop\\Leak Test Results\\',str(yesterday))
 		f.write(str(yesterday)+'\n') # add yesterday's date to not uploaded list
 		f.close()
 		time.sleep(5)
 		
 	# check email for confirmation during time window, around 8pm	
-	if (minutes_since >= 629 and minutes_since <= 645):
+	if (minutes_since >= 1320 and minutes_since <= 1385):
 		dates_not_uploaded = open(datefile,'r').read().splitlines()
 		dates_not_uploaded.append(str(yesterday))
 		confirmed_dates = []

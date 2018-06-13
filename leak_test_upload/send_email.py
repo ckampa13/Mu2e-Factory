@@ -47,7 +47,7 @@ def numPassed(data):
         return passed                              
 
 # function to send email asking for confirmation
-def ask2upload(directory, day2upload):
+def ask2upload(directory, day2upload, receivers):
 	# sencder info
 	login = 'mu2e.bot.umn@gmail.com'
 	password = 'Mu2e2021'
@@ -55,7 +55,6 @@ def ask2upload(directory, day2upload):
 
 	# receivers
 	#receivers = ['mu2efactory@gmail.com','ambrose0028@gmail.com','pende061@umn.edu']
-	receivers = ['mu2efactory@gmail.com']
 	
 	msg = MIMEMultipart()
 	msg['From'] = sender

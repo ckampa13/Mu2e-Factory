@@ -31,13 +31,17 @@ def check_for_confirmation(M, date_to_upload):
 		decode = email.header.decode_header(msg['Subject'])[0]
 		subject = str(decode[0])    
 	
-		if (subject.startswith("Re: 20")):
-			blankline = body.splitlines()[2]
+		if (subject.startswith("Re: "+str(date_to_upload))):
+			return True
+			# i think these requirements are uneccessary--just having the
+			# date in the subject should be enough.
+			"""blankline = body.splitlines()[2]
 			REline = body.splitlines()[3] # line after blank--start of quoted message
 			date_of_email = body.splitlines()[5]
 			date_of_email = date_of_email[2:len(date_of_email)] # date of data
+			#if( blankline == '' and REline[0:2] == 'On' and date_of_email == date_to_upload):
 			if( blankline == '' and REline[0:2] == 'On' and date_of_email == date_to_upload):
-				return True
+				return True"""
 		
 		#print(body)		
 		#print('-------------')
